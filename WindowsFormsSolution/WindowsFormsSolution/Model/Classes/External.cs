@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿
 
 namespace WinFromsSolution.Models
 {
-    [Table("externals")]
     public class External : Person
     {
         public Customer Customer { get; set; }

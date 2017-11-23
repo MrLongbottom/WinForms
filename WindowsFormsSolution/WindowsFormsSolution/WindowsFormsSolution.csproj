@@ -54,6 +54,7 @@
     <Compile Include="Model\Classes\AgendaItem.cs" />
     <Compile Include="Model\Classes\Attachment.cs" />
     <Compile Include="Model\Classes\Attendance.cs" />
+    <Compile Include="Model\Exception\CantBeNullException.cs" />
     <Compile Include="Model\Classes\Comment.cs" />
     <Compile Include="Model\Classes\Customer.cs" />
     <Compile Include="Model\Classes\External.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Model\Classes\SubMeeting.cs" />
     <Compile Include="Model\Classes\User.cs" />
     <Compile Include="Model\Database.cs" />
+    <Compile Include="Model\Exception\notAdminException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace WinFromsSolution.Models
 {
-    [Table("submeetings")]
     public class Submeeting
     {
         public int ID { get; set; }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsSolution.Model
+namespace WinFromsSolution.Models
 {
     public class Database
     {
         public List<Project> projects { private set; get; }
         public List<Meeting> meetings { private set; get; }
-        public List<SubMeeting> submeetings { private set; get; }
+        public List<Submeeting> submeetings { private set; get; }
         public List<User> users { private set; get; }
         public List<Customer> customers { private set; get; }
         public List<Attachment> attachments { private set; get; }
@@ -25,7 +25,7 @@ namespace WindowsFormsSolution.Model
             meetings.Add(meeting);
         }
 
-        public void addSubmeeting(SubMeeting submeeting)
+        public void addSubmeeting(Submeeting submeeting)
         {
             submeetings.Add(submeeting);
         }
@@ -64,7 +64,7 @@ namespace WindowsFormsSolution.Model
                 throw new notAdminException(currentUser);
         }
 
-        public void deleteSubmeeting(SubMeeting submeeting, User currentrUser)
+        public void deleteSubmeeting(Submeeting submeeting, User currentrUser)
         {
             if (currentrUser.Admin)//needs to allow atendee roles
             {
@@ -94,7 +94,7 @@ namespace WindowsFormsSolution.Model
         }
         public void deleteAttachment(Attachment attachment, User currentUser)
         {
-            if (currentUser == attachment.owner || currentUser.Admin)
+            if (currentUser == attachment.Owner || currentUser.Admin)
             {
                 attachments.Remove(attachment);
             }
