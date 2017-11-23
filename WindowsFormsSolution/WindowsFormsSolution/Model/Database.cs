@@ -46,7 +46,7 @@ namespace WindowsFormsSolution.Model
         }
         public void deleteProject(Project project, User currentUser)
         {
-            if (currentUser is Admin)
+            if (currentUser.Admin)
             {
                 projects.Remove(project);
             }
@@ -56,7 +56,7 @@ namespace WindowsFormsSolution.Model
 
         public void deleteMeeting(Meeting meeting, User currentUser)
         {
-            if (currentUser is Admin)
+            if (currentUser.Admin)
             {
                 meetings.Remove(meeting);
             }
@@ -66,7 +66,7 @@ namespace WindowsFormsSolution.Model
 
         public void deleteSubmeeting(SubMeeting submeeting, User currentrUser)
         {
-            if (currentrUser is Admin)//needs to allow atendee roles
+            if (currentrUser.Admin)//needs to allow atendee roles
             {
                 submeetings.Remove(submeeting);
             }
@@ -75,7 +75,7 @@ namespace WindowsFormsSolution.Model
         }
         public void deleteUser(User user, User currentrUser)
         {
-            if (currentrUser is Admin && user != currentrUser)
+            if (currentrUser.Admin && user != currentrUser)
             {
                 users.Remove(user);
             }
@@ -85,7 +85,7 @@ namespace WindowsFormsSolution.Model
 
         public void deleteCustomer(Customer customer, User currentUser)
         {
-            if (currentUser is Admin)
+            if (currentUser.Admin)
             {
                 customers.Remove(customer);
             }
@@ -94,7 +94,7 @@ namespace WindowsFormsSolution.Model
         }
         public void deleteAttachment(Attachment attachment, User currentUser)
         {
-            if (currentUser == attachment.owner || currentUser is Admin)
+            if (currentUser == attachment.owner || currentUser.Admin)
             {
                 attachments.Remove(attachment);
             }
