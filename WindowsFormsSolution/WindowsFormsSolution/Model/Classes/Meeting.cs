@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 
-namespace WinFromsSolution.Models
+namespace WindowsFormsSolution.Models
 {
     public class Meeting
     {

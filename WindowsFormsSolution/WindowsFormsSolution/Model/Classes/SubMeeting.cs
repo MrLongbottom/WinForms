@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-namespace WinFromsSolution.Models
+namespace WindowsFormsSolution.Models
 {
     public class Submeeting
     {
