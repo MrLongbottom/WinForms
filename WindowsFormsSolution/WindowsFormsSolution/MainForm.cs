@@ -15,6 +15,7 @@ namespace WindowsFormsSolution
         public FjordblinkMeetingProgram()
         {
             InitializeComponent();
+            Console.WriteLine("Hello World!");
             currPanel = ProfilePage;
         }
 
@@ -39,7 +40,7 @@ namespace WindowsFormsSolution
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Console.WriteLine("Index: " + listBox1.SelectedIndex);
         }
     }
 }

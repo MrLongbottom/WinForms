@@ -38,9 +38,9 @@
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
             this.ProfilePage = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.MainMenu.SuspendLayout();
             this.ProfilePage.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // 
             // MainMenu
             // 
-            this.MainMenu.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.MainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(36)))), ((int)(((byte)(80)))));
             this.MainMenu.Font = new System.Drawing.Font("Segoe UI", 20F);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProfileMenuItem,
@@ -90,13 +90,14 @@
             // 
             // ProjectsMenuItem
             // 
+            this.ProjectsMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.ProjectsMenuItem.Name = "ProjectsMenuItem";
             this.ProjectsMenuItem.Size = new System.Drawing.Size(135, 41);
             this.ProjectsMenuItem.Text = "Projekter";
             // 
             // UsersMenuItem
             // 
-            this.UsersMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.UsersMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
             this.UsersMenuItem.Name = "UsersMenuItem";
             this.UsersMenuItem.Size = new System.Drawing.Size(121, 41);
             this.UsersMenuItem.Text = "Brugere";
@@ -127,22 +128,6 @@
             this.ProfilePage.Size = new System.Drawing.Size(1264, 717);
             this.ProfilePage.TabIndex = 7;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(231, 241);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(211, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -161,6 +146,22 @@
             this.listBox1.Size = new System.Drawing.Size(255, 147);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(231, 241);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(211, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FjordblinkMeetingProgram
             // 
