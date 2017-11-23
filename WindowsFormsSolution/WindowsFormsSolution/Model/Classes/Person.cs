@@ -4,7 +4,7 @@ namespace WindowsFormsSolution.Models
 {
     public class Person
     {
-        public int ID { get; set; }
+       // public int ID { get; set; }
         public string Name
         {
             get { return this.Name; }
@@ -47,7 +47,7 @@ namespace WindowsFormsSolution.Models
         {
             Attendances.Add(attendance);
         }
-        /*public Person(int _ID, string _Name, string _Email, string _PhoneNumber)
+        public Person(int _ID, string _Name, string _Email, string _PhoneNumber)
         {
             ID = _ID;
             Name = _Name;
@@ -62,7 +62,7 @@ namespace WindowsFormsSolution.Models
                 Name = newName;
             }
             else
-                throw new InvalidAccessException(currentUser);
+                throw new InvalidAccessException();
         }
         public void changeEmail(string newEmail, User currentUser)
         {
@@ -71,7 +71,7 @@ namespace WindowsFormsSolution.Models
                 Email = newEmail;
             }
             else
-                throw new InvalidAccessException(currentUser);
+                throw new InvalidAccessException();
         }
         public void changePhonenumber(string newPhonenumber, User currentUser)
         {
@@ -80,7 +80,7 @@ namespace WindowsFormsSolution.Models
                 PhoneNumber = newPhonenumber;
             }
             else
-                throw new InvalidAccessException(currentUser);
-        }*/
+                throw new InvalidAccessException();
+        }
     }
 }
