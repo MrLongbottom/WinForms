@@ -4,9 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
-    [Table("files")]
     public class File : Attachment
     {
         /*public File(User owner, string name) : base(owner)

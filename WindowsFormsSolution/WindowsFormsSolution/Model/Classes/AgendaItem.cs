@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
     public class AgendaItem
     {

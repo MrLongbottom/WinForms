@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
     [Table("meetings")]
     public class Meeting

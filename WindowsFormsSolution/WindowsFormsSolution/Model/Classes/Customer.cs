@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
-    [Table("customers")]
     public class Customer
     {
         public int ID { get; set; }

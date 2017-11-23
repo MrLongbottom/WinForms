@@ -1,4 +1,4 @@
-﻿namespace WinFormSolution.Models
+﻿namespace WinFromsSolution.Models
 {
     public class SoundFile : File
     {

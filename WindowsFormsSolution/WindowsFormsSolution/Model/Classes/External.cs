@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
     [Table("externals")]
     public class External : Person

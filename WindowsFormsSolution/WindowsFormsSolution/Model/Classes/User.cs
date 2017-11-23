@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WinFormSolution.Models
+namespace WinFromsSolution.Models
 {
-    [Table("users")]
     public class User : Person
     {
         public bool Admin { get; set; } = false;
