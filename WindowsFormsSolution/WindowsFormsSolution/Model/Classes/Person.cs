@@ -43,6 +43,10 @@ namespace WinFromsSolution.Models
         }
         public List<Attendance> Attendances { private set; get; }
 
+        public void addAttendance(Attendance attendance)
+        {
+            Attendances.Add(attendance);
+        }
         /*public Person(int _ID, string _Name, string _Email, string _PhoneNumber)
         {
             ID = _ID;
