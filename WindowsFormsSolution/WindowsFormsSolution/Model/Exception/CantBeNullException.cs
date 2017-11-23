@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace WinFromsSolution.Models
+namespace WindowsFormsSolution.Models
 {
     [Serializable]
     internal class CantBeNullException : Exception

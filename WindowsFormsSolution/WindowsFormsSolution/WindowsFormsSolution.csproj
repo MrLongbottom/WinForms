@@ -57,10 +57,12 @@
     <Compile Include="Model\Classes\AgendaItem.cs" />
     <Compile Include="Model\Classes\Attachment.cs" />
     <Compile Include="Model\Classes\Attendance.cs" />
+    <Compile Include="Model\Classes\DoNotContainElementException.cs" />
+    <Compile Include="Model\Exception\InvalidAccessException.cs" />
     <Compile Include="Model\Exception\CantBeNullException.cs" />
     <Compile Include="Model\Classes\Comment.cs" />
     <Compile Include="Model\Classes\Customer.cs" />
-    <Compile Include="Model\Classes\External.cs" />
+    <Compile Include="Model\Exception\External.cs" />
     <Compile Include="Model\Classes\File.cs" />
     <Compile Include="Model\Classes\Meeting.cs" />
     <Compile Include="Model\Classes\Person.cs" />
