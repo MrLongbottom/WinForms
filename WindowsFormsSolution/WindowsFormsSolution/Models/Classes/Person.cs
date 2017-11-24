@@ -7,39 +7,15 @@ namespace WindowsFormsSolution.Models
        // public int ID { get; set; }
         public string Name
         {
-            get { return this.Name; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new CantBeNullException();
-                }
-                Name = value;
-            }
+            get; set;
         }
         public string Email
         {
-            get { return this.Email; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new CantBeNullException();
-                }
-                this.Email = value;
-            }
+            get; set;
         }
         public string PhoneNumber
         {
-            get { return this.PhoneNumber; }
-            set
-            {
-                if (value == null)
-                {
-                    throw new CantBeNullException();
-                }
-                this.PhoneNumber = value;
-            }
+            get; set;
         }
         public List<Attendance> Attendances { private set; get; }
 
