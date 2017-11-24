@@ -17,7 +17,7 @@ namespace WindowsFormsSolution
             Models.Database database = new Models.Database();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FjordblinkMeetingProgram(database));
+            Application.Run(new MainForm(database));
         }
     }
 }
