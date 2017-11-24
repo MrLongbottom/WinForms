@@ -47,5 +47,44 @@ namespace WindowsFormsSolution
         {
             Console.WriteLine("Index: " + listBox1.SelectedIndex);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Controller
+        private void login(string email, string password)
+        {
+            foreach ( Models.User user in Models.Database.users)
+            {
+                if (email == user.Email)
+                {
+                    if (password == user.Password)
+                    {
+                        makeHomescreenUI(currUser);
+                    }
+                    else
+                    {
+                        throw NotImplementedException();
+                    }
+                    break;
+                }
+            }
+        }
+
+
     }
 }
