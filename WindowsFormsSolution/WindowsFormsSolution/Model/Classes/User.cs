@@ -21,14 +21,14 @@ namespace WindowsFormsSolution.Models
         public List<Project> Projects { get; set; }
         public List<Attendance> Atendances { get; set; }
         public List<Attachment> Attachments { get; set; }
-        /*public User(string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base (_ID, _Name, _Email, _PhoneNumber)
+        public User(string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base (_ID, _Name, _Email, _PhoneNumber)
         {
             Password = _Password;
         }
         public User(string _PictureAdress, string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base(_ID, _Name, _Email, _PhoneNumber)
         {
             Password = _Password;
-            PictureAdress = _PictureAdress;
+            //PictureAdress = _PictureAdress;
         }
 
         public void changeAdminstate(bool state, User currentUser)
@@ -38,7 +38,7 @@ namespace WindowsFormsSolution.Models
                 Admin = state;
             }
             else
-                throw new InvalidAccessException(currentUser);
+                throw new InvalidAccessException();
         }
 
         public bool comparePassword(string password)
@@ -58,10 +58,10 @@ namespace WindowsFormsSolution.Models
                 Password = newPassword;
             }
             else
-                throw new InvalidAccessException(currentUser);
+                throw new InvalidAccessException();
         }
 
-        public void changePicture(string newPicureAdress, User currentUser)
+        /*public void changePicture(string newPicureAdress, User currentUser)
         {
             if (currentUser == this || currentUser.Admin)
             {
@@ -69,7 +69,7 @@ namespace WindowsFormsSolution.Models
             }
             else
                 throw new InvalidAccessException(currentUser);
-        }
+        }*/
 
         public void addProject(Project project)
         {
@@ -84,6 +84,6 @@ namespace WindowsFormsSolution.Models
         public void addAttachments(Attachment attachment)
         {
             Attachments.Add(attachment);
-        }*/
+        }
     }
 }

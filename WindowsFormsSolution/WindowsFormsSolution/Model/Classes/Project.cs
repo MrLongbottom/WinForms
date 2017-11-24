@@ -4,7 +4,7 @@ namespace WindowsFormsSolution.Models
 {
     public class Project
     {
-        public int ID { get; set; }
+       // public int ID { get; set; }
         public List<Submeeting> Submeetings { get; set; }
         public List<Attachment> Attachments { get; set; }
         //We might need to make an attendee kinda role for project
