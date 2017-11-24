@@ -2,8 +2,10 @@
 {
     public class SoundFile : File
     {
-        /*public SoundFile(User owner, string name) : base(owner, name)
-        { }*/
+        public SoundFile(User owner, string name) : base(owner, name)
+        {
+
+        }
 
         /*public void Play()
         {

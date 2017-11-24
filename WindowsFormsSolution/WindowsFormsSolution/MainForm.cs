@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsSolution
 {
-    public partial class FjordblinkMeetingProgram : Form
+    public partial class MainForm : Form
     {
-        public FjordblinkMeetingProgram(Models.Database data)
+        public MainForm(Models.Database data)
         {
             database = data;
             InitializeComponent();
