@@ -20,7 +20,7 @@ namespace WindowsFormsSolution.Models
             string submeetingString = "";
             foreach (Submeeting submeeting in Submeetings)
             {
-                submeetingString += $" {submeeting.Description} {submeeting.Title} {submeeting.Meeting.Description} {submeeting.Meeting.EndTime.ToString()} {submeeting.Meeting.Owner} {submeeting.Meeting.StartTime.ToString()} {submeeting.Meeting.Title}";
+                submeetingString += $" {submeeting.Referat} {submeeting.Description} {submeeting.Title} {submeeting.Meeting.Description} {submeeting.Meeting.EndTime.ToString()} {submeeting.Meeting.Owner} {submeeting.Meeting.StartTime.ToString()} {submeeting.Meeting.Title}";
                 foreach (Attendance person in submeeting.Meeting.Attendances)
                 {
                     submeetingString += $"{person.Person.Name} {person.Person.Email} {person.Person.PhoneNumber}";

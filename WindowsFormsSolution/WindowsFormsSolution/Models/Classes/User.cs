@@ -25,7 +25,7 @@ namespace WindowsFormsSolution.Models
         {
             Password = _Password;
         }
-        public User(string _PictureAdress, string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base(_ID, _Name, _Email, _PhoneNumber)
+        public User(string _PictureAdress, string _Password, string _Name, string _Email, string _PhoneNumber) : base(_Name, _Email, _PhoneNumber)
         {
             Password = _Password;
             //PictureAdress = _PictureAdress;
@@ -76,7 +76,7 @@ namespace WindowsFormsSolution.Models
             Projects.Add(project);
         } 
 
-        public void addAtendace(Atendance atendance)
+        public void addAtendace(Attendance atendance)
         {
             Atendances.Add(atendance);
         }
@@ -84,6 +84,25 @@ namespace WindowsFormsSolution.Models
         public void addAttachments(Attachment attachment)
         {
             Attachments.Add(attachment);
+        }
+
+        public override string ToString()
+        {
+            string userString = "";
+            foreach (Attendance attendance in Atendances)
+            {
+                userString += $" {attendance.Meeting.Description} {attendance.Meeting.EndTime.ToString()} {attendance.Meeting.StartTime.ToString()} {attendance.Meeting.Title}";
+                foreach (Submeeting submeeting in attendance.Meeting.Submeetings)
+                {
+                    userString += $" {submeeting.Description} {submeeting.Referat} {submeeting.Title} {submeeting.Project.Description} {submeeting.Project.Location} {submeeting.Project.Title}";
+                }
+            }
+            foreach (Project project in Projects)
+            {
+                userString += $" {project.Customer.Address} {project.Customer.Cvr} {project.Customer.Email} {project.Customer.Name} {project.Customer.PhoneNumber} {project.Description} {project.Location} {project.Title}";
+            }
+            userString += $" {Email} {Name} {PhoneNumber}";
+            return userString;
         }
     }
 }
