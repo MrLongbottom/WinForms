@@ -21,7 +21,8 @@ namespace WindowsFormsSolution
         }
 
         private Models.Database database { get; }
-        private Panel currPanel { get; }
+        private Models.User currUser { get; }
+        private Panel currPanel;
 
         private void Form1_Load(object sender, EventArgs e)
         {
