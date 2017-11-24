@@ -271,11 +271,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 762);
+            this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.LoginPage);
+            this.Controls.Add(this.CustomerTab);
+            this.Controls.Add(this.MeetingTab);
+            this.Controls.Add(this.ProjectTab);
+            this.Controls.Add(this.UserTab);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);

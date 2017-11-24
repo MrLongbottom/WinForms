@@ -104,7 +104,9 @@ namespace WindowsFormsSolution
             {
                 MainMenu.Visible = true;
                 SearchBar.Visible = true;
+                SearchBar.BringToFront();
                 SearchButton.Visible = true;
+                SearchButton.BringToFront();
                 ChangeTab(ProfileTab, ProfileMenuItem);
                 return;
                 //throw new ArgumentNullException("No users in database");
