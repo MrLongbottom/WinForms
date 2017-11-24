@@ -25,7 +25,7 @@ namespace WindowsFormsSolution.Models
         {
             Password = _Password;
         }
-        public User(string _PictureAdress, string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base(_ID, _Name, _Email, _PhoneNumber)
+        public User(string _PictureAdress, string _Password, string _Name, string _Email, string _PhoneNumber) : base(_Name, _Email, _PhoneNumber)
         {
             Password = _Password;
             //PictureAdress = _PictureAdress;
@@ -76,9 +76,9 @@ namespace WindowsFormsSolution.Models
             Projects.Add(project);
         } 
 
-        public void addAtendace(Atendance atendance)
+        public void addAtendace(Attendance attendance)
         {
-            Atendances.Add(atendance);
+            Atendances.Add(attendance);
         }
 
         public void addAttachments(Attachment attachment)

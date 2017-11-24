@@ -18,6 +18,7 @@ namespace WindowsFormsSolution.Models
 
         public Database()
         {
+            Console.WriteLine("Test");
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
         }
         public void addProject(Project project)
