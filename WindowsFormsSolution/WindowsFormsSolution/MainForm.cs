@@ -17,7 +17,8 @@ namespace WindowsFormsSolution
             database = data;
             InitializeComponent();
             Console.WriteLine("Hello World!");
-            currPanel = ProfilePage;
+            currPanel = LoginPage;
+            ProfileTab.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -29,21 +30,47 @@ namespace WindowsFormsSolution
 
         }
 
-        private void ProfileMenuItem_Click(object sender, EventArgs e)
+        private void ChangeTab (Panel toPanel, ToolStripMenuItem toMenuItem)
         {
             currPanel.Visible = false;
-            currPanel.BackColor = MainMenu.BackColor;
-            currPanel = ProfilePage;
+            foreach (ToolStripMenuItem item in MainMenu.Items)
+            {
+                item.BackColor = MainMenu.BackColor;
+            }
+            currPanel = toPanel;
             currPanel.Visible = true;
-            currPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            toMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
+        }
+
+        private void ProfileMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTab(ProfileTab, ProfileMenuItem);
         }
 
         private void MeetingsMenuItem_Click(object sender, EventArgs e)
         {
-            currPanel.Visible = false;
+            ChangeTab(MeetingTab, MeetingsMenuItem);
         }
 
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            ProfileMenuItem_Click(sender, e);
+        }
 
+        private void ProjectsMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTab(ProjectTab, ProjectsMenuItem);
+        }
+
+        private void UsersMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTab(UserTab, UsersMenuItem);
+        }
+
+        private void CustomersMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTab(CustomerTab, CustomersMenuItem);
+        }
 
 
 
@@ -79,7 +106,5 @@ namespace WindowsFormsSolution
                 }
             }
         }
-
-
     }
 }

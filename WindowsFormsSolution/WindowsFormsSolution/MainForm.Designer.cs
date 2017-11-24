@@ -42,8 +42,7 @@
             this.UsersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
-            this.ProfilePage = new System.Windows.Forms.Panel();
-            this.LoginPanel = new System.Windows.Forms.Panel();
+            this.ProfileTab = new System.Windows.Forms.Panel();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.LoginEmailLabel = new System.Windows.Forms.Label();
             this.LoginPasswordLabel = new System.Windows.Forms.Label();
@@ -51,8 +50,17 @@
             this.LoginForgotPasswordLink = new System.Windows.Forms.LinkLabel();
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
+            this.LoginPage = new System.Windows.Forms.Panel();
+            this.MeetingTab = new System.Windows.Forms.Panel();
+            this.ProjectTab = new System.Windows.Forms.Panel();
+            this.UserTab = new System.Windows.Forms.Panel();
+            this.CustomerTab = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
-            this.ProfilePage.SuspendLayout();
+            this.ProfileTab.SuspendLayout();
+            this.LoginPage.SuspendLayout();
+            this.MeetingTab.SuspendLayout();
+            this.ProjectTab.SuspendLayout();
+            this.UserTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchButton
@@ -106,6 +114,7 @@
             this.ProjectsMenuItem.Name = "ProjectsMenuItem";
             this.ProjectsMenuItem.Size = new System.Drawing.Size(135, 41);
             this.ProjectsMenuItem.Text = "Projekter";
+            this.ProjectsMenuItem.Click += new System.EventHandler(this.ProjectsMenuItem_Click);
             // 
             // UsersMenuItem
             // 
@@ -113,6 +122,7 @@
             this.UsersMenuItem.Name = "UsersMenuItem";
             this.UsersMenuItem.Size = new System.Drawing.Size(121, 41);
             this.UsersMenuItem.Text = "Brugere";
+            this.UsersMenuItem.Click += new System.EventHandler(this.UsersMenuItem_Click);
             // 
             // CustomersMenuItem
             // 
@@ -120,6 +130,7 @@
             this.CustomersMenuItem.Name = "CustomersMenuItem";
             this.CustomersMenuItem.Size = new System.Drawing.Size(114, 41);
             this.CustomersMenuItem.Text = "Kunder";
+            this.CustomersMenuItem.Click += new System.EventHandler(this.CustomersMenuItem_Click);
             // 
             // SearchBar
             // 
@@ -130,28 +141,14 @@
             this.SearchBar.Size = new System.Drawing.Size(250, 30);
             this.SearchBar.TabIndex = 5;
             // 
-            // ProfilePage
+            // ProfileTab
             // 
-            this.ProfilePage.Controls.Add(this.LoginLabel);
-            this.ProfilePage.Controls.Add(this.LoginEmailLabel);
-            this.ProfilePage.Controls.Add(this.LoginPasswordLabel);
-            this.ProfilePage.Controls.Add(this.LoginEmalBox);
-            this.ProfilePage.Controls.Add(this.LoginForgotPasswordLink);
-            this.ProfilePage.Controls.Add(this.LoginPasswordBox);
-            this.ProfilePage.Controls.Add(this.LoginButton);
-            this.ProfilePage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProfilePage.Location = new System.Drawing.Point(0, 45);
-            this.ProfilePage.Name = "ProfilePage";
-            this.ProfilePage.Size = new System.Drawing.Size(1264, 717);
-            this.ProfilePage.TabIndex = 7;
-            // 
-            // LoginPanel
-            // 
-            this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoginPanel.Location = new System.Drawing.Point(0, 0);
-            this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(1264, 762);
-            this.LoginPanel.TabIndex = 11;
+            this.ProfileTab.Controls.Add(this.MeetingTab);
+            this.ProfileTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProfileTab.Location = new System.Drawing.Point(0, 45);
+            this.ProfileTab.Name = "ProfileTab";
+            this.ProfileTab.Size = new System.Drawing.Size(1264, 717);
+            this.ProfileTab.TabIndex = 7;
             // 
             // LoginLabel
             // 
@@ -213,24 +210,79 @@
             this.LoginButton.TabIndex = 11;
             this.LoginButton.Text = "Log In";
             this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // LoginPage
+            // 
+            this.LoginPage.Controls.Add(this.LoginLabel);
+            this.LoginPage.Controls.Add(this.LoginEmailLabel);
+            this.LoginPage.Controls.Add(this.LoginPasswordLabel);
+            this.LoginPage.Controls.Add(this.LoginEmalBox);
+            this.LoginPage.Controls.Add(this.LoginForgotPasswordLink);
+            this.LoginPage.Controls.Add(this.LoginPasswordBox);
+            this.LoginPage.Controls.Add(this.LoginButton);
+            this.LoginPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoginPage.Location = new System.Drawing.Point(0, 0);
+            this.LoginPage.Name = "LoginPage";
+            this.LoginPage.Size = new System.Drawing.Size(1264, 762);
+            this.LoginPage.TabIndex = 11;
+            // 
+            // MeetingTab
+            // 
+            this.MeetingTab.Controls.Add(this.ProjectTab);
+            this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MeetingTab.Location = new System.Drawing.Point(0, 0);
+            this.MeetingTab.Name = "MeetingTab";
+            this.MeetingTab.Size = new System.Drawing.Size(1264, 717);
+            this.MeetingTab.TabIndex = 0;
+            // 
+            // ProjectTab
+            // 
+            this.ProjectTab.Controls.Add(this.UserTab);
+            this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectTab.Location = new System.Drawing.Point(0, 0);
+            this.ProjectTab.Name = "ProjectTab";
+            this.ProjectTab.Size = new System.Drawing.Size(1264, 717);
+            this.ProjectTab.TabIndex = 0;
+            // 
+            // UserTab
+            // 
+            this.UserTab.Controls.Add(this.CustomerTab);
+            this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserTab.Location = new System.Drawing.Point(0, 0);
+            this.UserTab.Name = "UserTab";
+            this.UserTab.Size = new System.Drawing.Size(1264, 717);
+            this.UserTab.TabIndex = 0;
+            // 
+            // CustomerTab
+            // 
+            this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerTab.Location = new System.Drawing.Point(0, 0);
+            this.CustomerTab.Name = "CustomerTab";
+            this.CustomerTab.Size = new System.Drawing.Size(1264, 717);
+            this.CustomerTab.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 762);
-            this.Controls.Add(this.ProfilePage);
+            this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MainMenu);
-            this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.LoginPage);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
-            this.ProfilePage.ResumeLayout(false);
-            this.ProfilePage.PerformLayout();
+            this.ProfileTab.ResumeLayout(false);
+            this.LoginPage.ResumeLayout(false);
+            this.LoginPage.PerformLayout();
+            this.MeetingTab.ResumeLayout(false);
+            this.ProjectTab.ResumeLayout(false);
+            this.UserTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,8 +297,8 @@
         private System.Windows.Forms.TextBox SearchBar;
         private System.Windows.Forms.ToolStripMenuItem CustomersMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ProfileMenuItem;
-        private System.Windows.Forms.Panel ProfilePage;
-        private System.Windows.Forms.Panel LoginPanel;
+        private System.Windows.Forms.Panel ProfileTab;
+        private System.Windows.Forms.Panel LoginPage;
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label LoginEmailLabel;
         private System.Windows.Forms.Label LoginPasswordLabel;
@@ -254,6 +306,10 @@
         private System.Windows.Forms.LinkLabel LoginForgotPasswordLink;
         private System.Windows.Forms.TextBox LoginPasswordBox;
         private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Panel MeetingTab;
+        private System.Windows.Forms.Panel ProjectTab;
+        private System.Windows.Forms.Panel UserTab;
+        private System.Windows.Forms.Panel CustomerTab;
     }
 }
 
