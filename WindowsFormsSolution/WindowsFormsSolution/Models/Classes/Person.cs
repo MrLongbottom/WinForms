@@ -47,9 +47,8 @@ namespace WindowsFormsSolution.Models
         {
             Attendances.Add(attendance);
         }
-        public Person(int _ID, string _Name, string _Email, string _PhoneNumber)
+        public Person(string _Name, string _Email, string _PhoneNumber)
         {
-            ID = _ID;
             Name = _Name;
             Email = _Email;
             PhoneNumber = _PhoneNumber;

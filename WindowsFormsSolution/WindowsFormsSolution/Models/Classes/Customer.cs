@@ -24,5 +24,15 @@ namespace WindowsFormsSolution.Models
                 Projects.Add(project);
             }
         }
+
+        public override string ToString()
+        {
+            string customerString = "";
+            foreach (Project project in Projects)
+            {
+                customerString += $" {project.ToString()}";
+            }
+            return $"{customerString}";
+        }
     }
 }

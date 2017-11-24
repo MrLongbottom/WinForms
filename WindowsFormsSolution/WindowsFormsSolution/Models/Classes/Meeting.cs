@@ -21,15 +21,15 @@ namespace WindowsFormsSolution.Models
             Attendances.Add(attendance);
         }
 
-        public Meeting(string title, User user, DateTime startTime, TimeSpan duration, string description, params Attendance[] attendance)
+        public Meeting(string title, User user, DateTime startTime, TimeSpan duration, string description, params Attendance[] attendances)
         {
             Title = title;
             Owner = user;
             StartTime = startTime;
             Description = description;
-            foreach (Attendance )
+            foreach (Attendance attendance in attendances)
             {
-
+                
             }
         }
 
@@ -148,6 +148,22 @@ namespace WindowsFormsSolution.Models
             {
                 Submeetings.Remove(submeeting);
             }
+        }
+
+        public override string ToString()
+        {
+            string meetingString = "";
+            foreach (Submeeting submeeting in Submeetings)
+            {
+                //meetingString += submeeting.Project.ToString();
+                meetingString += $" {submeeting.Project.Customer.Address} {submeeting.Project.Customer.Cvr} {submeeting.Project.Customer.Email} {submeeting.Project.Customer.Name} {submeeting.Project.Customer.PhoneNumber} {submeeting.Project.Description} {submeeting.Project.Location} {submeeting.Project.Title}";
+            }
+            foreach (Attendance attendance in Attendances)
+            {
+                meetingString += $"{attendance.Person.Email} {attendance.Person.Name} {attendance.Person.PhoneNumber}";
+            }
+            meetingString += $"{Title} {Description} {StartTime.ToString()} {EndTime.ToString()} {Owner.Email} {Owner.PhoneNumber} {Owner.Name}";
+            return meetingString;
         }
     }
 }

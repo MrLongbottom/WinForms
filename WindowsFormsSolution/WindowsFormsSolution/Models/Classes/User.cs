@@ -21,7 +21,7 @@ namespace WindowsFormsSolution.Models
         public List<Project> Projects { get; set; }
         public List<Attendance> Atendances { get; set; }
         public List<Attachment> Attachments { get; set; }
-        public User(string _Password, int _ID, string _Name, string _Email, string _PhoneNumber) : base (_ID, _Name, _Email, _PhoneNumber)
+        public User(string _Password, string _Name, string _Email, string _PhoneNumber) : base (_Name, _Email, _PhoneNumber)
         {
             Password = _Password;
         }

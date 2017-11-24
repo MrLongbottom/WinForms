@@ -15,6 +15,11 @@ namespace WindowsFormsSolution.Models
         public List<Customer> customers { private set; get; }
         public List<Attachment> attachments { private set; get; }
 
+
+        public Database()
+        {
+            users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
+        }
         public void addProject(Project project)
         {
             projects.Add(project);
