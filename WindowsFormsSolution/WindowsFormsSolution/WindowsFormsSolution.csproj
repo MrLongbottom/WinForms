@@ -54,7 +54,7 @@
     <Compile Include="Model\Classes\AgendaItem.cs" />
     <Compile Include="Model\Classes\Attachment.cs" />
     <Compile Include="Model\Classes\Attendance.cs" />
-    <Compile Include="Model\Classes\DoNotContainElementException.cs" />
+    <Compile Include="Model\Exception\DoNotContainElementException.cs" />
     <Compile Include="Model\Exception\InvalidAccessException.cs" />
     <Compile Include="Model\Exception\CantBeNullException.cs" />
     <Compile Include="Model\Classes\Comment.cs" />
