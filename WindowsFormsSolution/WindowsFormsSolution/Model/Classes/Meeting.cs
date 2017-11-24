@@ -27,10 +27,10 @@ namespace WindowsFormsSolution.Models
             Owner = user;
             StartTime = startTime;
             Description = description;
-            foreach (Attendance )
+            /*foreach (Attendance )
             {
 
-            }
+            }*/
         }
 
         public void ChangeDescription(string description, User currUser)

@@ -12,14 +12,16 @@ namespace WindowsFormsSolution
 {
     public partial class FjordblinkMeetingProgram : Form
     {
-        public FjordblinkMeetingProgram()
+        public FjordblinkMeetingProgram(Models.Database data)
         {
+            database = data;
             InitializeComponent();
             Console.WriteLine("Hello World!");
             currPanel = ProfilePage;
         }
 
-        private Panel currPanel;
+        private Models.Database database { get; }
+        private Panel currPanel { get; }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -29,8 +31,10 @@ namespace WindowsFormsSolution
         private void ProfileMenuItem_Click(object sender, EventArgs e)
         {
             currPanel.Visible = false;
+            currPanel.BackColor = MainMenu.BackColor;
             currPanel = ProfilePage;
             currPanel.Visible = true;
+            currPanel.BackColor = System.Drawing.SystemColors.Highlight;
         }
 
         private void MeetingsMenuItem_Click(object sender, EventArgs e)

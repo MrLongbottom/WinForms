@@ -75,14 +75,16 @@
             // ProfileMenuItem
             // 
             this.ProfileMenuItem.AutoSize = false;
+            this.ProfileMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.ProfileMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ProfileMenuItem.Image")));
             this.ProfileMenuItem.Name = "ProfileMenuItem";
-            this.ProfileMenuItem.Size = new System.Drawing.Size(120, 41);
+            this.ProfileMenuItem.Size = new System.Drawing.Size(100, 41);
             this.ProfileMenuItem.Text = "Profil";
             this.ProfileMenuItem.Click += new System.EventHandler(this.ProfileMenuItem_Click);
             // 
             // MeetingsMenuItem
             // 
+            this.MeetingsMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.MeetingsMenuItem.Name = "MeetingsMenuItem";
             this.MeetingsMenuItem.Size = new System.Drawing.Size(108, 41);
             this.MeetingsMenuItem.Text = "Møder";
@@ -97,13 +99,14 @@
             // 
             // UsersMenuItem
             // 
-            this.UsersMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
+            this.UsersMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.UsersMenuItem.Name = "UsersMenuItem";
             this.UsersMenuItem.Size = new System.Drawing.Size(121, 41);
             this.UsersMenuItem.Text = "Brugere";
             // 
             // CustomersMenuItem
             // 
+            this.CustomersMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.CustomersMenuItem.Name = "CustomersMenuItem";
             this.CustomersMenuItem.Size = new System.Drawing.Size(114, 41);
             this.CustomersMenuItem.Text = "Kunder";
