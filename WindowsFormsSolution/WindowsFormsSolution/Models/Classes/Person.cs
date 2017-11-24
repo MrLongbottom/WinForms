@@ -17,7 +17,7 @@ namespace WindowsFormsSolution.Models
         {
             get; set;
         }
-        public List<Attendance> Attendances { private set; get; }
+        public List<Attendance> Attendances { private set; get; } = new List<Attendance>();
 
         public void addAttendance(Attendance attendance)
         {

@@ -18,9 +18,8 @@ namespace WindowsFormsSolution.Models
                 this.PictureAdress = value;
             }
         }*/
-        public List<Project> Projects { get; set; }
-        public List<Attendance> Atendances { get; set; }
-        public List<Attachment> Attachments { get; set; }
+        public List<Project> Projects { get; set; } = new List<Project>();
+        public List<Attachment> Attachments { get; set; } = new List<Attachment>();
         public User(string _Password, string _Name, string _Email, string _PhoneNumber) : base (_Name, _Email, _PhoneNumber)
         {
             Password = _Password;
@@ -76,9 +75,9 @@ namespace WindowsFormsSolution.Models
             Projects.Add(project);
         } 
 
-        public void addAtendace(Attendance attendance)
+        public void addAttendace(Attendance attendance)
         {
-            Atendances.Add(attendance);
+            Attendances.Add(attendance);
         }
 
         public void addAttachments(Attachment attachment)

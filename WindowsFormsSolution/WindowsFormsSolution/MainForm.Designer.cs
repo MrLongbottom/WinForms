@@ -43,6 +43,14 @@
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
             this.ProfileTab = new System.Windows.Forms.Panel();
+            this.ProfileProjectsLabel = new System.Windows.Forms.Label();
+            this.ProfileProjects = new System.Windows.Forms.ListBox();
+            this.ProfileMeetingsLabel = new System.Windows.Forms.Label();
+            this.ProfileMeetings = new System.Windows.Forms.ListBox();
+            this.ProfilePhone = new System.Windows.Forms.Label();
+            this.ProfileEmail = new System.Windows.Forms.Label();
+            this.ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.ProfileName = new System.Windows.Forms.Label();
             this.MeetingTab = new System.Windows.Forms.Panel();
             this.ProjectTab = new System.Windows.Forms.Panel();
             this.UserTab = new System.Windows.Forms.Panel();
@@ -55,14 +63,10 @@
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
-            this.ProfileName = new System.Windows.Forms.Label();
-            this.ProfilePicture = new System.Windows.Forms.PictureBox();
-            this.ProfileEmail = new System.Windows.Forms.Label();
-            this.ProfilePhone = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
-            this.LoginPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
+            this.LoginPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchButton
@@ -148,6 +152,10 @@
             // 
             // ProfileTab
             // 
+            this.ProfileTab.Controls.Add(this.ProfileProjectsLabel);
+            this.ProfileTab.Controls.Add(this.ProfileProjects);
+            this.ProfileTab.Controls.Add(this.ProfileMeetingsLabel);
+            this.ProfileTab.Controls.Add(this.ProfileMeetings);
             this.ProfileTab.Controls.Add(this.ProfilePhone);
             this.ProfileTab.Controls.Add(this.ProfileEmail);
             this.ProfileTab.Controls.Add(this.ProfilePicture);
@@ -157,6 +165,96 @@
             this.ProfileTab.Name = "ProfileTab";
             this.ProfileTab.Size = new System.Drawing.Size(1264, 762);
             this.ProfileTab.TabIndex = 7;
+            // 
+            // ProfileProjectsLabel
+            // 
+            this.ProfileProjectsLabel.AutoSize = true;
+            this.ProfileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjectsLabel.Location = new System.Drawing.Point(902, 90);
+            this.ProfileProjectsLabel.Name = "ProfileProjectsLabel";
+            this.ProfileProjectsLabel.Size = new System.Drawing.Size(188, 31);
+            this.ProfileProjectsLabel.TabIndex = 7;
+            this.ProfileProjectsLabel.Text = "Mine Projekter";
+            // 
+            // ProfileProjects
+            // 
+            this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjects.FormattingEnabled = true;
+            this.ProfileProjects.ItemHeight = 20;
+            this.ProfileProjects.Items.AddRange(new object[] {
+            "Project 1",
+            "Project 2",
+            "Project 3"});
+            this.ProfileProjects.Location = new System.Drawing.Point(797, 130);
+            this.ProfileProjects.Name = "ProfileProjects";
+            this.ProfileProjects.Size = new System.Drawing.Size(361, 524);
+            this.ProfileProjects.TabIndex = 6;
+            // 
+            // ProfileMeetingsLabel
+            // 
+            this.ProfileMeetingsLabel.AutoSize = true;
+            this.ProfileMeetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileMeetingsLabel.Location = new System.Drawing.Point(454, 90);
+            this.ProfileMeetingsLabel.Name = "ProfileMeetingsLabel";
+            this.ProfileMeetingsLabel.Size = new System.Drawing.Size(155, 31);
+            this.ProfileMeetingsLabel.TabIndex = 5;
+            this.ProfileMeetingsLabel.Text = "Mine Møder";
+            // 
+            // ProfileMeetings
+            // 
+            this.ProfileMeetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileMeetings.FormattingEnabled = true;
+            this.ProfileMeetings.ItemHeight = 20;
+            this.ProfileMeetings.Items.AddRange(new object[] {
+            "Meeting 1",
+            "Meeting 2",
+            "Meeting 3"});
+            this.ProfileMeetings.Location = new System.Drawing.Point(373, 130);
+            this.ProfileMeetings.Name = "ProfileMeetings";
+            this.ProfileMeetings.Size = new System.Drawing.Size(361, 524);
+            this.ProfileMeetings.TabIndex = 4;
+            this.ProfileMeetings.SelectedIndexChanged += new System.EventHandler(this.ProfileMeetings_SelectedIndexChanged);
+            // 
+            // ProfilePhone
+            // 
+            this.ProfilePhone.AutoSize = true;
+            this.ProfilePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfilePhone.Location = new System.Drawing.Point(90, 317);
+            this.ProfilePhone.Name = "ProfilePhone";
+            this.ProfilePhone.Size = new System.Drawing.Size(35, 24);
+            this.ProfilePhone.TabIndex = 3;
+            this.ProfilePhone.Text = "Tlf.";
+            // 
+            // ProfileEmail
+            // 
+            this.ProfileEmail.AutoSize = true;
+            this.ProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEmail.Location = new System.Drawing.Point(90, 288);
+            this.ProfileEmail.Name = "ProfileEmail";
+            this.ProfileEmail.Size = new System.Drawing.Size(57, 24);
+            this.ProfileEmail.TabIndex = 2;
+            this.ProfileEmail.Text = "Email";
+            // 
+            // ProfilePicture
+            // 
+            this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources._123;
+            this.ProfilePicture.Location = new System.Drawing.Point(93, 90);
+            this.ProfilePicture.Name = "ProfilePicture";
+            this.ProfilePicture.Size = new System.Drawing.Size(150, 150);
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProfilePicture.TabIndex = 1;
+            this.ProfilePicture.TabStop = false;
+            // 
+            // ProfileName
+            // 
+            this.ProfileName.AutoSize = true;
+            this.ProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileName.Location = new System.Drawing.Point(90, 243);
+            this.ProfileName.Name = "ProfileName";
+            this.ProfileName.Size = new System.Drawing.Size(61, 24);
+            this.ProfileName.TabIndex = 0;
+            this.ProfileName.Text = "Name";
             // 
             // MeetingTab
             // 
@@ -223,7 +321,7 @@
             this.LoginEmalBox.Location = new System.Drawing.Point(534, 341);
             this.LoginEmalBox.Name = "LoginEmalBox";
             this.LoginEmalBox.Size = new System.Drawing.Size(200, 20);
-            this.LoginEmalBox.TabIndex = 14;
+            this.LoginEmalBox.TabIndex = 1;
             // 
             // LoginForgotPasswordLink
             // 
@@ -231,7 +329,7 @@
             this.LoginForgotPasswordLink.Location = new System.Drawing.Point(657, 411);
             this.LoginForgotPasswordLink.Name = "LoginForgotPasswordLink";
             this.LoginForgotPasswordLink.Size = new System.Drawing.Size(77, 13);
-            this.LoginForgotPasswordLink.TabIndex = 13;
+            this.LoginForgotPasswordLink.TabIndex = 4;
             this.LoginForgotPasswordLink.TabStop = true;
             this.LoginForgotPasswordLink.Text = "Glemt Kodeord";
             // 
@@ -240,15 +338,16 @@
             this.LoginPasswordBox.Location = new System.Drawing.Point(534, 380);
             this.LoginPasswordBox.Name = "LoginPasswordBox";
             this.LoginPasswordBox.Size = new System.Drawing.Size(200, 20);
-            this.LoginPasswordBox.TabIndex = 12;
+            this.LoginPasswordBox.TabIndex = 2;
             this.LoginPasswordBox.UseSystemPasswordChar = true;
+            this.LoginPasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginPasswordBox_KeyDown);
             // 
             // LoginButton
             // 
             this.LoginButton.Location = new System.Drawing.Point(534, 406);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 11;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Log In";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -267,47 +366,6 @@
             this.LoginPage.Name = "LoginPage";
             this.LoginPage.Size = new System.Drawing.Size(1264, 762);
             this.LoginPage.TabIndex = 11;
-            // 
-            // ProfileName
-            // 
-            this.ProfileName.AutoSize = true;
-            this.ProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileName.Location = new System.Drawing.Point(90, 243);
-            this.ProfileName.Name = "ProfileName";
-            this.ProfileName.Size = new System.Drawing.Size(51, 20);
-            this.ProfileName.TabIndex = 0;
-            this.ProfileName.Text = "Name";
-            // 
-            // ProfilePicture
-            // 
-            this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources._123;
-            this.ProfilePicture.Location = new System.Drawing.Point(93, 90);
-            this.ProfilePicture.Name = "ProfilePicture";
-            this.ProfilePicture.Size = new System.Drawing.Size(150, 150);
-            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ProfilePicture.TabIndex = 1;
-            this.ProfilePicture.TabStop = false;
-            // 
-            // ProfileEmail
-            // 
-            this.ProfileEmail.AutoSize = true;
-            this.ProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEmail.Location = new System.Drawing.Point(89, 279);
-            this.ProfileEmail.Name = "ProfileEmail";
-            this.ProfileEmail.Size = new System.Drawing.Size(48, 20);
-            this.ProfileEmail.TabIndex = 2;
-            this.ProfileEmail.Text = "Email";
-            // 
-            // ProfilePhone
-            // 
-            this.ProfilePhone.AutoSize = true;
-            this.ProfilePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfilePhone.Location = new System.Drawing.Point(89, 299);
-            this.ProfilePhone.Name = "ProfilePhone";
-            this.ProfilePhone.Size = new System.Drawing.Size(30, 20);
-            this.ProfilePhone.TabIndex = 3;
-            this.ProfilePhone.Text = "Tlf.";
             // 
             // MainForm
             // 
@@ -330,9 +388,9 @@
             this.MainMenu.PerformLayout();
             this.ProfileTab.ResumeLayout(false);
             this.ProfileTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,6 +422,10 @@
         private System.Windows.Forms.Label ProfileName;
         private System.Windows.Forms.Label ProfilePhone;
         private System.Windows.Forms.Label ProfileEmail;
+        private System.Windows.Forms.ListBox ProfileMeetings;
+        private System.Windows.Forms.Label ProfileMeetingsLabel;
+        private System.Windows.Forms.Label ProfileProjectsLabel;
+        private System.Windows.Forms.ListBox ProfileProjects;
     }
 }
 

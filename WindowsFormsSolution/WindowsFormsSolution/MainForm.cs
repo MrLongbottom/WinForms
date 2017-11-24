@@ -44,6 +44,19 @@ namespace WindowsFormsSolution
 
         private void ProfileMenuItem_Click(object sender, EventArgs e)
         {
+            ProfileMeetings.Items.Clear();
+            foreach (Models.Attendance att in currUser.Attendances)
+            {
+                ProfileMeetings.Items.Add(att.Meeting.Title);
+            }
+            ProfileProjects.Items.Clear();
+            foreach (Models.Project pro in currUser.Projects)
+            {
+                ProfileProjects.Items.Add(pro.Title);
+            }
+            ProfileName.Text = currUser.Name;
+            ProfileEmail.Text = "Email: " + currUser.Email;
+            ProfilePhone.Text = "Tlf: " + currUser.PhoneNumber;
             ChangeTab(ProfileTab, ProfileMenuItem);
         }
 
@@ -92,7 +105,7 @@ namespace WindowsFormsSolution
         {
             foreach ( Models.User user in database.users)
             {
-                if (email == user.Email && password == user.Password)
+                if (email.ToLower() == user.Email.ToLower() && password == user.Password)
                 {
                     currUser = user;
                     MainMenu.Visible = true;
@@ -100,7 +113,7 @@ namespace WindowsFormsSolution
                     SearchButton.Visible = true;
                     SearchButton.BringToFront();
                     SearchBar.BringToFront();
-                    ChangeTab(ProfileTab, ProfileMenuItem);
+                    ProfileMenuItem_Click(null, null);
                     return;
                 }
             }
@@ -112,6 +125,17 @@ namespace WindowsFormsSolution
             {
                 throw new NotImplementedException("Wrong password / username Combination");
             }
+        }
+
+        private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("Selected Item #" + ProfileMeetings.SelectedIndex);
+        }
+
+        private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            { LoginButton_Click(sender, e); }
         }
     }
 }
