@@ -43,6 +43,10 @@
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
             this.ProfileTab = new System.Windows.Forms.Panel();
+            this.MeetingTab = new System.Windows.Forms.Panel();
+            this.ProjectTab = new System.Windows.Forms.Panel();
+            this.UserTab = new System.Windows.Forms.Panel();
+            this.CustomerTab = new System.Windows.Forms.Panel();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.LoginEmailLabel = new System.Windows.Forms.Label();
             this.LoginPasswordLabel = new System.Windows.Forms.Label();
@@ -51,16 +55,12 @@
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
-            this.MeetingTab = new System.Windows.Forms.Panel();
-            this.ProjectTab = new System.Windows.Forms.Panel();
-            this.UserTab = new System.Windows.Forms.Panel();
-            this.CustomerTab = new System.Windows.Forms.Panel();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
-            this.LoginPage.SuspendLayout();
             this.MeetingTab.SuspendLayout();
             this.ProjectTab.SuspendLayout();
             this.UserTab.SuspendLayout();
+            this.LoginPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchButton
@@ -73,6 +73,7 @@
             this.SearchButton.TabStop = false;
             this.SearchButton.Text = "Søg";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Visible = false;
             // 
             // MainMenu
             // 
@@ -89,6 +90,7 @@
             this.MainMenu.Size = new System.Drawing.Size(1264, 45);
             this.MainMenu.TabIndex = 4;
             this.MainMenu.Text = "MainMenu";
+            this.MainMenu.Visible = false;
             // 
             // ProfileMenuItem
             // 
@@ -140,15 +142,51 @@
             this.SearchBar.Name = "SearchBar";
             this.SearchBar.Size = new System.Drawing.Size(250, 30);
             this.SearchBar.TabIndex = 5;
+            this.SearchBar.Visible = false;
             // 
             // ProfileTab
             // 
             this.ProfileTab.Controls.Add(this.MeetingTab);
             this.ProfileTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProfileTab.Location = new System.Drawing.Point(0, 45);
+            this.ProfileTab.Location = new System.Drawing.Point(0, 0);
             this.ProfileTab.Name = "ProfileTab";
-            this.ProfileTab.Size = new System.Drawing.Size(1264, 717);
+            this.ProfileTab.Size = new System.Drawing.Size(1264, 762);
             this.ProfileTab.TabIndex = 7;
+            // 
+            // MeetingTab
+            // 
+            this.MeetingTab.Controls.Add(this.ProjectTab);
+            this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MeetingTab.Location = new System.Drawing.Point(0, 0);
+            this.MeetingTab.Name = "MeetingTab";
+            this.MeetingTab.Size = new System.Drawing.Size(1264, 762);
+            this.MeetingTab.TabIndex = 0;
+            // 
+            // ProjectTab
+            // 
+            this.ProjectTab.Controls.Add(this.UserTab);
+            this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectTab.Location = new System.Drawing.Point(0, 0);
+            this.ProjectTab.Name = "ProjectTab";
+            this.ProjectTab.Size = new System.Drawing.Size(1264, 762);
+            this.ProjectTab.TabIndex = 0;
+            // 
+            // UserTab
+            // 
+            this.UserTab.Controls.Add(this.CustomerTab);
+            this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserTab.Location = new System.Drawing.Point(0, 0);
+            this.UserTab.Name = "UserTab";
+            this.UserTab.Size = new System.Drawing.Size(1264, 762);
+            this.UserTab.TabIndex = 0;
+            // 
+            // CustomerTab
+            // 
+            this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomerTab.Location = new System.Drawing.Point(0, 0);
+            this.CustomerTab.Name = "CustomerTab";
+            this.CustomerTab.Size = new System.Drawing.Size(1264, 762);
+            this.CustomerTab.TabIndex = 0;
             // 
             // LoginLabel
             // 
@@ -201,6 +239,7 @@
             this.LoginPasswordBox.Name = "LoginPasswordBox";
             this.LoginPasswordBox.Size = new System.Drawing.Size(200, 20);
             this.LoginPasswordBox.TabIndex = 12;
+            this.LoginPasswordBox.UseSystemPasswordChar = true;
             // 
             // LoginButton
             // 
@@ -227,41 +266,6 @@
             this.LoginPage.Size = new System.Drawing.Size(1264, 762);
             this.LoginPage.TabIndex = 11;
             // 
-            // MeetingTab
-            // 
-            this.MeetingTab.Controls.Add(this.ProjectTab);
-            this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MeetingTab.Location = new System.Drawing.Point(0, 0);
-            this.MeetingTab.Name = "MeetingTab";
-            this.MeetingTab.Size = new System.Drawing.Size(1264, 717);
-            this.MeetingTab.TabIndex = 0;
-            // 
-            // ProjectTab
-            // 
-            this.ProjectTab.Controls.Add(this.UserTab);
-            this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectTab.Location = new System.Drawing.Point(0, 0);
-            this.ProjectTab.Name = "ProjectTab";
-            this.ProjectTab.Size = new System.Drawing.Size(1264, 717);
-            this.ProjectTab.TabIndex = 0;
-            // 
-            // UserTab
-            // 
-            this.UserTab.Controls.Add(this.CustomerTab);
-            this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserTab.Location = new System.Drawing.Point(0, 0);
-            this.UserTab.Name = "UserTab";
-            this.UserTab.Size = new System.Drawing.Size(1264, 717);
-            this.UserTab.TabIndex = 0;
-            // 
-            // CustomerTab
-            // 
-            this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerTab.Location = new System.Drawing.Point(0, 0);
-            this.CustomerTab.Name = "CustomerTab";
-            this.CustomerTab.Size = new System.Drawing.Size(1264, 717);
-            this.CustomerTab.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,11 +282,11 @@
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.ProfileTab.ResumeLayout(false);
-            this.LoginPage.ResumeLayout(false);
-            this.LoginPage.PerformLayout();
             this.MeetingTab.ResumeLayout(false);
             this.ProjectTab.ResumeLayout(false);
             this.UserTab.ResumeLayout(false);
+            this.LoginPage.ResumeLayout(false);
+            this.LoginPage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

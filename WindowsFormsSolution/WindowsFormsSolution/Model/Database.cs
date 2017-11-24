@@ -8,12 +8,12 @@ namespace WindowsFormsSolution.Models
 {
     public class Database
     {
-        public List<Project> projects { private set; get; }
-        public List<Meeting> meetings { private set; get; }
-        public List<Submeeting> submeetings { private set; get; }
-        public List<User> users { private set; get; }
-        public List<Customer> customers { private set; get; }
-        public List<Attachment> attachments { private set; get; }
+        public List<Project> projects { private set; get; } = new List<Project>();
+        public List<Meeting> meetings { private set; get; } = new List<Meeting>();
+        public List<Submeeting> submeetings { private set; get; } = new List<Submeeting>();
+        public List<User> users { private set; get; } = new List<User>();
+        public List<Customer> customers { private set; get; } = new List<Customer>();
+        public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 
         public void addProject(Project project)
         {

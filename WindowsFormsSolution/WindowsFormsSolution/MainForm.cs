@@ -22,7 +22,7 @@ namespace WindowsFormsSolution
         }
 
         private Models.Database database { get; }
-        private Models.User currUser { get; }
+        private Models.User currUser { set; get; }
         private Panel currPanel;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace WindowsFormsSolution
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            ProfileMenuItem_Click(sender, e);
+            Login(LoginEmalBox.Text, LoginPasswordBox.Text);
         }
 
         private void ProjectsMenuItem_Click(object sender, EventArgs e)
@@ -88,22 +88,30 @@ namespace WindowsFormsSolution
 
 
         //Controller
-        private void login(string email, string password)
+        private void Login(string email, string password)
         {
             foreach ( Models.User user in database.users)
             {
-                if (email == user.Email)
+                if (email == user.Email && password == user.Password)
                 {
-                    if (password == user.Password)
-                    {
-                        //makeHomescreenUI(currUser);
-                    }
-                    else
-                    {
-                        throw new NotImplementedException();
-                    }
-                    break;
+                    currUser = user;
+                    MainMenu.Visible = true;
+                    ChangeTab(ProfileTab, ProfileMenuItem);
+                    return;
                 }
+            }
+            if (database.users.Count == 0)
+            {
+                MainMenu.Visible = true;
+                SearchBar.Visible = true;
+                SearchButton.Visible = true;
+                ChangeTab(ProfileTab, ProfileMenuItem);
+                return;
+                //throw new ArgumentNullException("No users in database");
+            }
+            else
+            {
+                throw new NotImplementedException("Wrong password / username Combination");
             }
         }
     }
