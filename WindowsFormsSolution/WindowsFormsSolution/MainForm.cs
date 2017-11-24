@@ -43,11 +43,6 @@ namespace WindowsFormsSolution
             currPanel.Visible = false;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("Index: " + listBox1.SelectedIndex);
-        }
-
 
 
 
@@ -68,17 +63,17 @@ namespace WindowsFormsSolution
         //Controller
         private void login(string email, string password)
         {
-            foreach ( Models.User user in Models.Database.users)
+            foreach ( Models.User user in database.users)
             {
                 if (email == user.Email)
                 {
                     if (password == user.Password)
                     {
-                        makeHomescreenUI(currUser);
+                        //makeHomescreenUI(currUser);
                     }
                     else
                     {
-                        throw NotImplementedException();
+                        throw new NotImplementedException();
                     }
                     break;
                 }

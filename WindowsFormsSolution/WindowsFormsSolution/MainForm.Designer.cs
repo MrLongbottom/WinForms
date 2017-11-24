@@ -43,12 +43,14 @@
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
             this.ProfilePage = new System.Windows.Forms.Panel();
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.LoginPanel = new System.Windows.Forms.Panel();
+            this.LoginLabel = new System.Windows.Forms.Label();
+            this.LoginEmailLabel = new System.Windows.Forms.Label();
+            this.LoginPasswordLabel = new System.Windows.Forms.Label();
+            this.LoginEmalBox = new System.Windows.Forms.TextBox();
             this.LoginForgotPasswordLink = new System.Windows.Forms.LinkLabel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LoginPasswordBox = new System.Windows.Forms.TextBox();
+            this.LoginButton = new System.Windows.Forms.Button();
             this.MainMenu.SuspendLayout();
             this.ProfilePage.SuspendLayout();
             this.SuspendLayout();
@@ -130,11 +132,12 @@
             // 
             // ProfilePage
             // 
-            this.ProfilePage.Controls.Add(this.label2);
-            this.ProfilePage.Controls.Add(this.label1);
-            this.ProfilePage.Controls.Add(this.textBox2);
+            this.ProfilePage.Controls.Add(this.LoginLabel);
+            this.ProfilePage.Controls.Add(this.LoginEmailLabel);
+            this.ProfilePage.Controls.Add(this.LoginPasswordLabel);
+            this.ProfilePage.Controls.Add(this.LoginEmalBox);
             this.ProfilePage.Controls.Add(this.LoginForgotPasswordLink);
-            this.ProfilePage.Controls.Add(this.EmailBox);
+            this.ProfilePage.Controls.Add(this.LoginPasswordBox);
             this.ProfilePage.Controls.Add(this.LoginButton);
             this.ProfilePage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfilePage.Location = new System.Drawing.Point(0, 45);
@@ -142,58 +145,76 @@
             this.ProfilePage.Size = new System.Drawing.Size(1264, 717);
             this.ProfilePage.TabIndex = 7;
             // 
-            // LoginButton
+            // LoginPanel
             // 
-            this.LoginButton.Location = new System.Drawing.Point(502, 270);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 3;
-            this.LoginButton.Text = "Log In";
-            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoginPanel.Location = new System.Drawing.Point(0, 0);
+            this.LoginPanel.Name = "LoginPanel";
+            this.LoginPanel.Size = new System.Drawing.Size(1264, 762);
+            this.LoginPanel.TabIndex = 11;
             // 
-            // EmailBox
+            // LoginLabel
             // 
-            this.EmailBox.Location = new System.Drawing.Point(502, 244);
-            this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(200, 20);
-            this.EmailBox.TabIndex = 4;
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginLabel.Location = new System.Drawing.Point(589, 288);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(89, 31);
+            this.LoginLabel.TabIndex = 17;
+            this.LoginLabel.Text = "Log In";
+            // 
+            // LoginEmailLabel
+            // 
+            this.LoginEmailLabel.AutoSize = true;
+            this.LoginEmailLabel.Location = new System.Drawing.Point(531, 325);
+            this.LoginEmailLabel.Name = "LoginEmailLabel";
+            this.LoginEmailLabel.Size = new System.Drawing.Size(35, 13);
+            this.LoginEmailLabel.TabIndex = 16;
+            this.LoginEmailLabel.Text = "Email:";
+            // 
+            // LoginPasswordLabel
+            // 
+            this.LoginPasswordLabel.AutoSize = true;
+            this.LoginPasswordLabel.Location = new System.Drawing.Point(531, 364);
+            this.LoginPasswordLabel.Name = "LoginPasswordLabel";
+            this.LoginPasswordLabel.Size = new System.Drawing.Size(50, 13);
+            this.LoginPasswordLabel.TabIndex = 15;
+            this.LoginPasswordLabel.Text = "Kodeord:";
+            // 
+            // LoginEmalBox
+            // 
+            this.LoginEmalBox.Location = new System.Drawing.Point(534, 341);
+            this.LoginEmalBox.Name = "LoginEmalBox";
+            this.LoginEmalBox.Size = new System.Drawing.Size(200, 20);
+            this.LoginEmalBox.TabIndex = 14;
             // 
             // LoginForgotPasswordLink
             // 
             this.LoginForgotPasswordLink.AutoSize = true;
-            this.LoginForgotPasswordLink.Location = new System.Drawing.Point(625, 275);
+            this.LoginForgotPasswordLink.Location = new System.Drawing.Point(657, 411);
             this.LoginForgotPasswordLink.Name = "LoginForgotPasswordLink";
             this.LoginForgotPasswordLink.Size = new System.Drawing.Size(77, 13);
-            this.LoginForgotPasswordLink.TabIndex = 6;
+            this.LoginForgotPasswordLink.TabIndex = 13;
             this.LoginForgotPasswordLink.TabStop = true;
             this.LoginForgotPasswordLink.Text = "Glemt Kodeord";
             // 
-            // textBox2
+            // LoginPasswordBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(502, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 7;
+            this.LoginPasswordBox.Location = new System.Drawing.Point(534, 380);
+            this.LoginPasswordBox.Name = "LoginPasswordBox";
+            this.LoginPasswordBox.Size = new System.Drawing.Size(200, 20);
+            this.LoginPasswordBox.TabIndex = 12;
             // 
-            // label1
+            // LoginButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(499, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Kodeord:";
+            this.LoginButton.Location = new System.Drawing.Point(534, 406);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.TabIndex = 11;
+            this.LoginButton.Text = "Log In";
+            this.LoginButton.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(499, 189);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Email:";
-            // 
-            // FjorblinkProgram
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +223,8 @@
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MainMenu);
-            this.Name = "FjorblinkProgram";
+            this.Controls.Add(this.LoginPanel);
+            this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainMenu.ResumeLayout(false);
@@ -224,12 +246,14 @@
         private System.Windows.Forms.ToolStripMenuItem CustomersMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ProfileMenuItem;
         private System.Windows.Forms.Panel ProfilePage;
-        private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.TextBox EmailBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Panel LoginPanel;
+        private System.Windows.Forms.Label LoginLabel;
+        private System.Windows.Forms.Label LoginEmailLabel;
+        private System.Windows.Forms.Label LoginPasswordLabel;
+        private System.Windows.Forms.TextBox LoginEmalBox;
         private System.Windows.Forms.LinkLabel LoginForgotPasswordLink;
+        private System.Windows.Forms.TextBox LoginPasswordBox;
+        private System.Windows.Forms.Button LoginButton;
     }
 }
 
