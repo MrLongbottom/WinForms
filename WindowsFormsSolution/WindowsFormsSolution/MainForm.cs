@@ -96,20 +96,17 @@ namespace WindowsFormsSolution
                 {
                     currUser = user;
                     MainMenu.Visible = true;
+                    SearchBar.Visible = true;
+                    SearchButton.Visible = true;
+                    SearchButton.BringToFront();
+                    SearchBar.BringToFront();
                     ChangeTab(ProfileTab, ProfileMenuItem);
                     return;
                 }
             }
             if (database.users.Count == 0)
             {
-                MainMenu.Visible = true;
-                SearchBar.Visible = true;
-                SearchBar.BringToFront();
-                SearchButton.Visible = true;
-                SearchButton.BringToFront();
-                ChangeTab(ProfileTab, ProfileMenuItem);
-                return;
-                //throw new ArgumentNullException("No users in database");
+                throw new ArgumentNullException("No users in database");
             }
             else
             {

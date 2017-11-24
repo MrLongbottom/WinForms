@@ -55,12 +55,14 @@
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
+            this.ProfileName = new System.Windows.Forms.Label();
+            this.ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.ProfileEmail = new System.Windows.Forms.Label();
+            this.ProfilePhone = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
-            this.MeetingTab.SuspendLayout();
-            this.ProjectTab.SuspendLayout();
-            this.UserTab.SuspendLayout();
             this.LoginPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchButton
@@ -146,7 +148,10 @@
             // 
             // ProfileTab
             // 
-            this.ProfileTab.Controls.Add(this.MeetingTab);
+            this.ProfileTab.Controls.Add(this.ProfilePhone);
+            this.ProfileTab.Controls.Add(this.ProfileEmail);
+            this.ProfileTab.Controls.Add(this.ProfilePicture);
+            this.ProfileTab.Controls.Add(this.ProfileName);
             this.ProfileTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileTab.Location = new System.Drawing.Point(0, 0);
             this.ProfileTab.Name = "ProfileTab";
@@ -155,7 +160,6 @@
             // 
             // MeetingTab
             // 
-            this.MeetingTab.Controls.Add(this.ProjectTab);
             this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingTab.Location = new System.Drawing.Point(0, 0);
             this.MeetingTab.Name = "MeetingTab";
@@ -164,7 +168,6 @@
             // 
             // ProjectTab
             // 
-            this.ProjectTab.Controls.Add(this.UserTab);
             this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectTab.Location = new System.Drawing.Point(0, 0);
             this.ProjectTab.Name = "ProjectTab";
@@ -173,7 +176,6 @@
             // 
             // UserTab
             // 
-            this.UserTab.Controls.Add(this.CustomerTab);
             this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserTab.Location = new System.Drawing.Point(0, 0);
             this.UserTab.Name = "UserTab";
@@ -266,6 +268,47 @@
             this.LoginPage.Size = new System.Drawing.Size(1264, 762);
             this.LoginPage.TabIndex = 11;
             // 
+            // ProfileName
+            // 
+            this.ProfileName.AutoSize = true;
+            this.ProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileName.Location = new System.Drawing.Point(90, 243);
+            this.ProfileName.Name = "ProfileName";
+            this.ProfileName.Size = new System.Drawing.Size(51, 20);
+            this.ProfileName.TabIndex = 0;
+            this.ProfileName.Text = "Name";
+            // 
+            // ProfilePicture
+            // 
+            this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources._123;
+            this.ProfilePicture.Location = new System.Drawing.Point(93, 90);
+            this.ProfilePicture.Name = "ProfilePicture";
+            this.ProfilePicture.Size = new System.Drawing.Size(150, 150);
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProfilePicture.TabIndex = 1;
+            this.ProfilePicture.TabStop = false;
+            // 
+            // ProfileEmail
+            // 
+            this.ProfileEmail.AutoSize = true;
+            this.ProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEmail.Location = new System.Drawing.Point(89, 279);
+            this.ProfileEmail.Name = "ProfileEmail";
+            this.ProfileEmail.Size = new System.Drawing.Size(48, 20);
+            this.ProfileEmail.TabIndex = 2;
+            this.ProfileEmail.Text = "Email";
+            // 
+            // ProfilePhone
+            // 
+            this.ProfilePhone.AutoSize = true;
+            this.ProfilePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfilePhone.Location = new System.Drawing.Point(89, 299);
+            this.ProfilePhone.Name = "ProfilePhone";
+            this.ProfilePhone.Size = new System.Drawing.Size(30, 20);
+            this.ProfilePhone.TabIndex = 3;
+            this.ProfilePhone.Text = "Tlf.";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,11 +329,10 @@
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.ProfileTab.ResumeLayout(false);
-            this.MeetingTab.ResumeLayout(false);
-            this.ProjectTab.ResumeLayout(false);
-            this.UserTab.ResumeLayout(false);
+            this.ProfileTab.PerformLayout();
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +360,10 @@
         private System.Windows.Forms.Panel ProjectTab;
         private System.Windows.Forms.Panel UserTab;
         private System.Windows.Forms.Panel CustomerTab;
+        private System.Windows.Forms.PictureBox ProfilePicture;
+        private System.Windows.Forms.Label ProfileName;
+        private System.Windows.Forms.Label ProfilePhone;
+        private System.Windows.Forms.Label ProfileEmail;
     }
 }
 
