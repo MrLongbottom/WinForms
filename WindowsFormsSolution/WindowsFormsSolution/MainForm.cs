@@ -18,7 +18,12 @@ namespace WindowsFormsSolution
             InitializeComponent();
             Console.WriteLine("Hello World!");
             currPanel = LoginPage;
+            LoginPage.Visible = true;
+            CustomerTab.Visible = false;
+            UserTab.Visible = false;
+            ProjectTab.Visible = false;
             ProfileTab.Visible = false;
+            MeetingTab.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -106,6 +111,21 @@ namespace WindowsFormsSolution
 
         private void UsersMenuItem_Click(object sender, EventArgs e)
         {
+            UsersFormerBox.Items.Clear();
+            foreach (Models.User user in database.users)
+            {
+                //UsersCurrentBox.Items.Add(user.Name);
+            }
+            UsersCurrentBox.Items.Clear();
+            foreach (Models.User user in database.users)
+            {
+                //UsersCurrentBox.Items.Add(user.Name);
+            }
+            UsersExternalsBox.Items.Clear();
+            foreach (Models.External ext in database)
+            {
+                //UsersCurrentBox.Items.Add(user.Name);
+            }
             ChangeTab(UserTab, UsersMenuItem);
         }
 

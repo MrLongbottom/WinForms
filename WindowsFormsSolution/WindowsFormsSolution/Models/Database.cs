@@ -12,6 +12,7 @@ namespace WindowsFormsSolution.Models
         public List<Meeting> meetings { private set; get; } = new List<Meeting>();
         public List<Submeeting> submeetings { private set; get; } = new List<Submeeting>();
         public List<User> users { private set; get; } = new List<User>();
+        public List<External> externals { private set; get; } = new List<External>();
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 

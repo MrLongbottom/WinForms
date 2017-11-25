@@ -318,6 +318,15 @@
   <metadata name="ProfileEditNameBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="ProfileEditPhoneBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ProfileEditEmailBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ProfileEditNameBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="ProfileEditPhoneButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
@@ -427,7 +436,7 @@
   <data name="ProfileEditNameButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsNAAALDQHtB8AsAAAK1UlEQVR4Xu2dW6xt1xyHe0FJ
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAAsMAAALDAE/QCLIAAAK1UlEQVR4Xu2dW6xt1xyHe0FJ
         3eIUcYlKlMQlPUVCoipCJKgqiZAoScODRoLWLXF5kHrgAX1wiWtCWtWHQx+0ibt6wIuIElpxSUpVEJXT
         6Cl64fc7Ok/nnv3vvddac86xxn/M70u+lOZ0r7U6x9e95pxjjnFcAU6SZ8l3yE/L78rfyL/IW+Ud8hZ5
         k/yVvEpeIi+Qp8vjJUBTPEpeKK+Rt8n/jvBmeaU8T54sAVLi/9KfK78j75TRYB+rf+NcJp8hAVJwgjxf
