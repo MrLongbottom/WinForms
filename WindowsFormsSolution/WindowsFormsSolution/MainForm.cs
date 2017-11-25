@@ -219,5 +219,31 @@ namespace WindowsFormsSolution
                 ProfilePhone.Text = "Tlf: " + user.PhoneNumber;
             }
         }
+
+        private void logUdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTab(LoginPage, null);
+            MainMenu.Visible = false;
+            SearchBar.Visible = false;
+            SearchButton.Visible = false;
+            LoginWrong.Visible = false;
+            LoginEmalBox.Clear();
+            LoginPasswordBox.Clear();
+        }
+
+        private void ProfileEditNameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            ProfileEditNameButton_Click(sender, e);
+        }
+
+        private void ProfileEditEmailBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            ProfileEditEmailButton_Click(sender, e);
+        }
+
+        private void ProfileEditPhoneBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            ProfileEditPhoneBox_KeyDown(sender, e);
+        }
     }
 }

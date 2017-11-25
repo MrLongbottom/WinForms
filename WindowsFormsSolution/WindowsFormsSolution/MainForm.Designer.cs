@@ -70,6 +70,7 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
             this.LoginWrong = new System.Windows.Forms.Label();
+            this.LogoutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -108,6 +109,8 @@
             // ProfileMenuItem
             // 
             this.ProfileMenuItem.AutoSize = false;
+            this.ProfileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LogoutMenuItem});
             this.ProfileMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.ProfileMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ProfileMenuItem.Image")));
             this.ProfileMenuItem.Name = "ProfileMenuItem";
@@ -187,6 +190,7 @@
             this.ProfileEditPhoneBox.Size = new System.Drawing.Size(150, 29);
             this.ProfileEditPhoneBox.TabIndex = 13;
             this.ProfileEditPhoneBox.Visible = false;
+            this.ProfileEditPhoneBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditPhoneBox_KeyDown);
             // 
             // ProfileEditEmailBox
             // 
@@ -196,6 +200,7 @@
             this.ProfileEditEmailBox.Size = new System.Drawing.Size(150, 29);
             this.ProfileEditEmailBox.TabIndex = 12;
             this.ProfileEditEmailBox.Visible = false;
+            this.ProfileEditEmailBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditEmailBox_KeyDown);
             // 
             // ProfileEditNameBox
             // 
@@ -205,6 +210,7 @@
             this.ProfileEditNameBox.Size = new System.Drawing.Size(150, 29);
             this.ProfileEditNameBox.TabIndex = 11;
             this.ProfileEditNameBox.Visible = false;
+            this.ProfileEditNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditNameBox_KeyDown);
             // 
             // ProfileEditPhoneButton
             // 
@@ -453,6 +459,14 @@
             this.LoginWrong.Text = "Wrong Username / Password";
             this.LoginWrong.Visible = false;
             // 
+            // LogoutMenuItem
+            // 
+            this.LogoutMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.LogoutMenuItem.Name = "LogoutMenuItem";
+            this.LogoutMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.LogoutMenuItem.Text = "Log Ud";
+            this.LogoutMenuItem.Click += new System.EventHandler(this.logUdToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,6 +533,7 @@
         private System.Windows.Forms.TextBox ProfileEditPhoneBox;
         private System.Windows.Forms.TextBox ProfileEditEmailBox;
         private System.Windows.Forms.Label LoginWrong;
+        private System.Windows.Forms.ToolStripMenuItem LogoutMenuItem;
     }
 }
 

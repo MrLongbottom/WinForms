@@ -15,7 +15,7 @@ namespace WindowsFormsSolution
         static void Main()
         {
             Models.Database database = new Models.Database();
-            database.users.Add(new Models.User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
+            database.users.Add(new Models.User("123", "Børge Børgesen", "admin", "12345678"));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm(database));
