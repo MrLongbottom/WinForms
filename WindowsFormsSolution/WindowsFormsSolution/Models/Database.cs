@@ -19,6 +19,8 @@ namespace WindowsFormsSolution.Models
         public Database()
         {
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
+            customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
+            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", null, null));
         }
         public void addProject(Project project)
         {
