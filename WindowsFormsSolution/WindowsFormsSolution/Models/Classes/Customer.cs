@@ -5,7 +5,7 @@ namespace WindowsFormsSolution.Models
     public class Customer
     {
 //public int ID { get; set; }
-        public List<Project> Projects { get; set; }
+        public List<Project> Projects { get; private set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
@@ -23,6 +23,21 @@ namespace WindowsFormsSolution.Models
             {
                 Projects.Add(project);
             }
+        }
+
+        public void addProject(Project project)
+        {
+            Projects.Add(project);
+        }
+
+        public void removeProject(Project project, User currUser)
+        {
+            if (Projects.Contains(project))
+            {
+                Projects.Remove(project);
+            }
+            else
+                throw new DoNotContainElementException();
         }
 
         public override string ToString()

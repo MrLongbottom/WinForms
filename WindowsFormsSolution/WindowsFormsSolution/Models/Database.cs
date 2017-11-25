@@ -56,7 +56,7 @@ namespace WindowsFormsSolution.Models
                 projects.Remove(project);
             }
             else
-                throw new notAdminException(currentUser);
+                throw new InvalidAccessException();
         }
 
         public void deleteMeeting(Meeting meeting, User currentUser)
@@ -66,17 +66,17 @@ namespace WindowsFormsSolution.Models
                 meetings.Remove(meeting);
             }
             else
-                throw new notAdminException(currentUser);
+                throw new InvalidAccessException();
         }
 
         public void deleteSubmeeting(Submeeting submeeting, User currentrUser)
         {
-            if (currentrUser.Admin)//needs to allow atendee roles
+            if (currentrUser.Admin || submeeting.Meeting.Owner == currentrUser)//needs to allow atendee roles
             {
                 submeetings.Remove(submeeting);
             }
             else
-                throw new notAdminException(currentrUser);
+                throw new InvalidAccessException();
         }
         public void deleteUser(User user, User currentrUser)
         {
@@ -85,7 +85,7 @@ namespace WindowsFormsSolution.Models
                 users.Remove(user);
             }
             else
-                throw new notAdminException(currentrUser);
+                throw new InvalidAccessException();
         }
 
         public void deleteCustomer(Customer customer, User currentUser)
@@ -95,7 +95,7 @@ namespace WindowsFormsSolution.Models
                 customers.Remove(customer);
             }
             else
-                throw new notAdminException(currentUser);
+                throw new InvalidAccessException();
         }
         public void deleteAttachment(Attachment attachment, User currentUser)
         {
@@ -104,7 +104,7 @@ namespace WindowsFormsSolution.Models
                 attachments.Remove(attachment);
             }
             else
-                throw new notAdminException(currentUser);
+                throw new InvalidAccessException();
         }
     }
 }
