@@ -73,12 +73,19 @@ namespace WindowsFormsSolution
                 ProfileEditPhoneButton.Visible = true;
                 ChangeTab(ProfileTab, ProfileMenuItem);
             }
+            else if (currUser.Admin)
+            {
+                ProfileEditEmailButton.Visible = true;
+                ProfileEditNameButton.Visible = true;
+                ProfileEditPhoneButton.Visible = true;
+                ChangeTab(ProfileTab, UsersMenuItem);
+            }
             else
             {
                 ProfileEditEmailButton.Visible = false;
                 ProfileEditNameButton.Visible = false;
                 ProfileEditPhoneButton.Visible = false;
-                ChangeTab(ProfileTab, null);
+                ChangeTab(ProfileTab, UsersMenuItem);
             }
         }
 
@@ -145,7 +152,9 @@ namespace WindowsFormsSolution
             }
             else
             {
-                throw new NotImplementedException("Wrong password / username Combination");
+                LoginWrong.Visible = true;
+                LoginEmalBox.Clear();
+                LoginPasswordBox.Clear();
             }
         }
 
@@ -169,10 +178,11 @@ namespace WindowsFormsSolution
             }
             else
             {
+                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
                 ProfileName.Visible = true;
                 ProfileEditNameBox.Visible = false;
-                currUser.changeName(ProfileEditNameBox.Text, currUser);
-                ProfileName.Text = currUser.Name;
+                user.changeName(ProfileEditNameBox.Text, user);
+                ProfileName.Text = user.Name;
             }
         }
 
@@ -185,10 +195,11 @@ namespace WindowsFormsSolution
             }
             else
             {
+                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
                 ProfileEmail.Visible = true;
                 ProfileEditEmailBox.Visible = false;
-                currUser.changeEmail(ProfileEditEmailBox.Text, currUser);
-                ProfileEmail.Text = "Email: " + currUser.Email;
+                user.changeEmail(ProfileEditEmailBox.Text, user);
+                ProfileEmail.Text = "Email: " + user.Email;
             }
         }
 
@@ -201,10 +212,11 @@ namespace WindowsFormsSolution
             }
             else
             {
+                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
                 ProfilePhone.Visible = true;
                 ProfileEditPhoneBox.Visible = false;
-                currUser.changePhonenumber(ProfileEditPhoneBox.Text, currUser);
-                ProfilePhone.Text = "Tlf: " + currUser.PhoneNumber;
+                user.changePhonenumber(ProfileEditPhoneBox.Text, user);
+                ProfilePhone.Text = "Tlf: " + user.PhoneNumber;
             }
         }
     }

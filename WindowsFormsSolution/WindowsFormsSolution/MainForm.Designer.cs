@@ -43,6 +43,12 @@
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchBar = new System.Windows.Forms.TextBox();
             this.ProfileTab = new System.Windows.Forms.Panel();
+            this.ProfileEditPhoneBox = new System.Windows.Forms.TextBox();
+            this.ProfileEditEmailBox = new System.Windows.Forms.TextBox();
+            this.ProfileEditNameBox = new System.Windows.Forms.TextBox();
+            this.ProfileEditPhoneButton = new System.Windows.Forms.Button();
+            this.ProfileEditEmailButton = new System.Windows.Forms.Button();
+            this.ProfileEditNameButton = new System.Windows.Forms.Button();
             this.ProfileProjectsLabel = new System.Windows.Forms.Label();
             this.ProfileProjects = new System.Windows.Forms.ListBox();
             this.ProfileMeetingsLabel = new System.Windows.Forms.Label();
@@ -63,12 +69,7 @@
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
-            this.ProfileEditNameButton = new System.Windows.Forms.Button();
-            this.ProfileEditEmailButton = new System.Windows.Forms.Button();
-            this.ProfileEditPhoneButton = new System.Windows.Forms.Button();
-            this.ProfileEditNameBox = new System.Windows.Forms.TextBox();
-            this.ProfileEditEmailBox = new System.Windows.Forms.TextBox();
-            this.ProfileEditPhoneBox = new System.Windows.Forms.TextBox();
+            this.LoginWrong = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -177,6 +178,66 @@
             this.ProfileTab.Name = "ProfileTab";
             this.ProfileTab.Size = new System.Drawing.Size(1264, 762);
             this.ProfileTab.TabIndex = 7;
+            // 
+            // ProfileEditPhoneBox
+            // 
+            this.ProfileEditPhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditPhoneBox.Location = new System.Drawing.Point(94, 323);
+            this.ProfileEditPhoneBox.Name = "ProfileEditPhoneBox";
+            this.ProfileEditPhoneBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditPhoneBox.TabIndex = 13;
+            this.ProfileEditPhoneBox.Visible = false;
+            // 
+            // ProfileEditEmailBox
+            // 
+            this.ProfileEditEmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditEmailBox.Location = new System.Drawing.Point(93, 288);
+            this.ProfileEditEmailBox.Name = "ProfileEditEmailBox";
+            this.ProfileEditEmailBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditEmailBox.TabIndex = 12;
+            this.ProfileEditEmailBox.Visible = false;
+            // 
+            // ProfileEditNameBox
+            // 
+            this.ProfileEditNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditNameBox.Location = new System.Drawing.Point(94, 243);
+            this.ProfileEditNameBox.Name = "ProfileEditNameBox";
+            this.ProfileEditNameBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditNameBox.TabIndex = 11;
+            this.ProfileEditNameBox.Visible = false;
+            // 
+            // ProfileEditPhoneButton
+            // 
+            this.ProfileEditPhoneButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditPhoneButton.BackgroundImage")));
+            this.ProfileEditPhoneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditPhoneButton.Location = new System.Drawing.Point(61, 326);
+            this.ProfileEditPhoneButton.Name = "ProfileEditPhoneButton";
+            this.ProfileEditPhoneButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditPhoneButton.TabIndex = 10;
+            this.ProfileEditPhoneButton.UseVisualStyleBackColor = true;
+            this.ProfileEditPhoneButton.Click += new System.EventHandler(this.ProfileEditPhoneButton_Click);
+            // 
+            // ProfileEditEmailButton
+            // 
+            this.ProfileEditEmailButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditEmailButton.BackgroundImage")));
+            this.ProfileEditEmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditEmailButton.Location = new System.Drawing.Point(61, 291);
+            this.ProfileEditEmailButton.Name = "ProfileEditEmailButton";
+            this.ProfileEditEmailButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditEmailButton.TabIndex = 9;
+            this.ProfileEditEmailButton.UseVisualStyleBackColor = true;
+            this.ProfileEditEmailButton.Click += new System.EventHandler(this.ProfileEditEmailButton_Click);
+            // 
+            // ProfileEditNameButton
+            // 
+            this.ProfileEditNameButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditNameButton.BackgroundImage")));
+            this.ProfileEditNameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditNameButton.Location = new System.Drawing.Point(61, 246);
+            this.ProfileEditNameButton.Name = "ProfileEditNameButton";
+            this.ProfileEditNameButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditNameButton.TabIndex = 8;
+            this.ProfileEditNameButton.UseVisualStyleBackColor = true;
+            this.ProfileEditNameButton.Click += new System.EventHandler(this.ProfileEditNameButton_Click);
             // 
             // ProfileProjectsLabel
             // 
@@ -304,7 +365,7 @@
             // 
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginLabel.Location = new System.Drawing.Point(589, 288);
+            this.LoginLabel.Location = new System.Drawing.Point(589, 260);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(89, 31);
             this.LoginLabel.TabIndex = 17;
@@ -366,6 +427,7 @@
             // 
             // LoginPage
             // 
+            this.LoginPage.Controls.Add(this.LoginWrong);
             this.LoginPage.Controls.Add(this.LoginLabel);
             this.LoginPage.Controls.Add(this.LoginEmailLabel);
             this.LoginPage.Controls.Add(this.LoginPasswordLabel);
@@ -379,65 +441,17 @@
             this.LoginPage.Size = new System.Drawing.Size(1264, 762);
             this.LoginPage.TabIndex = 11;
             // 
-            // ProfileEditNameButton
+            // LoginWrong
             // 
-            this.ProfileEditNameButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditNameButton.BackgroundImage")));
-            this.ProfileEditNameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditNameButton.Location = new System.Drawing.Point(61, 246);
-            this.ProfileEditNameButton.Name = "ProfileEditNameButton";
-            this.ProfileEditNameButton.Size = new System.Drawing.Size(23, 23);
-            this.ProfileEditNameButton.TabIndex = 8;
-            this.ProfileEditNameButton.UseVisualStyleBackColor = true;
-            this.ProfileEditNameButton.Click += new System.EventHandler(this.ProfileEditNameButton_Click);
-            // 
-            // ProfileEditEmailButton
-            // 
-            this.ProfileEditEmailButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditEmailButton.BackgroundImage")));
-            this.ProfileEditEmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditEmailButton.Location = new System.Drawing.Point(61, 291);
-            this.ProfileEditEmailButton.Name = "ProfileEditEmailButton";
-            this.ProfileEditEmailButton.Size = new System.Drawing.Size(23, 23);
-            this.ProfileEditEmailButton.TabIndex = 9;
-            this.ProfileEditEmailButton.UseVisualStyleBackColor = true;
-            this.ProfileEditEmailButton.Click += new System.EventHandler(this.ProfileEditEmailButton_Click);
-            // 
-            // ProfileEditPhoneButton
-            // 
-            this.ProfileEditPhoneButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditPhoneButton.BackgroundImage")));
-            this.ProfileEditPhoneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditPhoneButton.Location = new System.Drawing.Point(61, 326);
-            this.ProfileEditPhoneButton.Name = "ProfileEditPhoneButton";
-            this.ProfileEditPhoneButton.Size = new System.Drawing.Size(23, 23);
-            this.ProfileEditPhoneButton.TabIndex = 10;
-            this.ProfileEditPhoneButton.UseVisualStyleBackColor = true;
-            this.ProfileEditPhoneButton.Click += new System.EventHandler(this.ProfileEditPhoneButton_Click);
-            // 
-            // ProfileEditNameBox
-            // 
-            this.ProfileEditNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditNameBox.Location = new System.Drawing.Point(94, 243);
-            this.ProfileEditNameBox.Name = "ProfileEditNameBox";
-            this.ProfileEditNameBox.Size = new System.Drawing.Size(150, 29);
-            this.ProfileEditNameBox.TabIndex = 11;
-            this.ProfileEditNameBox.Visible = false;
-            // 
-            // ProfileEditEmailBox
-            // 
-            this.ProfileEditEmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditEmailBox.Location = new System.Drawing.Point(93, 288);
-            this.ProfileEditEmailBox.Name = "ProfileEditEmailBox";
-            this.ProfileEditEmailBox.Size = new System.Drawing.Size(150, 29);
-            this.ProfileEditEmailBox.TabIndex = 12;
-            this.ProfileEditEmailBox.Visible = false;
-            // 
-            // ProfileEditPhoneBox
-            // 
-            this.ProfileEditPhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditPhoneBox.Location = new System.Drawing.Point(94, 323);
-            this.ProfileEditPhoneBox.Name = "ProfileEditPhoneBox";
-            this.ProfileEditPhoneBox.Size = new System.Drawing.Size(150, 29);
-            this.ProfileEditPhoneBox.TabIndex = 13;
-            this.ProfileEditPhoneBox.Visible = false;
+            this.LoginWrong.AutoSize = true;
+            this.LoginWrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginWrong.ForeColor = System.Drawing.Color.Red;
+            this.LoginWrong.Location = new System.Drawing.Point(540, 300);
+            this.LoginWrong.Name = "LoginWrong";
+            this.LoginWrong.Size = new System.Drawing.Size(192, 17);
+            this.LoginWrong.TabIndex = 14;
+            this.LoginWrong.Text = "Wrong Username / Password";
+            this.LoginWrong.Visible = false;
             // 
             // MainForm
             // 
@@ -504,6 +518,7 @@
         private System.Windows.Forms.TextBox ProfileEditNameBox;
         private System.Windows.Forms.TextBox ProfileEditPhoneBox;
         private System.Windows.Forms.TextBox ProfileEditEmailBox;
+        private System.Windows.Forms.Label LoginWrong;
     }
 }
 
