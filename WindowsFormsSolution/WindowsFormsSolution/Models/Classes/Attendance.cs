@@ -21,7 +21,7 @@ namespace WindowsFormsSolution.Models
             Person = person;
             Chairman = chairman;
             Referrent = referrent;
-            Meeting.addAttendance(this);
+            Meeting.AddAttendance(this);
             Person.addAttendance(this);
         }
 

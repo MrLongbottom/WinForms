@@ -19,7 +19,7 @@ namespace WindowsFormsSolution.Models
             }
         }*/
         public List<Project> Projects { get; set; }
-        public List<Attendance> Atendances { get; set; }
+        //public List<Attendance> Atendances { get; set; }
         public List<Attachment> Attachments { get; set; }
         public User(string _Password, string _Name, string _Email, string _PhoneNumber) : base (_Name, _Email, _PhoneNumber)
         {
@@ -76,14 +76,48 @@ namespace WindowsFormsSolution.Models
             Projects.Add(project);
         } 
 
-        public void addAtendace(Attendance attendance)
+        public void removeProject(Project project, User currUser)
         {
-            Atendances.Add(attendance);
+            if (!currUser.Admin && !(currUser == this))
+            {
+                throw new InvalidAccessException();
+            }
+            else if (!Projects.Contains(project))
+            {
+                throw new DoNotContainElementException();
+            }
+            else
+            {
+                if (project.Users.Contains(this))
+                {
+                    project.removeUser(this, currUser);
+                }
+                Projects.Remove(project);
+            }
         }
 
         public void addAttachments(Attachment attachment)
         {
             Attachments.Add(attachment);
+        }
+
+        public override string ToString()
+        {
+            string userString = "";
+            foreach (Attendance attendance in Attendances)
+            {
+                userString += $" {attendance.Meeting.Description} {attendance.Meeting.EndTime.ToString()} {attendance.Meeting.StartTime.ToString()} {attendance.Meeting.Title}";
+                foreach (Submeeting submeeting in attendance.Meeting.Submeetings)
+                {
+                    userString += $" {submeeting.Referat} {submeeting.Title} {submeeting.Project.Description} {submeeting.Project.Location} {submeeting.Project.Title}";
+                }
+            }
+            foreach (Project project in Projects)
+            {
+                userString += $" {project.Customer.Address} {project.Customer.Cvr} {project.Customer.Email} {project.Customer.Name} {project.Customer.PhoneNumber} {project.Description} {project.Location} {project.Title}";
+            }
+            userString += $" {Email} {Name} {PhoneNumber}";
+            return userString;
         }
     }
 }
