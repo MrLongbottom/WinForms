@@ -12,17 +12,14 @@ namespace WindowsFormsSolution.Models
         public string PhoneNumber { get; set; }
         public string Cvr { get; set; }
 
-        public Customer(string name, string email, string address, string phoneNumber, string cvr, params Project[] projects)
+        public Customer(string name, string email, string address, string phoneNumber, string cvr)
         {
             Name = name;
             Email = email;
             Address = address;
             PhoneNumber = phoneNumber;
             Cvr = cvr;
-            foreach (Project project in projects)
-            {
-                Projects.Add(project);
-            }
+            
         }
 
         public void addProject(Project project)

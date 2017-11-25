@@ -16,10 +16,6 @@ namespace WindowsFormsSolution.Models
         public List<AgendaItem> AgendaItems { get; private set; }
         public List<Attachment> Attachments { get; private set; }
 
-        public void addAttendance(Attendance attendance)
-        {
-            Attendances.Add(attendance);
-        }
 
         public Meeting(string title, User user, DateTime startTime, TimeSpan duration, string description, params Attendance[] attendances)
         {
@@ -108,12 +104,25 @@ namespace WindowsFormsSolution.Models
             }
         }
 
-        /*public void ChangeAttendeeRole(Attendance attendee, Attendance attendeeRole)
+        public void ChangeAttendeeRole(Attendance attendee, string attendeeRole, bool state)
         {
-            throw new System.NotImplementedException();
+            if (Attendances.Contains(attendee))
+            {
+                switch (attendeeRole)
+                {
+                    case "chairman":
+                        attendee.setChairman(state);
+                        break;
+                    case "referrent":
+                        attendee.setReferrent(state);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
-        public SoundFile BeginRecordSound()
+        /*public SoundFile BeginRecordSound()
         {
             throw new System.NotImplementedException();
         }
@@ -159,7 +168,31 @@ namespace WindowsFormsSolution.Models
             }
             else
             {
+                if (submeeting.Project != null)
+                {
+                    submeeting.Project.removeSubmeeting(submeeting, currUser);
+                }
                 Submeetings.Remove(submeeting);
+            }
+        }
+
+        public void removeAttendance(Attendance attendance, User currUser)
+        {
+            if (!currUser.Admin && currUser != Owner && currUser != attendance.Person)
+            {
+                throw new InvalidAccessException();
+            }
+            else if (!Attendances.Contains(attendance))
+            {
+                throw new DoNotContainElementException();
+            }
+            else
+            {
+                if (attendance.Person != null)
+                {
+                    attendance.Person.removeAtendace(attendance, currUser);
+                }
+                Attendances.Remove(attendance);
             }
         }
 

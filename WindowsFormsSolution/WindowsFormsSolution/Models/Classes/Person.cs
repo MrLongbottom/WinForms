@@ -81,5 +81,33 @@ namespace WindowsFormsSolution.Models
             else
                 throw new InvalidAccessException();
         }
+
+
+        public void addAtendace(Attendance atendance)
+        {
+            Attendances.Add(atendance);
+        }
+
+        public void removeAtendace(Attendance attendance, User currUser)
+        {
+            if (!currUser.Admin && currUser != this && currUser != attendance.Meeting.Owner)
+            {
+                throw new InvalidAccessException();
+            }
+            else if (!Attendances.Contains(attendance))
+            {
+                throw new DoNotContainElementException();
+            }
+            else
+            {
+                if (attendance.Meeting != null)
+                {
+                    attendance.Meeting.removeAttendance(attendance, currUser);
+                }
+                Attendances.Remove(attendance);
+            }
+        }
     }
+
 }
+
