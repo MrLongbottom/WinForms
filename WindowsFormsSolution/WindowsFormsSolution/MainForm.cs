@@ -33,31 +33,53 @@ namespace WindowsFormsSolution
         private void ChangeTab (Panel toPanel, ToolStripMenuItem toMenuItem)
         {
             currPanel.Visible = false;
-            foreach (ToolStripMenuItem item in MainMenu.Items)
-            {
-                item.BackColor = MainMenu.BackColor;
-            }
             currPanel = toPanel;
             currPanel.Visible = true;
-            toMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
+            if (toMenuItem != null)
+            {
+                foreach (ToolStripMenuItem item in MainMenu.Items)
+                {
+                    item.BackColor = MainMenu.BackColor;
+                }
+                toMenuItem.BackColor = System.Drawing.SystemColors.Highlight;
+            }
         }
 
         private void ProfileMenuItem_Click(object sender, EventArgs e)
         {
+            LoadUserWindow(currUser);
+        }
+
+        //user is not stored, so changing information is hard
+        public void LoadUserWindow(Models.User user)
+        {
             ProfileMeetings.Items.Clear();
-            foreach (Models.Attendance att in currUser.Attendances)
+            foreach (Models.Attendance att in user.Attendances)
             {
                 ProfileMeetings.Items.Add(att.Meeting.Title);
             }
             ProfileProjects.Items.Clear();
-            foreach (Models.Project pro in currUser.Projects)
+            foreach (Models.Project pro in user.Projects)
             {
                 ProfileProjects.Items.Add(pro.Title);
             }
-            ProfileName.Text = currUser.Name;
-            ProfileEmail.Text = "Email: " + currUser.Email;
-            ProfilePhone.Text = "Tlf: " + currUser.PhoneNumber;
-            ChangeTab(ProfileTab, ProfileMenuItem);
+            ProfileName.Text = user.Name;
+            ProfileEmail.Text = "Email: " + user.Email;
+            ProfilePhone.Text = "Tlf: " + user.PhoneNumber;
+            if (user == currUser)
+            {
+                ProfileEditEmailButton.Visible = true;
+                ProfileEditNameButton.Visible = true;
+                ProfileEditPhoneButton.Visible = true;
+                ChangeTab(ProfileTab, ProfileMenuItem);
+            }
+            else
+            {
+                ProfileEditEmailButton.Visible = false;
+                ProfileEditNameButton.Visible = false;
+                ProfileEditPhoneButton.Visible = false;
+                ChangeTab(ProfileTab, null);
+            }
         }
 
         private void MeetingsMenuItem_Click(object sender, EventArgs e)
@@ -136,6 +158,54 @@ namespace WindowsFormsSolution
         {
             if (e.KeyCode == Keys.Enter)
             { LoginButton_Click(sender, e); }
+        }
+
+        private void ProfileEditNameButton_Click(object sender, EventArgs e)
+        {
+            if (ProfileName.Visible)
+            {
+                ProfileEditNameBox.Visible = true;
+                ProfileName.Visible = false;
+            }
+            else
+            {
+                ProfileName.Visible = true;
+                ProfileEditNameBox.Visible = false;
+                currUser.changeName(ProfileEditNameBox.Text, currUser);
+                ProfileName.Text = currUser.Name;
+            }
+        }
+
+        private void ProfileEditEmailButton_Click(object sender, EventArgs e)
+        {
+            if (ProfileEmail.Visible)
+            {
+                ProfileEditEmailBox.Visible = true;
+                ProfileEmail.Visible = false;
+            }
+            else
+            {
+                ProfileEmail.Visible = true;
+                ProfileEditEmailBox.Visible = false;
+                currUser.changeEmail(ProfileEditEmailBox.Text, currUser);
+                ProfileEmail.Text = "Email: " + currUser.Email;
+            }
+        }
+
+        private void ProfileEditPhoneButton_Click(object sender, EventArgs e)
+        {
+            if (ProfilePhone.Visible)
+            {
+                ProfileEditPhoneBox.Visible = true;
+                ProfilePhone.Visible = false;
+            }
+            else
+            {
+                ProfilePhone.Visible = true;
+                ProfileEditPhoneBox.Visible = false;
+                currUser.changePhonenumber(ProfileEditPhoneBox.Text, currUser);
+                ProfilePhone.Text = "Tlf: " + currUser.PhoneNumber;
+            }
         }
     }
 }

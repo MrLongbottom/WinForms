@@ -63,6 +63,12 @@
             this.LoginPasswordBox = new System.Windows.Forms.TextBox();
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
+            this.ProfileEditNameButton = new System.Windows.Forms.Button();
+            this.ProfileEditEmailButton = new System.Windows.Forms.Button();
+            this.ProfileEditPhoneButton = new System.Windows.Forms.Button();
+            this.ProfileEditNameBox = new System.Windows.Forms.TextBox();
+            this.ProfileEditEmailBox = new System.Windows.Forms.TextBox();
+            this.ProfileEditPhoneBox = new System.Windows.Forms.TextBox();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -152,6 +158,12 @@
             // 
             // ProfileTab
             // 
+            this.ProfileTab.Controls.Add(this.ProfileEditPhoneBox);
+            this.ProfileTab.Controls.Add(this.ProfileEditEmailBox);
+            this.ProfileTab.Controls.Add(this.ProfileEditNameBox);
+            this.ProfileTab.Controls.Add(this.ProfileEditPhoneButton);
+            this.ProfileTab.Controls.Add(this.ProfileEditEmailButton);
+            this.ProfileTab.Controls.Add(this.ProfileEditNameButton);
             this.ProfileTab.Controls.Add(this.ProfileProjectsLabel);
             this.ProfileTab.Controls.Add(this.ProfileProjects);
             this.ProfileTab.Controls.Add(this.ProfileMeetingsLabel);
@@ -170,7 +182,7 @@
             // 
             this.ProfileProjectsLabel.AutoSize = true;
             this.ProfileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileProjectsLabel.Location = new System.Drawing.Point(902, 90);
+            this.ProfileProjectsLabel.Location = new System.Drawing.Point(882, 90);
             this.ProfileProjectsLabel.Name = "ProfileProjectsLabel";
             this.ProfileProjectsLabel.Size = new System.Drawing.Size(188, 31);
             this.ProfileProjectsLabel.TabIndex = 7;
@@ -194,7 +206,7 @@
             // 
             this.ProfileMeetingsLabel.AutoSize = true;
             this.ProfileMeetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileMeetingsLabel.Location = new System.Drawing.Point(454, 90);
+            this.ProfileMeetingsLabel.Location = new System.Drawing.Point(474, 90);
             this.ProfileMeetingsLabel.Name = "ProfileMeetingsLabel";
             this.ProfileMeetingsLabel.Size = new System.Drawing.Size(155, 31);
             this.ProfileMeetingsLabel.TabIndex = 5;
@@ -219,7 +231,7 @@
             // 
             this.ProfilePhone.AutoSize = true;
             this.ProfilePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfilePhone.Location = new System.Drawing.Point(90, 317);
+            this.ProfilePhone.Location = new System.Drawing.Point(90, 325);
             this.ProfilePhone.Name = "ProfilePhone";
             this.ProfilePhone.Size = new System.Drawing.Size(35, 24);
             this.ProfilePhone.TabIndex = 3;
@@ -367,6 +379,66 @@
             this.LoginPage.Size = new System.Drawing.Size(1264, 762);
             this.LoginPage.TabIndex = 11;
             // 
+            // ProfileEditNameButton
+            // 
+            this.ProfileEditNameButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditNameButton.BackgroundImage")));
+            this.ProfileEditNameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditNameButton.Location = new System.Drawing.Point(61, 246);
+            this.ProfileEditNameButton.Name = "ProfileEditNameButton";
+            this.ProfileEditNameButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditNameButton.TabIndex = 8;
+            this.ProfileEditNameButton.UseVisualStyleBackColor = true;
+            this.ProfileEditNameButton.Click += new System.EventHandler(this.ProfileEditNameButton_Click);
+            // 
+            // ProfileEditEmailButton
+            // 
+            this.ProfileEditEmailButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditEmailButton.BackgroundImage")));
+            this.ProfileEditEmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditEmailButton.Location = new System.Drawing.Point(61, 291);
+            this.ProfileEditEmailButton.Name = "ProfileEditEmailButton";
+            this.ProfileEditEmailButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditEmailButton.TabIndex = 9;
+            this.ProfileEditEmailButton.UseVisualStyleBackColor = true;
+            this.ProfileEditEmailButton.Click += new System.EventHandler(this.ProfileEditEmailButton_Click);
+            // 
+            // ProfileEditPhoneButton
+            // 
+            this.ProfileEditPhoneButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditPhoneButton.BackgroundImage")));
+            this.ProfileEditPhoneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ProfileEditPhoneButton.Location = new System.Drawing.Point(61, 326);
+            this.ProfileEditPhoneButton.Name = "ProfileEditPhoneButton";
+            this.ProfileEditPhoneButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditPhoneButton.TabIndex = 10;
+            this.ProfileEditPhoneButton.UseVisualStyleBackColor = true;
+            this.ProfileEditPhoneButton.Click += new System.EventHandler(this.ProfileEditPhoneButton_Click);
+            // 
+            // ProfileEditNameBox
+            // 
+            this.ProfileEditNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditNameBox.Location = new System.Drawing.Point(94, 243);
+            this.ProfileEditNameBox.Name = "ProfileEditNameBox";
+            this.ProfileEditNameBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditNameBox.TabIndex = 11;
+            this.ProfileEditNameBox.Visible = false;
+            // 
+            // ProfileEditEmailBox
+            // 
+            this.ProfileEditEmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditEmailBox.Location = new System.Drawing.Point(93, 288);
+            this.ProfileEditEmailBox.Name = "ProfileEditEmailBox";
+            this.ProfileEditEmailBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditEmailBox.TabIndex = 12;
+            this.ProfileEditEmailBox.Visible = false;
+            // 
+            // ProfileEditPhoneBox
+            // 
+            this.ProfileEditPhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileEditPhoneBox.Location = new System.Drawing.Point(94, 323);
+            this.ProfileEditPhoneBox.Name = "ProfileEditPhoneBox";
+            this.ProfileEditPhoneBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditPhoneBox.TabIndex = 13;
+            this.ProfileEditPhoneBox.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +498,12 @@
         private System.Windows.Forms.Label ProfileMeetingsLabel;
         private System.Windows.Forms.Label ProfileProjectsLabel;
         private System.Windows.Forms.ListBox ProfileProjects;
+        private System.Windows.Forms.Button ProfileEditNameButton;
+        private System.Windows.Forms.Button ProfileEditPhoneButton;
+        private System.Windows.Forms.Button ProfileEditEmailButton;
+        private System.Windows.Forms.TextBox ProfileEditNameBox;
+        private System.Windows.Forms.TextBox ProfileEditPhoneBox;
+        private System.Windows.Forms.TextBox ProfileEditEmailBox;
     }
 }
 
