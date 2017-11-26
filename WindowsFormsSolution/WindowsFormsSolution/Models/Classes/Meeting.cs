@@ -11,10 +11,10 @@ namespace WindowsFormsSolution.Models
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public string Description { get; set; }
-        public List<Attendance> Attendances { get; private set; }
-        public List<Submeeting> Submeetings { get; private set; }
-        public List<AgendaItem> AgendaItems { get; private set; }
-        public List<Attachment> Attachments { get; private set; }
+        public List<Attendance> Attendances { get; private set; } = new List<Attendance>();
+        public List<Submeeting> Submeetings { get; private set; } = new List<Submeeting>();
+        public List<AgendaItem> AgendaItems { get; private set; } = new List<AgendaItem>();
+        public List<Attachment> Attachments { get; private set; } = new List<Attachment>();
 
 
         public Meeting(string title, User user, DateTime startTime, DateTime endTime, string description, params Attendance[] attendances)

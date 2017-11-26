@@ -24,6 +24,7 @@ namespace WindowsFormsSolution
             ProjectTab.Visible = false;
             ProfileTab.Visible = false;
             MeetingTab.Visible = false;
+            MeetingPage.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -100,7 +101,7 @@ namespace WindowsFormsSolution
             MeetingsFormerBox.Items.Clear();
             foreach (Models.Attendance att in currUser.Attendances)
             {
-                if (att.Meeting.StartTime < DateTime.Now)
+                if (att.Meeting.StartTime <= DateTime.Now)
                 {
                     MeetingsFormerBox.Items.Add(att.Meeting.Title);
                 }
@@ -193,8 +194,7 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Models.Meeting meet = database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString());
-            
+            LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -289,6 +289,18 @@ namespace WindowsFormsSolution
         {
             MeetingTitleLabel.Text = meeting.Title;
             MeetingDescriptionLabel.Text = meeting.Description;
+            //Dagsorden Setup
+            MeetingAgendaTree.Nodes.Clear();
+            foreach (Models.AgendaItem agen in meeting.AgendaItems)
+            {
+                List<TreeNode> children = new List<TreeNode>();
+                foreach(Models.Submeeting sub in agen.Submeetings)
+                {
+                    children.Add(new TreeNode(sub.Title));
+                }
+                MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+            }
+
             ChangeTab(MeetingPage, MeetingsMenuItem);
         }
 
@@ -315,6 +327,22 @@ namespace WindowsFormsSolution
         private void MeetingsCreateButtom_Click(object sender, EventArgs e)
         {
             ChangeTab(CreatMeeting, MeetingsMenuItem);
+        }
+
+        private void LoadProjectWindow(Models.Project pro)
+        {
+            ProjectTitleLabel.Text = pro.Title;
+            ProjectReferBox.Items.Clear();
+            foreach(Models.Submeeting sub in pro.Submeetings)
+            {
+                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
+            }
+            ChangeTab(ProjectPage, ProjectsMenuItem);
+        }
+
+        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
         }
     }
 }
