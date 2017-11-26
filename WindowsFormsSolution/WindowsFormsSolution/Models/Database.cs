@@ -137,5 +137,15 @@ namespace WindowsFormsSolution.Models
             }
             throw new Exception("No user with the name: " + name);
         }
+
+        internal Meeting GetMeetingByTitle(string title)
+        {
+            foreach (Meeting meet in meetings)
+            {
+                if (meet.Title == title)
+                { return meet; }
+            }
+            throw new Exception("No meeting with the title: " + title);
+        }
     }
 }
