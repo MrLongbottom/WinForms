@@ -16,7 +16,7 @@ namespace WindowsFormsSolution.Models
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 
-
+        //I hate git
         public Database()
         {
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
