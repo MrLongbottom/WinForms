@@ -304,6 +304,22 @@ namespace WindowsFormsSolution
             ChangeTab(MeetingPage, MeetingsMenuItem);
         }
 
+        private void LoadProjectWindow(Models.Project pro)
+        {
+            ProjectTitleLabel.Text = pro.Title;
+            ProjectReferBox.Items.Clear();
+            foreach(Models.Submeeting sub in pro.Submeetings)
+            {
+                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
+            }
+            ChangeTab(ProjectPage, ProjectsMenuItem);
+        }
+
+        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -327,22 +343,6 @@ namespace WindowsFormsSolution
         private void MeetingsCreateButtom_Click(object sender, EventArgs e)
         {
             ChangeTab(CreatMeeting, MeetingsMenuItem);
-        }
-
-        private void LoadProjectWindow(Models.Project pro)
-        {
-            ProjectTitleLabel.Text = pro.Title;
-            ProjectReferBox.Items.Clear();
-            foreach(Models.Submeeting sub in pro.Submeetings)
-            {
-                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
-            }
-            ChangeTab(ProjectPage, ProjectsMenuItem);
-        }
-
-        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
         }
     }
 }
