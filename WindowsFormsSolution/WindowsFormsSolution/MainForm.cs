@@ -120,6 +120,12 @@ namespace WindowsFormsSolution
 
         private void ProjectsMenuItem_Click(object sender, EventArgs e)
         {
+            ProjectFormerBox.Items.Clear();
+            ProjectCurrentBox.Items.Clear();
+            foreach(Models.Project pro in currUser.Projects)
+            {
+                ProjectCurrentBox.Items.Add(pro.Title);
+            }
             ChangeTab(ProjectTab, ProjectsMenuItem);
         }
 
@@ -148,22 +154,6 @@ namespace WindowsFormsSolution
             ChangeTab(CustomerTab, CustomersMenuItem);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Controller
         private void Login(string email, string password)
         {
             foreach ( Models.User user in database.users)

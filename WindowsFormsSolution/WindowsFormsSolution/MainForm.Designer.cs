@@ -65,6 +65,10 @@
             this.MeetingsUpcomingBox = new System.Windows.Forms.ListBox();
             this.MeetingsFormerBox = new System.Windows.Forms.ListBox();
             this.ProjectTab = new System.Windows.Forms.Panel();
+            this.ProjectCurrentLabel = new System.Windows.Forms.Label();
+            this.ProjectFormerLabel = new System.Windows.Forms.Label();
+            this.ProjectCurrentBox = new System.Windows.Forms.ListBox();
+            this.ProjectFormerBox = new System.Windows.Forms.ListBox();
             this.UserTab = new System.Windows.Forms.Panel();
             this.UsersExternalsLabel = new System.Windows.Forms.Label();
             this.UsersExternalsBox = new System.Windows.Forms.ListBox();
@@ -91,10 +95,6 @@
             this.ProfileReferatLabel = new System.Windows.Forms.Label();
             this.ProjectReferBox = new System.Windows.Forms.ListBox();
             this.ProjectTitleLabel = new System.Windows.Forms.Label();
-            this.ProjectCurrentLabel = new System.Windows.Forms.Label();
-            this.ProjectFormerLabel = new System.Windows.Forms.Label();
-            this.ProjectCurrentBox = new System.Windows.Forms.ListBox();
-            this.ProjectFormerBox = new System.Windows.Forms.ListBox();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -448,6 +448,57 @@
             this.ProjectTab.Size = new System.Drawing.Size(1264, 762);
             this.ProjectTab.TabIndex = 0;
             // 
+            // ProjectCurrentLabel
+            // 
+            this.ProjectCurrentLabel.AutoSize = true;
+            this.ProjectCurrentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCurrentLabel.Location = new System.Drawing.Point(812, 69);
+            this.ProjectCurrentLabel.Name = "ProjectCurrentLabel";
+            this.ProjectCurrentLabel.Size = new System.Drawing.Size(272, 31);
+            this.ProjectCurrentLabel.TabIndex = 7;
+            this.ProjectCurrentLabel.Text = "Nuværende Projekter";
+            // 
+            // ProjectFormerLabel
+            // 
+            this.ProjectFormerLabel.AutoSize = true;
+            this.ProjectFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectFormerLabel.Location = new System.Drawing.Point(198, 69);
+            this.ProjectFormerLabel.Name = "ProjectFormerLabel";
+            this.ProjectFormerLabel.Size = new System.Drawing.Size(234, 31);
+            this.ProjectFormerLabel.TabIndex = 6;
+            this.ProjectFormerLabel.Text = "Tidligere Projekter";
+            // 
+            // ProjectCurrentBox
+            // 
+            this.ProjectCurrentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCurrentBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ProjectCurrentBox.FormattingEnabled = true;
+            this.ProjectCurrentBox.ItemHeight = 20;
+            this.ProjectCurrentBox.Items.AddRange(new object[] {
+            "Project 1",
+            "Project 2",
+            "Project 3"});
+            this.ProjectCurrentBox.Location = new System.Drawing.Point(684, 109);
+            this.ProjectCurrentBox.MultiColumn = true;
+            this.ProjectCurrentBox.Name = "ProjectCurrentBox";
+            this.ProjectCurrentBox.Size = new System.Drawing.Size(535, 584);
+            this.ProjectCurrentBox.TabIndex = 5;
+            // 
+            // ProjectFormerBox
+            // 
+            this.ProjectFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ProjectFormerBox.FormattingEnabled = true;
+            this.ProjectFormerBox.ItemHeight = 20;
+            this.ProjectFormerBox.Items.AddRange(new object[] {
+            "Project 1",
+            "Project 2",
+            "Project 3"});
+            this.ProjectFormerBox.Location = new System.Drawing.Point(46, 109);
+            this.ProjectFormerBox.Name = "ProjectFormerBox";
+            this.ProjectFormerBox.Size = new System.Drawing.Size(535, 584);
+            this.ProjectFormerBox.TabIndex = 4;
+            // 
             // UserTab
             // 
             this.UserTab.Controls.Add(this.UsersExternalsLabel);
@@ -706,6 +757,7 @@
             this.ProjectPage.Name = "ProjectPage";
             this.ProjectPage.Size = new System.Drawing.Size(1264, 762);
             this.ProjectPage.TabIndex = 4;
+            this.ProjectPage.Visible = false;
             // 
             // ProfileReferatLabel
             // 
@@ -736,57 +788,6 @@
             this.ProjectTitleLabel.Size = new System.Drawing.Size(158, 31);
             this.ProjectTitleLabel.TabIndex = 0;
             this.ProjectTitleLabel.Text = "Projekt Titel";
-            // 
-            // ProjectCurrentLabel
-            // 
-            this.ProjectCurrentLabel.AutoSize = true;
-            this.ProjectCurrentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectCurrentLabel.Location = new System.Drawing.Point(812, 69);
-            this.ProjectCurrentLabel.Name = "ProjectCurrentLabel";
-            this.ProjectCurrentLabel.Size = new System.Drawing.Size(272, 31);
-            this.ProjectCurrentLabel.TabIndex = 7;
-            this.ProjectCurrentLabel.Text = "Nuværende Projekter";
-            // 
-            // ProjectFormerLabel
-            // 
-            this.ProjectFormerLabel.AutoSize = true;
-            this.ProjectFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectFormerLabel.Location = new System.Drawing.Point(198, 69);
-            this.ProjectFormerLabel.Name = "ProjectFormerLabel";
-            this.ProjectFormerLabel.Size = new System.Drawing.Size(234, 31);
-            this.ProjectFormerLabel.TabIndex = 6;
-            this.ProjectFormerLabel.Text = "Tidligere Projekter";
-            // 
-            // ProjectCurrentBox
-            // 
-            this.ProjectCurrentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectCurrentBox.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProjectCurrentBox.FormattingEnabled = true;
-            this.ProjectCurrentBox.ItemHeight = 20;
-            this.ProjectCurrentBox.Items.AddRange(new object[] {
-            "Meeting 1",
-            "Meeting 2",
-            "Meeting 3"});
-            this.ProjectCurrentBox.Location = new System.Drawing.Point(684, 109);
-            this.ProjectCurrentBox.MultiColumn = true;
-            this.ProjectCurrentBox.Name = "ProjectCurrentBox";
-            this.ProjectCurrentBox.Size = new System.Drawing.Size(535, 584);
-            this.ProjectCurrentBox.TabIndex = 5;
-            // 
-            // ProjectFormerBox
-            // 
-            this.ProjectFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.ProjectFormerBox.FormattingEnabled = true;
-            this.ProjectFormerBox.ItemHeight = 20;
-            this.ProjectFormerBox.Items.AddRange(new object[] {
-            "Meeting 1",
-            "Meeting 2",
-            "Meeting 3"});
-            this.ProjectFormerBox.Location = new System.Drawing.Point(46, 109);
-            this.ProjectFormerBox.Name = "ProjectFormerBox";
-            this.ProjectFormerBox.Size = new System.Drawing.Size(535, 584);
-            this.ProjectFormerBox.TabIndex = 4;
             // 
             // MainForm
             // 
