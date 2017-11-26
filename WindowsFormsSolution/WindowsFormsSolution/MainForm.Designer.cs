@@ -34,6 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +73,11 @@
             this.UsersCurrentBox = new System.Windows.Forms.ListBox();
             this.UsersFormerBox = new System.Windows.Forms.ListBox();
             this.CustomerTab = new System.Windows.Forms.Panel();
+            this.MeetingPage = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.MeetingDescriptionLabel = new System.Windows.Forms.Label();
+            this.MeetingTitleLabel = new System.Windows.Forms.Label();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.LoginEmailLabel = new System.Windows.Forms.Label();
             this.LoginPasswordLabel = new System.Windows.Forms.Label();
@@ -86,6 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.MeetingTab.SuspendLayout();
             this.UserTab.SuspendLayout();
+            this.CustomerTab.SuspendLayout();
+            this.MeetingPage.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -521,11 +529,67 @@
             // 
             // CustomerTab
             // 
+            this.CustomerTab.Controls.Add(this.MeetingPage);
             this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerTab.Location = new System.Drawing.Point(0, 0);
             this.CustomerTab.Name = "CustomerTab";
             this.CustomerTab.Size = new System.Drawing.Size(1264, 762);
             this.CustomerTab.TabIndex = 0;
+            // 
+            // MeetingPage
+            // 
+            this.MeetingPage.Controls.Add(this.label1);
+            this.MeetingPage.Controls.Add(this.treeView1);
+            this.MeetingPage.Controls.Add(this.MeetingDescriptionLabel);
+            this.MeetingPage.Controls.Add(this.MeetingTitleLabel);
+            this.MeetingPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MeetingPage.Location = new System.Drawing.Point(0, 0);
+            this.MeetingPage.Name = "MeetingPage";
+            this.MeetingPage.Size = new System.Drawing.Size(1264, 762);
+            this.MeetingPage.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(264, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dagsorden";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.Location = new System.Drawing.Point(12, 246);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "";
+            treeNode1.Text = "1. Test";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.treeView1.Size = new System.Drawing.Size(617, 232);
+            this.treeView1.TabIndex = 2;
+            // 
+            // MeetingDescriptionLabel
+            // 
+            this.MeetingDescriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.MeetingDescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MeetingDescriptionLabel.Location = new System.Drawing.Point(12, 130);
+            this.MeetingDescriptionLabel.Name = "MeetingDescriptionLabel";
+            this.MeetingDescriptionLabel.Size = new System.Drawing.Size(1225, 75);
+            this.MeetingDescriptionLabel.TabIndex = 1;
+            this.MeetingDescriptionLabel.Text = resources.GetString("MeetingDescriptionLabel.Text");
+            this.MeetingDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // MeetingTitleLabel
+            // 
+            this.MeetingTitleLabel.AutoSize = true;
+            this.MeetingTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingTitleLabel.Location = new System.Drawing.Point(588, 90);
+            this.MeetingTitleLabel.Name = "MeetingTitleLabel";
+            this.MeetingTitleLabel.Size = new System.Drawing.Size(198, 37);
+            this.MeetingTitleLabel.TabIndex = 0;
+            this.MeetingTitleLabel.Text = "Meeting Title";
             // 
             // LoginLabel
             // 
@@ -627,12 +691,12 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.UserTab);
-            this.Controls.Add(this.ProfileTab);
-            this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.CustomerTab);
             this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
+            this.Controls.Add(this.UserTab);
+            this.Controls.Add(this.ProfileTab);
+            this.Controls.Add(this.LoginPage);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -645,6 +709,9 @@
             this.MeetingTab.PerformLayout();
             this.UserTab.ResumeLayout(false);
             this.UserTab.PerformLayout();
+            this.CustomerTab.ResumeLayout(false);
+            this.MeetingPage.ResumeLayout(false);
+            this.MeetingPage.PerformLayout();
             this.LoginPage.ResumeLayout(false);
             this.LoginPage.PerformLayout();
             this.ResumeLayout(false);
@@ -700,6 +767,11 @@
         private System.Windows.Forms.ListBox UsersCurrentBox;
         private System.Windows.Forms.ListBox UsersFormerBox;
         private System.Windows.Forms.Label UsersExternalsLabel;
+        private System.Windows.Forms.Panel MeetingPage;
+        private System.Windows.Forms.Label MeetingTitleLabel;
+        private System.Windows.Forms.Label MeetingDescriptionLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }
 
