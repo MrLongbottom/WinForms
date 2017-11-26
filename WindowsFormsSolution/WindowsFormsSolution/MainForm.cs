@@ -96,6 +96,7 @@ namespace WindowsFormsSolution
 
         private void MeetingsMenuItem_Click(object sender, EventArgs e)
         {
+            
             ChangeTab(MeetingTab, MeetingsMenuItem);
         }
 
@@ -119,12 +120,12 @@ namespace WindowsFormsSolution
             UsersCurrentBox.Items.Clear();
             foreach (Models.User user in database.users)
             {
-                //UsersCurrentBox.Items.Add(user.Name);
+                UsersCurrentBox.Items.Add(user.Name);
             }
             UsersExternalsBox.Items.Clear();
-            foreach (Models.External ext in database)
+            foreach (Models.External ext in database.externals)
             {
-                //UsersCurrentBox.Items.Add(user.Name);
+                UsersExternalsBox.Items.Add(ext.Name);
             }
             ChangeTab(UserTab, UsersMenuItem);
         }
