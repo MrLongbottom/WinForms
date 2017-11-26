@@ -34,7 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,15 +88,19 @@
             this.LoginPage = new System.Windows.Forms.Panel();
             this.LoginWrong = new System.Windows.Forms.Label();
             this.ProjectPage = new System.Windows.Forms.Panel();
-            this.ProjectTitleLabel = new System.Windows.Forms.Label();
+            this.ProfileReferatLabel = new System.Windows.Forms.Label();
             this.ProjectReferBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ProjectTitleLabel = new System.Windows.Forms.Label();
+            this.ProjectCurrentLabel = new System.Windows.Forms.Label();
+            this.ProjectFormerLabel = new System.Windows.Forms.Label();
+            this.ProjectCurrentBox = new System.Windows.Forms.ListBox();
+            this.ProjectFormerBox = new System.Windows.Forms.ListBox();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.MeetingTab.SuspendLayout();
+            this.ProjectTab.SuspendLayout();
             this.UserTab.SuspendLayout();
-            this.CustomerTab.SuspendLayout();
             this.MeetingPage.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.ProjectPage.SuspendLayout();
@@ -434,6 +438,10 @@
             // 
             // ProjectTab
             // 
+            this.ProjectTab.Controls.Add(this.ProjectCurrentLabel);
+            this.ProjectTab.Controls.Add(this.ProjectFormerLabel);
+            this.ProjectTab.Controls.Add(this.ProjectCurrentBox);
+            this.ProjectTab.Controls.Add(this.ProjectFormerBox);
             this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectTab.Location = new System.Drawing.Point(0, 0);
             this.ProjectTab.Name = "ProjectTab";
@@ -534,7 +542,6 @@
             // 
             // CustomerTab
             // 
-            this.CustomerTab.Controls.Add(this.MeetingPage);
             this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerTab.Location = new System.Drawing.Point(0, 0);
             this.CustomerTab.Name = "CustomerTab";
@@ -569,10 +576,10 @@
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(12, 246);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode1.Name = "";
-            treeNode1.Text = "1. Test";
+            treeNode2.Name = "";
+            treeNode2.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
             this.MeetingAgendaTree.TabIndex = 2;
             // 
@@ -691,7 +698,7 @@
             // 
             // ProjectPage
             // 
-            this.ProjectPage.Controls.Add(this.label1);
+            this.ProjectPage.Controls.Add(this.ProfileReferatLabel);
             this.ProjectPage.Controls.Add(this.ProjectReferBox);
             this.ProjectPage.Controls.Add(this.ProjectTitleLabel);
             this.ProjectPage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -700,15 +707,15 @@
             this.ProjectPage.Size = new System.Drawing.Size(1264, 762);
             this.ProjectPage.TabIndex = 4;
             // 
-            // ProjectTitleLabel
+            // ProfileReferatLabel
             // 
-            this.ProjectTitleLabel.AutoSize = true;
-            this.ProjectTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectTitleLabel.Location = new System.Drawing.Point(589, 75);
-            this.ProjectTitleLabel.Name = "ProjectTitleLabel";
-            this.ProjectTitleLabel.Size = new System.Drawing.Size(158, 31);
-            this.ProjectTitleLabel.TabIndex = 0;
-            this.ProjectTitleLabel.Text = "Projekt Titel";
+            this.ProfileReferatLabel.AutoSize = true;
+            this.ProfileReferatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileReferatLabel.Location = new System.Drawing.Point(369, 118);
+            this.ProfileReferatLabel.Name = "ProfileReferatLabel";
+            this.ProfileReferatLabel.Size = new System.Drawing.Size(63, 20);
+            this.ProfileReferatLabel.TabIndex = 2;
+            this.ProfileReferatLabel.Text = "Referat";
             // 
             // ProjectReferBox
             // 
@@ -720,15 +727,66 @@
             this.ProjectReferBox.Size = new System.Drawing.Size(715, 564);
             this.ProjectReferBox.TabIndex = 1;
             // 
-            // label1
+            // ProjectTitleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(369, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Referat";
+            this.ProjectTitleLabel.AutoSize = true;
+            this.ProjectTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectTitleLabel.Location = new System.Drawing.Point(589, 75);
+            this.ProjectTitleLabel.Name = "ProjectTitleLabel";
+            this.ProjectTitleLabel.Size = new System.Drawing.Size(158, 31);
+            this.ProjectTitleLabel.TabIndex = 0;
+            this.ProjectTitleLabel.Text = "Projekt Titel";
+            // 
+            // ProjectCurrentLabel
+            // 
+            this.ProjectCurrentLabel.AutoSize = true;
+            this.ProjectCurrentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCurrentLabel.Location = new System.Drawing.Point(812, 69);
+            this.ProjectCurrentLabel.Name = "ProjectCurrentLabel";
+            this.ProjectCurrentLabel.Size = new System.Drawing.Size(272, 31);
+            this.ProjectCurrentLabel.TabIndex = 7;
+            this.ProjectCurrentLabel.Text = "Nuværende Projekter";
+            // 
+            // ProjectFormerLabel
+            // 
+            this.ProjectFormerLabel.AutoSize = true;
+            this.ProjectFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectFormerLabel.Location = new System.Drawing.Point(198, 69);
+            this.ProjectFormerLabel.Name = "ProjectFormerLabel";
+            this.ProjectFormerLabel.Size = new System.Drawing.Size(234, 31);
+            this.ProjectFormerLabel.TabIndex = 6;
+            this.ProjectFormerLabel.Text = "Tidligere Projekter";
+            // 
+            // ProjectCurrentBox
+            // 
+            this.ProjectCurrentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCurrentBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ProjectCurrentBox.FormattingEnabled = true;
+            this.ProjectCurrentBox.ItemHeight = 20;
+            this.ProjectCurrentBox.Items.AddRange(new object[] {
+            "Meeting 1",
+            "Meeting 2",
+            "Meeting 3"});
+            this.ProjectCurrentBox.Location = new System.Drawing.Point(684, 109);
+            this.ProjectCurrentBox.MultiColumn = true;
+            this.ProjectCurrentBox.Name = "ProjectCurrentBox";
+            this.ProjectCurrentBox.Size = new System.Drawing.Size(535, 584);
+            this.ProjectCurrentBox.TabIndex = 5;
+            // 
+            // ProjectFormerBox
+            // 
+            this.ProjectFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.ProjectFormerBox.FormattingEnabled = true;
+            this.ProjectFormerBox.ItemHeight = 20;
+            this.ProjectFormerBox.Items.AddRange(new object[] {
+            "Meeting 1",
+            "Meeting 2",
+            "Meeting 3"});
+            this.ProjectFormerBox.Location = new System.Drawing.Point(46, 109);
+            this.ProjectFormerBox.Name = "ProjectFormerBox";
+            this.ProjectFormerBox.Size = new System.Drawing.Size(535, 584);
+            this.ProjectFormerBox.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -738,14 +796,14 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.CustomerTab);
-            this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.MeetingPage);
             this.Controls.Add(this.ProjectPage);
+            this.Controls.Add(this.CustomerTab);
+            this.Controls.Add(this.MeetingTab);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -756,9 +814,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.MeetingTab.ResumeLayout(false);
             this.MeetingTab.PerformLayout();
+            this.ProjectTab.ResumeLayout(false);
+            this.ProjectTab.PerformLayout();
             this.UserTab.ResumeLayout(false);
             this.UserTab.PerformLayout();
-            this.CustomerTab.ResumeLayout(false);
             this.MeetingPage.ResumeLayout(false);
             this.MeetingPage.PerformLayout();
             this.LoginPage.ResumeLayout(false);
@@ -826,7 +885,11 @@
         private System.Windows.Forms.Panel ProjectPage;
         private System.Windows.Forms.Label ProjectTitleLabel;
         private System.Windows.Forms.ListBox ProjectReferBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ProfileReferatLabel;
+        private System.Windows.Forms.Label ProjectCurrentLabel;
+        private System.Windows.Forms.Label ProjectFormerLabel;
+        private System.Windows.Forms.ListBox ProjectCurrentBox;
+        private System.Windows.Forms.ListBox ProjectFormerBox;
     }
 }
 
