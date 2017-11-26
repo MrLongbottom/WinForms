@@ -211,7 +211,7 @@ namespace WindowsFormsSolution
             }
             else
             {
-                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
+                Models.User user = database.GetUserByEmail(ProfileEmail.Text.Substring(7));
                 ProfileName.Visible = true;
                 ProfileEditNameBox.Visible = false;
                 user.changeName(ProfileEditNameBox.Text, user);
@@ -228,7 +228,7 @@ namespace WindowsFormsSolution
             }
             else
             {
-                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
+                Models.User user = database.GetUserByEmail(ProfileEmail.Text.Substring(7));
                 ProfileEmail.Visible = true;
                 ProfileEditEmailBox.Visible = false;
                 user.changeEmail(ProfileEditEmailBox.Text, user);
@@ -245,7 +245,7 @@ namespace WindowsFormsSolution
             }
             else
             {
-                Models.User user = database.GetUser(ProfileEmail.Text.Substring(7));
+                Models.User user = database.GetUserByEmail(ProfileEmail.Text.Substring(7));
                 ProfilePhone.Visible = true;
                 ProfileEditPhoneBox.Visible = false;
                 user.changePhonenumber(ProfileEditPhoneBox.Text, user);
@@ -277,6 +277,11 @@ namespace WindowsFormsSolution
         private void ProfileEditPhoneBox_KeyDown(object sender, KeyEventArgs e)
         {
             ProfileEditPhoneBox_KeyDown(sender, e);
+        }
+
+        private void UsersCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
         }
     }
 }

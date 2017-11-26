@@ -458,11 +458,9 @@
             this.UsersExternalsBox.FormattingEnabled = true;
             this.UsersExternalsBox.ItemHeight = 20;
             this.UsersExternalsBox.Items.AddRange(new object[] {
-            "sdasd",
-            "sadasd",
-            "sadasd",
-            "asdads",
-            "asd"});
+            "External 1",
+            "External 2",
+            "External 3"});
             this.UsersExternalsBox.Location = new System.Drawing.Point(869, 109);
             this.UsersExternalsBox.MultiColumn = true;
             this.UsersExternalsBox.Name = "UsersExternalsBox";
@@ -496,16 +494,15 @@
             this.UsersCurrentBox.FormattingEnabled = true;
             this.UsersCurrentBox.ItemHeight = 20;
             this.UsersCurrentBox.Items.AddRange(new object[] {
-            "sdasd",
-            "sadasd",
-            "sadasd",
-            "asdads",
-            "asd"});
+            "User 1",
+            "User 2",
+            "User 3"});
             this.UsersCurrentBox.Location = new System.Drawing.Point(457, 109);
             this.UsersCurrentBox.MultiColumn = true;
             this.UsersCurrentBox.Name = "UsersCurrentBox";
             this.UsersCurrentBox.Size = new System.Drawing.Size(350, 584);
             this.UsersCurrentBox.TabIndex = 5;
+            this.UsersCurrentBox.SelectedIndexChanged += new System.EventHandler(this.UsersCurrentBox_SelectedIndexChanged);
             // 
             // UsersFormerBox
             // 
@@ -514,50 +511,9 @@
             this.UsersFormerBox.FormattingEnabled = true;
             this.UsersFormerBox.ItemHeight = 20;
             this.UsersFormerBox.Items.AddRange(new object[] {
-            "sdasd",
-            "sadasd",
-            "sadasd",
-            "asdads",
-            "asdasd",
-            "ä",
-            "sd",
-            "asd",
-            "sad",
-            "",
-            "asd",
-            "as",
-            "dasd",
-            "a",
-            "f",
-            "sd",
-            "f",
-            "s",
-            "fd",
-            "",
-            "f",
-            "fd",
-            "g",
-            "sf",
-            "g",
-            "fds",
-            "g",
-            "fds",
-            "ds",
-            "f",
-            "dsf",
-            "ds",
-            "f",
-            "dsf",
-            "ds",
-            "fsd",
-            "f",
-            "sf",
-            "sd",
-            "f",
-            "dsf",
-            "sd",
-            "f",
-            "sdf"});
+            "User 1",
+            "User 2",
+            "User 3"});
             this.UsersFormerBox.Location = new System.Drawing.Point(46, 109);
             this.UsersFormerBox.Name = "UsersFormerBox";
             this.UsersFormerBox.Size = new System.Drawing.Size(350, 584);
@@ -671,12 +627,12 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.MeetingTab);
-            this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.CustomerTab);
+            this.Controls.Add(this.MeetingTab);
+            this.Controls.Add(this.ProjectTab);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
