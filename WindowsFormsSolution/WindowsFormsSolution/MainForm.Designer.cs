@@ -60,6 +60,7 @@
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.ProfileName = new System.Windows.Forms.Label();
             this.MeetingTab = new System.Windows.Forms.Panel();
+            this.MeetingsCreateButtom = new System.Windows.Forms.Button();
             this.MeetingsUpcomingLabel = new System.Windows.Forms.Label();
             this.MeetingsFormerLabel = new System.Windows.Forms.Label();
             this.MeetingsUpcomingBox = new System.Windows.Forms.ListBox();
@@ -104,7 +105,6 @@
             this.CreateMeetingDescriptionLabel = new System.Windows.Forms.Label();
             this.CreateMeetingTitleTextbox = new System.Windows.Forms.TextBox();
             this.CreateMeetingTittleLabel = new System.Windows.Forms.Label();
-            this.MeetingsCreateButtom = new System.Windows.Forms.Button();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -413,6 +413,16 @@
             this.MeetingTab.Name = "MeetingTab";
             this.MeetingTab.Size = new System.Drawing.Size(1685, 938);
             this.MeetingTab.TabIndex = 0;
+            // 
+            // MeetingsCreateButtom
+            // 
+            this.MeetingsCreateButtom.Location = new System.Drawing.Point(1501, 107);
+            this.MeetingsCreateButtom.Name = "MeetingsCreateButtom";
+            this.MeetingsCreateButtom.Size = new System.Drawing.Size(123, 42);
+            this.MeetingsCreateButtom.TabIndex = 4;
+            this.MeetingsCreateButtom.Text = "Opret møde";
+            this.MeetingsCreateButtom.UseVisualStyleBackColor = true;
+            this.MeetingsCreateButtom.Click += new System.EventHandler(this.MeetingsCreateButtom_Click);
             // 
             // MeetingsUpcomingLabel
             // 
@@ -917,16 +927,6 @@
             this.CreateMeetingTittleLabel.TabIndex = 0;
             this.CreateMeetingTittleLabel.Text = "Møde Titel";
             // 
-            // MeetingsCreateButtom
-            // 
-            this.MeetingsCreateButtom.Location = new System.Drawing.Point(1501, 107);
-            this.MeetingsCreateButtom.Name = "MeetingsCreateButtom";
-            this.MeetingsCreateButtom.Size = new System.Drawing.Size(123, 42);
-            this.MeetingsCreateButtom.TabIndex = 4;
-            this.MeetingsCreateButtom.Text = "Opret møde";
-            this.MeetingsCreateButtom.UseVisualStyleBackColor = true;
-            this.MeetingsCreateButtom.Click += new System.EventHandler(this.MeetingsCreateButtom_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -935,14 +935,14 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.CreatMeeting);
+            this.Controls.Add(this.CustomerTab);
             this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.MeetingPage);
-            this.Controls.Add(this.CreatMeeting);
-            this.Controls.Add(this.CustomerTab);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";

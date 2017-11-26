@@ -20,6 +20,7 @@ namespace WindowsFormsSolution
             currPanel = LoginPage;
             LoginPage.Visible = true;
             CustomerTab.Visible = false;
+            CreatMeeting.Visible = false;
             UserTab.Visible = false;
             ProjectTab.Visible = false;
             ProfileTab.Visible = false;
@@ -194,7 +195,7 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
+           // LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -285,7 +286,7 @@ namespace WindowsFormsSolution
             LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
         }
 
-        private void LoadMeetingWindow(Models.Meeting meeting)
+       /* private void LoadMeetingWindow(Models.Meeting meeting)
         {
             MeetingTitleLabel.Text = meeting.Title;
             MeetingDescriptionLabel.Text = meeting.Description;
@@ -318,7 +319,7 @@ namespace WindowsFormsSolution
         private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
-        }
+        }*/
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
