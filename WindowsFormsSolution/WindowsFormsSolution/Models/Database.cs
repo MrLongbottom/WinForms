@@ -12,7 +12,6 @@ namespace WindowsFormsSolution.Models
         public List<Meeting> meetings { private set; get; } = new List<Meeting>();
         public List<Submeeting> submeetings { private set; get; } = new List<Submeeting>();
         public List<User> users { private set; get; } = new List<User>();
-        public List<External> externals { private set; get; } = new List<External>();
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 
@@ -20,9 +19,8 @@ namespace WindowsFormsSolution.Models
         public Database()
         {
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
-            users.Add(new User("123", "Adminous Stratus", "admin", "Nokia"));
             customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
-            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
+            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", null, null));
         }
         public void addProject(Project project)
         {
@@ -111,7 +109,7 @@ namespace WindowsFormsSolution.Models
                 throw new InvalidAccessException();
         }
 
-        public User GetUserByEmail(string email)
+        public User GetUser(string email)
         {
             foreach(User user in users)
             {
@@ -119,26 +117,6 @@ namespace WindowsFormsSolution.Models
                 { return user; }
             }
             throw new Exception("No user with the email: " + email);
-        }
-
-        public User GetUserByName(string name)
-        {
-            foreach (User user in users)
-            {
-                if (user.Name == name)
-                { return user; }
-            }
-            throw new Exception("No user with the name: " + name);
-        }
-
-        public Meeting GetMeetingByTitle(string title)
-        {
-            foreach (Meeting meet in meetings)
-            {
-                if (meet.Title == title)
-                { return meet; }
-            }
-            throw new Exception("No meeting with the title: " + title);
         }
     }
 }
