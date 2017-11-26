@@ -15,6 +15,7 @@ namespace WindowsFormsSolution
         static void Main()
         {
             Models.Database database = new Models.Database();
+            //add a few test subjects of each class to work with
             Models.TestCases test = new Models.TestCases(database);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
