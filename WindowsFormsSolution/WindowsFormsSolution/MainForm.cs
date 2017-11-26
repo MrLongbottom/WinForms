@@ -24,6 +24,7 @@ namespace WindowsFormsSolution
             ProjectTab.Visible = false;
             ProfileTab.Visible = false;
             MeetingTab.Visible = false;
+            MeetingPage.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -100,7 +101,7 @@ namespace WindowsFormsSolution
             MeetingsFormerBox.Items.Clear();
             foreach (Models.Attendance att in currUser.Attendances)
             {
-                if (att.Meeting.StartTime < DateTime.Now)
+                if (att.Meeting.StartTime <= DateTime.Now)
                 {
                     MeetingsFormerBox.Items.Add(att.Meeting.Title);
                 }
@@ -193,8 +194,7 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Models.Meeting meet = database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString());
-            
+            LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -302,6 +302,22 @@ namespace WindowsFormsSolution
             }
 
             ChangeTab(MeetingPage, MeetingsMenuItem);
+        }
+
+        private void LoadProjectWindow(Models.Project pro)
+        {
+            ProjectTitleLabel.Text = pro.Title;
+            ProjectReferBox.Items.Clear();
+            foreach(Models.Submeeting sub in pro.Submeetings)
+            {
+                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
+            }
+            ChangeTab(ProjectPage, ProjectsMenuItem);
+        }
+
+        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
         }
     }
 }
