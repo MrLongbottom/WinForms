@@ -63,7 +63,7 @@
     <Compile Include="Models\Exception\CantBeNullException.cs" />
     <Compile Include="Models\Classes\Comment.cs" />
     <Compile Include="Models\Classes\Customer.cs" />
-    <Compile Include="Models\Exception\External.cs" />
+    <Compile Include="Models\Classes\External.cs" />
     <Compile Include="Models\Classes\File.cs" />
     <Compile Include="Models\Classes\Meeting.cs" />
     <Compile Include="Models\Classes\Person.cs" />
@@ -88,6 +88,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Models\TestCases.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
