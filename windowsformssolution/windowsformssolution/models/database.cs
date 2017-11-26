@@ -12,6 +12,7 @@ namespace WindowsFormsSolution.Models
         public List<Meeting> meetings { private set; get; } = new List<Meeting>();
         public List<Submeeting> submeetings { private set; get; } = new List<Submeeting>();
         public List<User> users { private set; get; } = new List<User>();
+        public List<External> externals { private set; get; } = new List<External>();
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 
@@ -19,8 +20,9 @@ namespace WindowsFormsSolution.Models
         public Database()
         {
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
+            users.Add(new User("123", "Adminium Coolio", "admin@admin.dk", "Nokia"));
             customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
-            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", null, null));
+            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
         }
         public void addProject(Project project)
         {
