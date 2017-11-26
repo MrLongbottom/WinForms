@@ -108,5 +108,15 @@ namespace WindowsFormsSolution.Models
             else
                 throw new InvalidAccessException();
         }
+
+        public User GetUser(string email)
+        {
+            foreach(User user in users)
+            {
+                if (user.Email == email)
+                { return user; }
+            }
+            throw new Exception("No user with the email: " + email);
+        }
     }
 }
