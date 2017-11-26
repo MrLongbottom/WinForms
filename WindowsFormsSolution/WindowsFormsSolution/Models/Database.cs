@@ -22,6 +22,16 @@ namespace WindowsFormsSolution.Models
             customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
             projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", null, null));
         }
+
+        public void addExtern(External external)
+        {
+            externals.Add(external);
+        }
+
+        public void removeExternal(External external)
+        {
+            externals.Remove(external);
+        }
         public void addProject(Project project)
         {
             projects.Add(project);
