@@ -193,7 +193,7 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Models.Meeting meet = database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString());
+            //Models.Meeting meet = database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString());
             
         }
 
@@ -290,6 +290,31 @@ namespace WindowsFormsSolution
             MeetingTitleLabel.Text = meeting.Title;
             MeetingDescriptionLabel.Text = meeting.Description;
             ChangeTab(MeetingPage, MeetingsMenuItem);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateMeetingAgendaLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MeetingsCreateButtom_Click(object sender, EventArgs e)
+        {
+            ChangeTab(CreatMeeting, MeetingsMenuItem);
         }
     }
 }
