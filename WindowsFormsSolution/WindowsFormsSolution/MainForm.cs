@@ -96,7 +96,19 @@ namespace WindowsFormsSolution
 
         private void MeetingsMenuItem_Click(object sender, EventArgs e)
         {
-            
+            MeetingsUpcomingBox.Items.Clear();
+            MeetingsFormerBox.Items.Clear();
+            foreach (Models.Attendance att in currUser.Attendances)
+            {
+                if (att.Meeting.StartTime < DateTime.Now)
+                {
+                    MeetingsFormerBox.Items.Add(att.Meeting.Title);
+                }
+                else
+                {
+                    MeetingsUpcomingBox.Items.Add(att.Meeting.Title);
+                }
+            }
             ChangeTab(MeetingTab, MeetingsMenuItem);
         }
 

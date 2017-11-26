@@ -4,11 +4,11 @@ namespace WindowsFormsSolution.Models
 {
     public class Project
     {
-       // public int ID { get; set; }
-        public List<Submeeting> Submeetings { get; private set; }
-        public List<Attachment> Attachments { get; private set; }
+        // public int ID { get; set; }
+        public List<Submeeting> Submeetings { get; private set; } = new List<Submeeting>();
+        public List<Attachment> Attachments { get; private set; } = new List<Attachment>();
         //We might need to make an attendee kinda role for project
-        public List<User> Users { get; private set; }
+        public List<User> Users { get; private set; } = new List<User>();
         public User Owner { get; private set; }
         public string Title { get; private set; }
         public Customer Customer { get; private set; }
@@ -22,7 +22,7 @@ namespace WindowsFormsSolution.Models
             Customer = customer;
             Location = location;
             Description = description;
-            Users.Add(Owner);
+            Users.Add(currUser);
             Users = users;
             Attachments = attachments;
             Customer.addProject(this);

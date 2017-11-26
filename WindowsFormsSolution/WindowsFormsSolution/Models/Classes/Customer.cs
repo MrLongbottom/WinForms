@@ -4,8 +4,8 @@ namespace WindowsFormsSolution.Models
 {
     public class Customer
     {
-//public int ID { get; set; }
-        public List<Project> Projects { get; private set; }
+        //public int ID { get; set; }
+        public List<Project> Projects { get; private set; } = new List<Project>();
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }

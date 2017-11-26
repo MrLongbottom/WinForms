@@ -59,12 +59,13 @@
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
             this.ProfileName = new System.Windows.Forms.Label();
             this.MeetingTab = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.MeetingsUpcomingLabel = new System.Windows.Forms.Label();
+            this.MeetingsFormerLabel = new System.Windows.Forms.Label();
+            this.MeetingsUpcomingBox = new System.Windows.Forms.ListBox();
+            this.MeetingsFormerBox = new System.Windows.Forms.ListBox();
             this.ProjectTab = new System.Windows.Forms.Panel();
             this.UserTab = new System.Windows.Forms.Panel();
+            this.UsersExternalsLabel = new System.Windows.Forms.Label();
             this.UsersExternalsBox = new System.Windows.Forms.ListBox();
             this.UsersCurrentLabel = new System.Windows.Forms.Label();
             this.UsersFormerLabel = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@
             this.LoginButton = new System.Windows.Forms.Button();
             this.LoginPage = new System.Windows.Forms.Panel();
             this.LoginWrong = new System.Windows.Forms.Label();
-            this.UsersExternalsLabel = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -358,70 +358,66 @@
             // 
             // MeetingTab
             // 
-            this.MeetingTab.Controls.Add(this.label2);
-            this.MeetingTab.Controls.Add(this.label1);
-            this.MeetingTab.Controls.Add(this.listBox2);
-            this.MeetingTab.Controls.Add(this.listBox1);
+            this.MeetingTab.Controls.Add(this.MeetingsUpcomingLabel);
+            this.MeetingTab.Controls.Add(this.MeetingsFormerLabel);
+            this.MeetingTab.Controls.Add(this.MeetingsUpcomingBox);
+            this.MeetingTab.Controls.Add(this.MeetingsFormerBox);
             this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingTab.Location = new System.Drawing.Point(0, 0);
             this.MeetingTab.Name = "MeetingTab";
             this.MeetingTab.Size = new System.Drawing.Size(1264, 762);
             this.MeetingTab.TabIndex = 0;
             // 
-            // label2
+            // MeetingsUpcomingLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(850, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(234, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Kommende Møder";
+            this.MeetingsUpcomingLabel.AutoSize = true;
+            this.MeetingsUpcomingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingsUpcomingLabel.Location = new System.Drawing.Point(850, 90);
+            this.MeetingsUpcomingLabel.Name = "MeetingsUpcomingLabel";
+            this.MeetingsUpcomingLabel.Size = new System.Drawing.Size(234, 31);
+            this.MeetingsUpcomingLabel.TabIndex = 3;
+            this.MeetingsUpcomingLabel.Text = "Kommende Møder";
             // 
-            // label1
+            // MeetingsFormerLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tidligere Møder";
+            this.MeetingsFormerLabel.AutoSize = true;
+            this.MeetingsFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingsFormerLabel.Location = new System.Drawing.Point(209, 90);
+            this.MeetingsFormerLabel.Name = "MeetingsFormerLabel";
+            this.MeetingsFormerLabel.Size = new System.Drawing.Size(201, 31);
+            this.MeetingsFormerLabel.TabIndex = 2;
+            this.MeetingsFormerLabel.Text = "Tidligere Møder";
             // 
-            // listBox2
+            // MeetingsUpcomingBox
             // 
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Items.AddRange(new object[] {
-            "sdasd",
-            "sadasd",
-            "sadasd",
-            "asdads",
-            "asd"});
-            this.listBox2.Location = new System.Drawing.Point(684, 130);
-            this.listBox2.MultiColumn = true;
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(535, 584);
-            this.listBox2.TabIndex = 1;
+            this.MeetingsUpcomingBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingsUpcomingBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.MeetingsUpcomingBox.FormattingEnabled = true;
+            this.MeetingsUpcomingBox.ItemHeight = 20;
+            this.MeetingsUpcomingBox.Items.AddRange(new object[] {
+            "Meeting 1",
+            "Meeting 2",
+            "Meeting 3"});
+            this.MeetingsUpcomingBox.Location = new System.Drawing.Point(684, 130);
+            this.MeetingsUpcomingBox.MultiColumn = true;
+            this.MeetingsUpcomingBox.Name = "MeetingsUpcomingBox";
+            this.MeetingsUpcomingBox.Size = new System.Drawing.Size(535, 584);
+            this.MeetingsUpcomingBox.TabIndex = 1;
             // 
-            // listBox1
+            // MeetingsFormerBox
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Items.AddRange(new object[] {
-            "sdasd",
-            "sadasd",
-            "sadasd",
-            "asdads",
-            "asdasd"});
-            this.listBox1.Location = new System.Drawing.Point(46, 130);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(535, 584);
-            this.listBox1.TabIndex = 0;
+            this.MeetingsFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingsFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.MeetingsFormerBox.FormattingEnabled = true;
+            this.MeetingsFormerBox.ItemHeight = 20;
+            this.MeetingsFormerBox.Items.AddRange(new object[] {
+            "Meeting 1",
+            "Meeting 2",
+            "Meeting 3"});
+            this.MeetingsFormerBox.Location = new System.Drawing.Point(46, 130);
+            this.MeetingsFormerBox.Name = "MeetingsFormerBox";
+            this.MeetingsFormerBox.Size = new System.Drawing.Size(535, 584);
+            this.MeetingsFormerBox.TabIndex = 0;
             // 
             // ProjectTab
             // 
@@ -444,6 +440,16 @@
             this.UserTab.Name = "UserTab";
             this.UserTab.Size = new System.Drawing.Size(1264, 762);
             this.UserTab.TabIndex = 0;
+            // 
+            // UsersExternalsLabel
+            // 
+            this.UsersExternalsLabel.AutoSize = true;
+            this.UsersExternalsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsersExternalsLabel.Location = new System.Drawing.Point(892, 69);
+            this.UsersExternalsLabel.Name = "UsersExternalsLabel";
+            this.UsersExternalsLabel.Size = new System.Drawing.Size(309, 31);
+            this.UsersExternalsLabel.TabIndex = 9;
+            this.UsersExternalsLabel.Text = "Eksterne Mødedeltagere";
             // 
             // UsersExternalsBox
             // 
@@ -657,16 +663,6 @@
             this.LoginWrong.Text = "Wrong Username / Password";
             this.LoginWrong.Visible = false;
             // 
-            // UsersExternalsLabel
-            // 
-            this.UsersExternalsLabel.AutoSize = true;
-            this.UsersExternalsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersExternalsLabel.Location = new System.Drawing.Point(892, 69);
-            this.UsersExternalsLabel.Name = "UsersExternalsLabel";
-            this.UsersExternalsLabel.Size = new System.Drawing.Size(309, 31);
-            this.UsersExternalsLabel.TabIndex = 9;
-            this.UsersExternalsLabel.Text = "Eksterne Mødedeltagere";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,12 +671,12 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.MeetingTab);
+            this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.ProfileTab);
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.CustomerTab);
-            this.Controls.Add(this.MeetingTab);
-            this.Controls.Add(this.ProjectTab);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -738,10 +734,10 @@
         private System.Windows.Forms.TextBox ProfileEditEmailBox;
         private System.Windows.Forms.Label LoginWrong;
         private System.Windows.Forms.ToolStripMenuItem LogoutMenuItem;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox MeetingsFormerBox;
+        private System.Windows.Forms.Label MeetingsUpcomingLabel;
+        private System.Windows.Forms.Label MeetingsFormerLabel;
+        private System.Windows.Forms.ListBox MeetingsUpcomingBox;
         private System.Windows.Forms.ListBox UsersExternalsBox;
         private System.Windows.Forms.Label UsersCurrentLabel;
         private System.Windows.Forms.Label UsersFormerLabel;
