@@ -19,10 +19,6 @@ namespace WindowsFormsSolution.Models
 
         public Database()
         {
-            users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
-            users.Add(new User("123", "Adminous Stratus", "admin", "Nokia"));
-            customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
-            projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
         }
 
         public void addExtern(External external)

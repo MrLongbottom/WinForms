@@ -74,8 +74,8 @@
             this.UsersFormerBox = new System.Windows.Forms.ListBox();
             this.CustomerTab = new System.Windows.Forms.Panel();
             this.MeetingPage = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.MeetingAgendaLabel = new System.Windows.Forms.Label();
+            this.MeetingAgendaTree = new System.Windows.Forms.TreeView();
             this.MeetingDescriptionLabel = new System.Windows.Forms.Label();
             this.MeetingTitleLabel = new System.Windows.Forms.Label();
             this.LoginLabel = new System.Windows.Forms.Label();
@@ -209,7 +209,6 @@
             this.ProfileTab.Name = "ProfileTab";
             this.ProfileTab.Size = new System.Drawing.Size(1264, 762);
             this.ProfileTab.TabIndex = 7;
-            this.ProfileTab.Visible = false;
             // 
             // ProfileEditPhoneBox
             // 
@@ -538,8 +537,8 @@
             // 
             // MeetingPage
             // 
-            this.MeetingPage.Controls.Add(this.label1);
-            this.MeetingPage.Controls.Add(this.treeView1);
+            this.MeetingPage.Controls.Add(this.MeetingAgendaLabel);
+            this.MeetingPage.Controls.Add(this.MeetingAgendaTree);
             this.MeetingPage.Controls.Add(this.MeetingDescriptionLabel);
             this.MeetingPage.Controls.Add(this.MeetingTitleLabel);
             this.MeetingPage.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -548,27 +547,27 @@
             this.MeetingPage.Size = new System.Drawing.Size(1264, 762);
             this.MeetingPage.TabIndex = 0;
             // 
-            // label1
+            // MeetingAgendaLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 216);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Dagsorden";
+            this.MeetingAgendaLabel.AutoSize = true;
+            this.MeetingAgendaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingAgendaLabel.Location = new System.Drawing.Point(264, 216);
+            this.MeetingAgendaLabel.Name = "MeetingAgendaLabel";
+            this.MeetingAgendaLabel.Size = new System.Drawing.Size(103, 24);
+            this.MeetingAgendaLabel.TabIndex = 3;
+            this.MeetingAgendaLabel.Text = "Dagsorden";
             // 
-            // treeView1
+            // MeetingAgendaTree
             // 
-            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.Location = new System.Drawing.Point(12, 246);
-            this.treeView1.Name = "treeView1";
+            this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MeetingAgendaTree.Location = new System.Drawing.Point(12, 246);
+            this.MeetingAgendaTree.Name = "MeetingAgendaTree";
             treeNode1.Name = "";
             treeNode1.Text = "1. Test";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(617, 232);
-            this.treeView1.TabIndex = 2;
+            this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
+            this.MeetingAgendaTree.TabIndex = 2;
             // 
             // MeetingDescriptionLabel
             // 
@@ -770,8 +769,8 @@
         private System.Windows.Forms.Panel MeetingPage;
         private System.Windows.Forms.Label MeetingTitleLabel;
         private System.Windows.Forms.Label MeetingDescriptionLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label MeetingAgendaLabel;
+        private System.Windows.Forms.TreeView MeetingAgendaTree;
     }
 }
 

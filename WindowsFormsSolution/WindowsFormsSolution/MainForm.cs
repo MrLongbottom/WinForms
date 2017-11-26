@@ -289,6 +289,18 @@ namespace WindowsFormsSolution
         {
             MeetingTitleLabel.Text = meeting.Title;
             MeetingDescriptionLabel.Text = meeting.Description;
+            //Dagsorden Setup
+            MeetingAgendaTree.Nodes.Clear();
+            foreach (Models.AgendaItem agen in meeting.AgendaItems)
+            {
+                List<TreeNode> children = new List<TreeNode>();
+                foreach(Models.Submeeting sub in agen.Submeetings)
+                {
+                    children.Add(new TreeNode(sub.Title));
+                }
+                MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+            }
+
             ChangeTab(MeetingPage, MeetingsMenuItem);
         }
     }
