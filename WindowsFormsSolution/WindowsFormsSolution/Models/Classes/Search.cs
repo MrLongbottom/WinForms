@@ -46,5 +46,18 @@ namespace WindowsFormsSolution.Models
             }
             return result;
         }
+
+        public List<User> UserSearch(List<User> users, string searchCriteria)
+        {
+            List<User> result = null;
+            foreach (User user in users)
+            {
+                if (user.ToString().Contains(searchCriteria))
+                {
+                    result.Add(user);
+                }
+            }
+            return result;
+        }
     }
 }
