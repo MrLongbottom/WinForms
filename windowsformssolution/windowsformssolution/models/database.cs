@@ -16,13 +16,23 @@ namespace WindowsFormsSolution.Models
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
 
-        //I hate git
+
         public Database()
         {
             users.Add(new User("password", "Børge Børgesen", "Børge@Børgesen.dk", "12345678"));
             users.Add(new User("123", "Adminous Stratus", "admin", "Nokia"));
             customers.Add(new Customer("Frelsen's chokolade", "Frelsen@Chokolade", "Algade 27 9000 Aalborg", "+45 Brev due", "76378162783612783"));
             projects.Add(new Project(users.First(), "Frelsensvandrør", customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
+        }
+
+        public void addExtern(External external)
+        {
+            externals.Add(external);
+        }
+
+        public void removeExternal(External external)
+        {
+            externals.Remove(external);
         }
         public void addProject(Project project)
         {

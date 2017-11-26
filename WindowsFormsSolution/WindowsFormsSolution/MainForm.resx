@@ -309,24 +309,6 @@
         gqX0/9k=
 </value>
   </data>
-  <metadata name="ProfileEditPhoneBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProfileEditEmailBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProfileEditNameBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProfileEditPhoneBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProfileEditEmailBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ProfileEditNameBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="ProfileEditPhoneButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
@@ -485,6 +467,9 @@
         ggRYLN4C+73S5xxRJB+RAIvHJ+Q+5/DXqv5DXX+X95cAcDenSf/mcByO5HwJAAP8m0NxHPfJ/wHimFw9
         weKbFAAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="MeetingDescriptionLabel.Text" xml:space="preserve">
+    <value>This is a meeting description. Be aware that such a description could be quite long and therefore we need to consider what to do if that is the case. Perhaps we shuld figure out some multi-line input and having a max size og exsactly how much can be in a descriptioner or implement a scrollbar.</value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>66</value>

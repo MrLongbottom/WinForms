@@ -193,7 +193,8 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("Selected Item #" + ProfileMeetings.SelectedIndex);
+            Models.Meeting meet = database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString());
+            
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -282,6 +283,13 @@ namespace WindowsFormsSolution
         private void UsersCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
+        }
+
+        private void LoadMeetingWindow(Models.Meeting meeting)
+        {
+            MeetingTitleLabel.Text = meeting.Title;
+            MeetingDescriptionLabel.Text = meeting.Description;
+            ChangeTab(MeetingPage, MeetingsMenuItem);
         }
     }
 }

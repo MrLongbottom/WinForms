@@ -17,7 +17,7 @@ namespace WindowsFormsSolution.Models
         public List<Attachment> Attachments { get; private set; }
 
 
-        public Meeting(string title, User user, DateTime startTime, TimeSpan duration, string description, params Attendance[] attendances)
+        public Meeting(string title, User user, DateTime startTime, DateTime endTime, string description, params Attendance[] attendances)
         {
             Title = title;
             Owner = user;
