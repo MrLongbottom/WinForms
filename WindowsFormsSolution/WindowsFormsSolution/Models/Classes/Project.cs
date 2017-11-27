@@ -22,8 +22,8 @@ namespace WindowsFormsSolution.Models
             Customer = customer;
             Location = location;
             Description = description;
-            Users.Add(currUser);
             Users = users;
+            Users.Add(currUser);
             Attachments = attachments;
             Customer.addProject(this);
             foreach (User user in users)

@@ -7,7 +7,7 @@ namespace WindowsFormsSolution.Models
         //public int ID { get; set; }
         public string Headline { get; private set; }
         public string Describtion { get; private set; }
-        public List<Submeeting> Submeetings { get; private set; }
+        public List<Submeeting> Submeetings { get; private set; } = new List<Submeeting>();
 
         public AgendaItem(string headline, string description)
         {

@@ -272,13 +272,24 @@ namespace WindowsFormsSolution
 
         private void UsersCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
+            if (database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
+            }
         }
 
         private void LoadMeetingWindow(Models.Meeting meeting)
         {
             MeetingTitleLabel.Text = meeting.Title;
             MeetingDescriptionLabel.Text = meeting.Description;
+            MeetingStartingTimeLabel.Text = "Start tidspunkt: " + meeting.StartTime.ToString();
+            MeetingEndingTimeLabel.Text = "Slut tidspunkt: " + meeting.EndTime.ToString();
+            //Mødedeltager Setup
+            MeetingAtendeeBox.Items.Clear();
+            foreach(Models.Attendance att in meeting.Attendances)
+            {
+                MeetingAtendeeBox.Items.Add(att.Person.Name);
+            }
             //Dagsorden Setup
             MeetingAgendaTree.Nodes.Clear();
             foreach (Models.AgendaItem agen in meeting.AgendaItems)
@@ -302,12 +313,52 @@ namespace WindowsFormsSolution
             {
                 ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
             }
+            ProjectUsersBox.Items.Clear();
+            foreach(Models.User use in pro.Users)
+            {
+                ProjectUsersBox.Items.Add(use.Name);
+            }
             ChangeTab(ProjectPage, ProjectsMenuItem);
         }
 
         private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
+            if (database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()) != null)
+            {
+                LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void MeetingAtendeeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetUserByName(MeetingAtendeeBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(MeetingAtendeeBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProfileProjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProjectCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProjectFormerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()));
+            }
         }
     }
 }

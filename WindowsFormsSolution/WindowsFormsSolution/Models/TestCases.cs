@@ -27,16 +27,16 @@ namespace WindowsFormsSolution.Models
             database.addExtern(new External(database.customers.ElementAt<Customer>(2), "Firma ansat", "Fimaansats@email.dk", "Firma ansats tlfnr"));
 
             //add test Project
-            database.addProject(new Project(database.users.First<User>(), "Hankats svimmingpool", database.customers.ElementAt<Customer>(1), database.customers.ElementAt<Customer>(1).Address, "Hotel hankat skal have en sømme pool insatllert i loftet", new List<User>(), new List<Attachment>()));
+            database.addProject(new Project(database.GetUserByEmail("admin"), "Hankats svimmingpool", database.customers.ElementAt<Customer>(1), database.customers.ElementAt<Customer>(1).Address, "Hotel hankat skal have en sømme pool insatllert i loftet", new List<User>(), new List<Attachment>()));
             database.addProject(new Project(database.users.First<User>(), "Hankats wellness", database.customers.ElementAt<Customer>(1), database.customers.ElementAt<Customer>(1).Address, "Hotel hankat vil have bygget en wellness område tæt på deres pool", new List<User>(), new List<Attachment>()));
             database.addProject(new Project(database.users.Last<User>(), "Project Tittle", database.customers.Last<Customer>(), database.customers.Last<Customer>().Address, "Project is about this", new List<User>(), new List<Attachment>()));
-            database.addProject(new Project(database.users.First(), "Frelsensvandrør", database.customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
+            database.addProject(new Project(database.users.First(), "Frelsens vandrør", database.customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
 
             //add test meeting
             database.addMeeting(new Meeting("Fredags møde 47", database.users.First<User>(), DateTime.Now, DateTime.Now, "Standard fredags møde"));
             database.addSubmeeting(new Submeeting(database.users.First<User>(), "Hankats svimmingpool", "Vi starter på tirsdag", database.meetings.First<Meeting>(), database.projects.First<Project>()));
             database.meetings[0].AddAttendance(new Attendance(database.meetings[0], database.users[0], false, false, false));
-
+            database.meetings[0].AddAgendaItem(new AgendaItem("Stuff happens here", "lots of stuff"), database.users[0]);
 
         }
     }
