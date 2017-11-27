@@ -25,6 +25,7 @@ namespace WindowsFormsSolution
             ProfileTab.Visible = false;
             MeetingTab.Visible = false;
             MeetingPage.Visible = false;
+            CreatMeeting.Visible = false;
         }
 
         private Models.Database database { get; }
