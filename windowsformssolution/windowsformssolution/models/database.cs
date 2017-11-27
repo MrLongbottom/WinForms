@@ -15,6 +15,7 @@ namespace WindowsFormsSolution.Models
         public List<External> externals { private set; get; } = new List<External>();
         public List<Customer> customers { private set; get; } = new List<Customer>();
         public List<Attachment> attachments { private set; get; } = new List<Attachment>();
+        public List<Attendance> Attendances { get; private set; } = new List<Attendance>();
 
         //Fix
 
@@ -34,11 +35,56 @@ namespace WindowsFormsSolution.Models
         public void addProject(Project project)
         {
             projects.Add(project);
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (project.Users.Contains(users.ElementAt<User>(i)))
+                {
+                    users.ElementAt<User>(i).Projects.Add(projects.Last<Project>());
+                }
+            }
         }
 
-        public void addMeeting(Meeting meeting)
+        public void addMeeting(Meeting meeting, List<Person> attendances)
         {
             meetings.Add(meeting);
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (attendances.Contains(users.ElementAt<User>(i)))
+                {
+                    if (attendances.First<Person>() == users.ElementAt<User>(i))
+                    {
+                        Attendances.Add(new Attendance(meetings.Last<Meeting>(), users.ElementAt<User>(i), false, false, true));
+                    }
+                    else
+                    {
+                        Attendances.Add(new Attendance(meetings.Last<Meeting>(), users.ElementAt<User>(i), false, false, false));
+                    }
+                }
+            }
+            for (int i = 0; i < externals.Count; i++)
+            {
+                if (attendances.Contains(externals.ElementAt<External>(i)))
+                {
+                    Attendances.Add(new Attendance(meetings.Last<Meeting>(), externals.ElementAt<External>(i), false, false, false));
+                }
+            }
+           /* for (int i = 0; i < users.Count; i++)
+            {
+                foreach (Attendance attendance in meetings.Last<Meeting>().Attendances)
+                {
+                    if (attendance.Person.Email == users.ElementAt<User>(i).Email)
+                    {
+                        if (attendance.Person.Email == meetings.Last<Meeting>().Attendances.First<Attendance>().Person.Email)
+                        {
+                            users.ElementAt<User>(i).addAtendace(new Attendance(meetings.Last<Meeting>(), users.ElementAt<User>(i), false, false, true));
+                        }
+                        else
+                        {
+                            users.ElementAt<User>(i).addAtendace(new Attendance(meetings.Last<Meeting>(), users.ElementAt<User>(i), false, false, false));
+                        }
+                    }
+                }
+            }*/
         }
 
         public void addSubmeeting(Submeeting submeeting)
@@ -138,16 +184,28 @@ namespace WindowsFormsSolution.Models
             throw new Exception("No user with the name: " + name);
         }
 
-        public Project GetProjectByTitle(string title)
+        public Person GetPersonByName(string name)
         {
-            foreach (Project pro in projects)
+            foreach (Person person in users)
             {
-                if (pro.Title == title)
-                {
-                    return pro;
-                }
+                if (person.Name == name)
+                { return person; }
             }
-            throw new Exception("No project with the title: " + title);
+            foreach (Person person in externals)
+            {
+                if (person.Name == name)
+                { return person; }
+            }
+            throw new Exception("No person with the name: " + name);
+        }
+        public Customer GetCustomerByName(string name)
+        {
+            foreach (Customer customer in customers)
+            {
+                if (customer.Name == name)
+                { return customer; }
+            }
+            throw new Exception("No user with the name: " + name);
         }
 
         internal Meeting GetMeetingByTitle(string title)

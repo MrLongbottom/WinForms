@@ -6,19 +6,32 @@ namespace WindowsFormsSolution.Models
     {
         //public int ID { get; set; }
         public string Headline { get; private set; }
-        public string Describtion { get; private set; }
-        public List<Submeeting> Submeetings { get; private set; } = new List<Submeeting>();
+       // public string Describtion { get; private set; }
+        public List<Submeeting> Submeetings { get; private set; }
+        public Meeting Meeting { get; private set; }
 
-        public AgendaItem(string headline, string description)
+        public AgendaItem(string headline, User currUser, Meeting meeting)//, string description)
         {
             Headline = headline;
-            Describtion = description;
+            Meeting = meeting;
+           // Describtion = description;
         }
 
-        public void changeDescription(string description)
+        public AgendaItem(string headline, List<string> submeetings, User currUser, Meeting meeting)//, string description)
+        {
+            Headline = headline;
+            Meeting = meeting;
+            foreach (string submeeting in submeetings)
+            {
+                Submeetings.Add(new Submeeting(currUser, submeeting, meeting));
+            }
+           // Describtion = description;
+        }
+
+        /*public void changeDescription(string description)
         {
             Describtion = description;
-        }
+        }*/
 
         public void changeHeadline(string headline)
         {

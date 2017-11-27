@@ -13,6 +13,22 @@ namespace WindowsFormsSolution.Models
         public Project Project { get; set; }
         public List<Attachment> Attachments { get; set; }
 
+        public Submeeting(User currUser, string title, Meeting meeting)
+        {
+            Title = title;           
+            Meeting = meeting;
+            Meeting.AddSubmeeting(this, currUser);
+        }
+
+        public Submeeting(User currUser, string title, Meeting meeting, Project project)
+        {
+            Title = title;
+            Meeting = meeting;
+            Meeting.AddSubmeeting(this, currUser);
+            Project = project;
+            Project.addSubmeeting(this);
+        }
+
         public Submeeting(User currUser, string title, string referat, Meeting meeting)
         {
             Title = title;

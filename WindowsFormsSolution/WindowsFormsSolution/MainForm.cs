@@ -20,12 +20,13 @@ namespace WindowsFormsSolution
             currPanel = LoginPage;
             LoginPage.Visible = true;
             CustomerTab.Visible = false;
+            CreatMeeting.Visible = false;
             UserTab.Visible = false;
             ProjectTab.Visible = false;
             ProfileTab.Visible = false;
             MeetingTab.Visible = false;
             MeetingPage.Visible = false;
-            CreatMeeting.Visible = false;
+            CreateProjectPanel.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -155,6 +156,22 @@ namespace WindowsFormsSolution
             ChangeTab(CustomerTab, CustomersMenuItem);
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Controller
         private void Login(string email, string password)
         {
             foreach ( Models.User user in database.users)
@@ -397,30 +414,184 @@ namespace WindowsFormsSolution
                 LoadMeetingWindow(database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()));
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateMeetingAgendaLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        //Create Meeting buttoms
+        private List<Models.CreatMeetingAgendaBuilder> Agendapoints { get; set; } = new List<Models.CreatMeetingAgendaBuilder>();
+        private List<string> attendances { get; set; } = new List<string>();
 
         private void MeetingsCreateButtom_Click(object sender, EventArgs e)
         {
             ChangeTab(CreatMeeting, MeetingsMenuItem);
+            foreach (Models.User user in database.users)
+            {
+                CreateMeetingAttendancecomboBox.Items.Add(user.Name);
+            }
+            foreach (Models.External external in database.externals)
+            {
+                CreateMeetingAttendancecomboBox.Items.Add(external.Name);
+            }
+        }
+
+        private void CreateMeetingAddsubmeetingButtom_Click(object sender, EventArgs e)
+        {
+            if (Agendapoints.Contains(CreatmeetingSelectAgendacomboBox.SelectedItem))
+            {
+                foreach (Models.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+                {
+                    if (Agendapoint == CreatmeetingSelectAgendacomboBox.SelectedItem)
+                    {
+                        Agendapoint.Submeetings.Add(CreatemeetingSubmeetingTextbox.Text);
+                    }
+                }
+                CreatemeetingSubmeetingTextbox.Text = "";
+                UpdateCreateMeetingAgendaTextbox();
+            }
+        }
+
+        private void CreateMeetingAddAgendaItemButtom_Click(object sender, EventArgs e)
+        {
+            Agendapoints.Add(new Models.CreatMeetingAgendaBuilder(CreateMeetingAgendaTextbox.Text));
+            CreateMeetingAgendaTextbox.Text = "";
+            CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.CreatMeetingAgendaBuilder>());
+            UpdateCreateMeetingAgendaTextbox();
+        }
+
+        private void UpdateCreateMeetingAgendaTextbox()
+        {
+            CreateMeetingFullAgendaLabel.BeginUpdate();
+            CreateMeetingFullAgendaLabel.Nodes.Clear();
+            int i = 0;
+            foreach (Models.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+            {
+                CreateMeetingFullAgendaLabel.Nodes.Add(new TreeNode(Agendapoint.ToString()));
+                foreach (String submeeting in Agendapoint.Submeetings)
+                {
+                    CreateMeetingFullAgendaLabel.Nodes[i].Nodes.Add(submeeting);                  
+                }
+                i++;
+            }
+            CreateMeetingFullAgendaLabel.EndUpdate();
+        }
+
+        private void CreateMeetingAddexternButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateMeetingAttendancecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (attendances.Contains(CreateMeetingAttendancecomboBox.SelectedItem))
+            {
+                attendances.Remove(CreateMeetingAttendancecomboBox.SelectedItem.ToString());
+            }
+            else
+            {
+                attendances.Add(CreateMeetingAttendancecomboBox.SelectedItem.ToString());
+            }
+            CreateMeetingAttendancesrichTextBox.Clear();
+            foreach (string attendance in attendances)
+            {
+                CreateMeetingAttendancesrichTextBox.Text += $"{attendance}\n";
+            }
+        }
+
+        private void CreateMeetingCreateButtom_Click(object sender, EventArgs e)
+        {
+            List<Models.Person> persons = new List<Models.Person>();
+            foreach (String name in attendances)
+            {
+                persons.Add(database.GetPersonByName(name));
+            }
+            database.addMeeting(new Models.Meeting(CreateMeetingTitleTextbox.Text, currUser, CreateMeetingStarttimeDatePicker.Value, CreateMeetingEndtimeDatePicker.Value, CreateMeetingDescriptionRichtextbox.Text, persons, Agendapoints), persons);
+            MeetingsMenuItem_Click(sender, e);
+          //ChangeTab(MeetingTab, MeetingsMenuItem);
+            Agendapoints.Clear();
+            attendances.Clear();
+            CreateMeetingAgendaTextbox.Clear();
+            CreateMeetingAttendancecomboBox.Items.Clear();
+            CreateMeetingAttendancesrichTextBox.Clear();
+            CreateMeetingDescriptionRichtextbox.Clear();
+            CreatemeetingSubmeetingTextbox.Clear();
+            CreateMeetingTitleTextbox.Clear();
+            UpdateCreateMeetingAgendaTextbox();
+
+        }
+
+        private void CreateMeetingCancelButtom_Click(object sender, EventArgs e)
+        {
+            ChangeTab(MeetingTab, MeetingsMenuItem);
+            Agendapoints.Clear();
+            attendances.Clear();
+            CreateMeetingAgendaTextbox.Clear();
+            CreateMeetingAttendancecomboBox.Items.Clear();
+            CreateMeetingAttendancesrichTextBox.Clear();
+            CreateMeetingDescriptionRichtextbox.Clear();
+            CreatemeetingSubmeetingTextbox.Clear();
+            CreateMeetingTitleTextbox.Clear();
+            UpdateCreateMeetingAgendaTextbox();
+        }
+
+        //Create Project Buttoms
+        private List<string> projectAttendances { get; set; } = new List<string>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChangeTab(CreateProjectPanel, ProjectsMenuItem);
+            foreach (Models.User user in database.users)
+            {
+                CreateProjectAttendanceComboBox.Items.Add(user.Name);
+            }
+            foreach (Models.Customer customer in database.customers)
+            {
+                CreateProjectCustomerComboBox.Items.Add(customer.Name);
+            }
+        }
+
+
+
+        private void CreateProjectCancelButtom_Click(object sender, EventArgs e)
+        {
+            List<Models.User> attandances = new List<Models.User>();
+            foreach (string attendance in projectAttendances)
+            {
+                attandances.Add(database.GetUserByName(attendance));
+            }
+            database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()));
+            ChangeTab(ProjectTab, ProjectsMenuItem);
+            projectAttendances.Clear();
+            CreateProjectAdressTextBox.Clear();
+            CreateProjectAttendanceComboBox.Items.Clear();
+            CreateProjectAttendanceRichTextBox.Clear();
+            CreateProjectCustomerComboBox.Items.Clear();
+            CreateProjectTitleTextBox.Clear();
+            richTextBox1.Clear();
+        }
+
+        private void CreateProjectCreateButtom_Click(object sender, EventArgs e)
+        {
+            ChangeTab(ProjectTab, ProjectsMenuItem);
+            projectAttendances.Clear();
+            CreateProjectAdressTextBox.Clear();
+            CreateProjectAttendanceComboBox.Items.Clear();
+            CreateProjectAttendanceRichTextBox.Clear();
+            CreateProjectCustomerComboBox.Items.Clear();
+            CreateProjectTitleTextBox.Clear();
+            richTextBox1.Clear();
+        }
+
+        private void CreateProjectAttendanceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (projectAttendances.Contains(CreateProjectAttendanceComboBox.SelectedItem))
+            {
+                projectAttendances.Remove(CreateProjectAttendanceComboBox.SelectedItem.ToString());
+            }
+            else
+            {
+                projectAttendances.Add(CreateProjectAttendanceComboBox.SelectedItem.ToString());
+            }
+            CreateProjectAttendanceRichTextBox.Clear();
+            foreach (string projectAttendance in projectAttendances)
+            {
+                CreateProjectAttendanceRichTextBox.Text += $"{projectAttendance}\n";
+            }
         }
     }
 }

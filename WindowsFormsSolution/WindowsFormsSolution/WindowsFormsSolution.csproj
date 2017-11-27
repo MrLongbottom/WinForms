@@ -57,6 +57,7 @@
     <Compile Include="Models\Classes\AgendaItem.cs" />
     <Compile Include="Models\Classes\Attachment.cs" />
     <Compile Include="Models\Classes\Attendance.cs" />
+    <Compile Include="Models\Classes\CreatMeetingAgendaBuilder.cs" />
     <Compile Include="Models\Classes\Search.cs" />
     <Compile Include="Models\Exception\DoNotContainElementException.cs" />
     <Compile Include="Models\Exception\InvalidAccessException.cs" />
