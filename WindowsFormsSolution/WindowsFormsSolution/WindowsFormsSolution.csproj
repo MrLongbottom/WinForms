@@ -74,10 +74,19 @@
     <Compile Include="Models\Classes\User.cs" />
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Exception\notAdminException.cs" />
+    <Compile Include="Models\OpretExternPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\OpretExternPopup.Designer.cs">
+      <DependentUpon>OpretExternPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\OpretExternPopup.resx">
+      <DependentUpon>OpretExternPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

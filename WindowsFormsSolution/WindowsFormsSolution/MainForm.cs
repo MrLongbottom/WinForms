@@ -490,7 +490,10 @@ namespace WindowsFormsSolution
 
         private void CreateMeetingAddexternButtom_Click(object sender, EventArgs e)
         {
-
+            Models.OpretExternPopup opretExternPopup = new Models.OpretExternPopup(database);
+            opretExternPopup.ShowDialog();
+            CreateMeetingAttendancecomboBox_SelectedIndexChanged(database.externals.Last<Models.External>(), e);
+            CreateMeetingAttendancecomboBox.Items.Add(database.externals.Last<Models.External>());
         }
 
         private void CreateMeetingAttendancecomboBox_SelectedIndexChanged(object sender, EventArgs e)
