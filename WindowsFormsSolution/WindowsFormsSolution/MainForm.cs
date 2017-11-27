@@ -449,7 +449,10 @@ namespace WindowsFormsSolution
 
         private void CreateMeetingAddsubmeetingButtom_Click(object sender, EventArgs e)
         {
-            if (Agendapoints.Contains(CreatmeetingSelectAgendacomboBox.SelectedItem))
+            Models.Classes.SubmeetingPopup submeetingPopup = new Models.Classes.SubmeetingPopup(database, Agendapoints);
+            submeetingPopup.ShowDialog();
+            UpdateCreateMeetingAgendaTextbox();
+           /* if (Agendapoints.Contains(CreatmeetingSelectAgendacomboBox.SelectedItem))
             {
                 foreach (Models.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
                 {
@@ -460,14 +463,14 @@ namespace WindowsFormsSolution
                 }
                 CreatemeetingSubmeetingTextbox.Text = "";
                 UpdateCreateMeetingAgendaTextbox();
-            }
+            }*/
         }
 
         private void CreateMeetingAddAgendaItemButtom_Click(object sender, EventArgs e)
         {
             Agendapoints.Add(new Models.CreatMeetingAgendaBuilder(CreateMeetingAgendaTextbox.Text));
             CreateMeetingAgendaTextbox.Text = "";
-            CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.CreatMeetingAgendaBuilder>());
+            //CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.CreatMeetingAgendaBuilder>());
             UpdateCreateMeetingAgendaTextbox();
         }
 
@@ -490,10 +493,20 @@ namespace WindowsFormsSolution
 
         private void CreateMeetingAddexternButtom_Click(object sender, EventArgs e)
         {
+            int checkCancel = database.externals.Count;
             Models.OpretExternPopup opretExternPopup = new Models.OpretExternPopup(database);
             opretExternPopup.ShowDialog();
-            CreateMeetingAttendancecomboBox_SelectedIndexChanged(database.externals.Last<Models.External>(), e);
-            CreateMeetingAttendancecomboBox.Items.Add(database.externals.Last<Models.External>());
+            if (database.externals.Count != checkCancel)
+            {
+                CreateMeetingAttendancecomboBox.Items.Add(database.externals.Last<Models.External>().Name);
+                attendances.Add(database.externals.Last<Models.External>().Name);
+                CreateMeetingAttendancesrichTextBox.Clear();
+                foreach (string attendance in attendances)
+                {
+                    CreateMeetingAttendancesrichTextBox.Text += $"{attendance}\n";
+                }
+            }
+
         }
 
         private void CreateMeetingAttendancecomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -530,7 +543,7 @@ namespace WindowsFormsSolution
             CreateMeetingAttendancecomboBox.Items.Clear();
             CreateMeetingAttendancesrichTextBox.Clear();
             CreateMeetingDescriptionRichtextbox.Clear();
-            CreatemeetingSubmeetingTextbox.Clear();
+            //CreatemeetingSubmeetingTextbox.Clear();
             CreateMeetingTitleTextbox.Clear();
             UpdateCreateMeetingAgendaTextbox();
 
@@ -545,7 +558,7 @@ namespace WindowsFormsSolution
             CreateMeetingAttendancecomboBox.Items.Clear();
             CreateMeetingAttendancesrichTextBox.Clear();
             CreateMeetingDescriptionRichtextbox.Clear();
-            CreatemeetingSubmeetingTextbox.Clear();
+            //CreatemeetingSubmeetingTextbox.Clear();
             CreateMeetingTitleTextbox.Clear();
             UpdateCreateMeetingAgendaTextbox();
         }

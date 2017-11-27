@@ -46,7 +46,7 @@ namespace WindowsFormsSolution.Models
             Project = project;
             Project.addSubmeeting(this);
         }
-
+        
         public void addProject(Project project)
         {
             Project = project;

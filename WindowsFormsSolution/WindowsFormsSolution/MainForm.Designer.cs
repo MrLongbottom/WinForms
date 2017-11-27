@@ -34,7 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,8 +101,6 @@
             this.CreatMeeting = new System.Windows.Forms.Panel();
             this.CreateMeetingCancelButtom = new System.Windows.Forms.Button();
             this.CreateMeetingCreateButtom = new System.Windows.Forms.Button();
-            this.CreatmeetingSelectAgendacomboBox = new System.Windows.Forms.ComboBox();
-            this.CreatemeetingSubmeetingTextbox = new System.Windows.Forms.TextBox();
             this.CreateMeetingAgendaTextbox = new System.Windows.Forms.TextBox();
             this.CreateMeetingAddexternButtom = new System.Windows.Forms.Button();
             this.CreateMeetingAttendancesrichTextBox = new System.Windows.Forms.RichTextBox();
@@ -788,10 +786,10 @@
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(16, 331);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode1.Name = "";
-            treeNode1.Text = "1. Test";
+            treeNode5.Name = "";
+            treeNode5.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode5});
             this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
             this.MeetingAgendaTree.TabIndex = 2;
             // 
@@ -934,8 +932,6 @@
             // 
             this.CreatMeeting.Controls.Add(this.CreateMeetingCancelButtom);
             this.CreatMeeting.Controls.Add(this.CreateMeetingCreateButtom);
-            this.CreatMeeting.Controls.Add(this.CreatmeetingSelectAgendacomboBox);
-            this.CreatMeeting.Controls.Add(this.CreatemeetingSubmeetingTextbox);
             this.CreatMeeting.Controls.Add(this.CreateMeetingAgendaTextbox);
             this.CreatMeeting.Controls.Add(this.CreateMeetingAddexternButtom);
             this.CreatMeeting.Controls.Add(this.CreateMeetingAttendancesrichTextBox);
@@ -982,39 +978,23 @@
             this.CreateMeetingCreateButtom.UseVisualStyleBackColor = true;
             this.CreateMeetingCreateButtom.Click += new System.EventHandler(this.CreateMeetingCreateButtom_Click);
             // 
-            // CreatmeetingSelectAgendacomboBox
-            // 
-            this.CreatmeetingSelectAgendacomboBox.FormattingEnabled = true;
-            this.CreatmeetingSelectAgendacomboBox.Location = new System.Drawing.Point(975, 641);
-            this.CreatmeetingSelectAgendacomboBox.Margin = new System.Windows.Forms.Padding(4);
-            this.CreatmeetingSelectAgendacomboBox.Name = "CreatmeetingSelectAgendacomboBox";
-            this.CreatmeetingSelectAgendacomboBox.Size = new System.Drawing.Size(100, 24);
-            this.CreatmeetingSelectAgendacomboBox.TabIndex = 18;
-            // 
-            // CreatemeetingSubmeetingTextbox
-            // 
-            this.CreatemeetingSubmeetingTextbox.Location = new System.Drawing.Point(544, 641);
-            this.CreatemeetingSubmeetingTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.CreatemeetingSubmeetingTextbox.Name = "CreatemeetingSubmeetingTextbox";
-            this.CreatemeetingSubmeetingTextbox.Size = new System.Drawing.Size(431, 22);
-            this.CreatemeetingSubmeetingTextbox.TabIndex = 17;
-            // 
             // CreateMeetingAgendaTextbox
             // 
-            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(544, 609);
+            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(712, 605);
             this.CreateMeetingAgendaTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.CreateMeetingAgendaTextbox.Name = "CreateMeetingAgendaTextbox";
-            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(431, 22);
+            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(363, 22);
             this.CreateMeetingAgendaTextbox.TabIndex = 16;
             // 
             // CreateMeetingAddexternButtom
             // 
+            this.CreateMeetingAddexternButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CreateMeetingAddexternButtom.Location = new System.Drawing.Point(1501, 223);
             this.CreateMeetingAddexternButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddexternButtom.Name = "CreateMeetingAddexternButtom";
             this.CreateMeetingAddexternButtom.Size = new System.Drawing.Size(123, 30);
             this.CreateMeetingAddexternButtom.TabIndex = 15;
-            this.CreateMeetingAddexternButtom.Text = "Tilføj ekstern";
+            this.CreateMeetingAddexternButtom.Text = "Tilføj ny ekstern";
             this.CreateMeetingAddexternButtom.UseVisualStyleBackColor = true;
             this.CreateMeetingAddexternButtom.Click += new System.EventHandler(this.CreateMeetingAddexternButtom_Click);
             // 
@@ -1035,7 +1015,7 @@
             this.CreateMeetingAttendancecomboBox.Location = new System.Drawing.Point(1185, 223);
             this.CreateMeetingAttendancecomboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAttendancecomboBox.Name = "CreateMeetingAttendancecomboBox";
-            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(309, 24);
+            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(310, 24);
             this.CreateMeetingAttendancecomboBox.TabIndex = 13;
             this.CreateMeetingAttendancecomboBox.SelectedIndexChanged += new System.EventHandler(this.CreateMeetingAttendancecomboBox_SelectedIndexChanged);
             // 
@@ -1082,12 +1062,12 @@
             // 
             // CreateMeetingAddsubmeetingButtom
             // 
-            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(897, 672);
+            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(568, 633);
             this.CreateMeetingAddsubmeetingButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddsubmeetingButtom.Name = "CreateMeetingAddsubmeetingButtom";
-            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(179, 27);
+            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(148, 27);
             this.CreateMeetingAddsubmeetingButtom.TabIndex = 8;
-            this.CreateMeetingAddsubmeetingButtom.Text = "Tilføj Dagsordenspunkt";
+            this.CreateMeetingAddsubmeetingButtom.Text = "Tilføj Underpunkt";
             this.CreateMeetingAddsubmeetingButtom.UseVisualStyleBackColor = true;
             this.CreateMeetingAddsubmeetingButtom.Click += new System.EventHandler(this.CreateMeetingAddsubmeetingButtom_Click);
             // 
@@ -1113,12 +1093,12 @@
             // 
             // CreateMeetingAddAgendaItemButtom
             // 
-            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(973, 604);
+            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(544, 603);
             this.CreateMeetingAddAgendaItemButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddAgendaItemButtom.Name = "CreateMeetingAddAgendaItemButtom";
-            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(101, 27);
+            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(172, 27);
             this.CreateMeetingAddAgendaItemButtom.TabIndex = 5;
-            this.CreateMeetingAddAgendaItemButtom.Text = "Tilføj Emne";
+            this.CreateMeetingAddAgendaItemButtom.Text = "Tilføj Dagsordenspunkt";
             this.CreateMeetingAddAgendaItemButtom.UseVisualStyleBackColor = true;
             this.CreateMeetingAddAgendaItemButtom.Click += new System.EventHandler(this.CreateMeetingAddAgendaItemButtom_Click);
             // 
@@ -1414,16 +1394,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 938);
             this.Controls.Add(this.MainMenu);
-            this.Controls.Add(this.ProfileTab);
-            this.Controls.Add(this.LoginPage);
-            this.Controls.Add(this.MeetingPage);
-            this.Controls.Add(this.CreatMeeting);
             this.Controls.Add(this.CustomerTab);
             this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.CreateProjectPanel);
             this.Controls.Add(this.ProjectPage);
+            this.Controls.Add(this.ProfileTab);
+            this.Controls.Add(this.LoginPage);
+            this.Controls.Add(this.MeetingPage);
+            this.Controls.Add(this.CreatMeeting);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
@@ -1523,8 +1503,6 @@
         private System.Windows.Forms.Label CreateMeetingEndtimeLabel;
         private System.Windows.Forms.DateTimePicker CreateMeetingEndtimeDatePicker;
         private System.Windows.Forms.Button MeetingsCreateButtom;
-        private System.Windows.Forms.ComboBox CreatmeetingSelectAgendacomboBox;
-        private System.Windows.Forms.TextBox CreatemeetingSubmeetingTextbox;
         private System.Windows.Forms.TextBox CreateMeetingAgendaTextbox;
         private System.Windows.Forms.Button CreateMeetingCreateButtom;
         private System.Windows.Forms.Button CreateMeetingCancelButtom;

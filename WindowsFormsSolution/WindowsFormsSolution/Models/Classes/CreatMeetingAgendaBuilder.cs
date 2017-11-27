@@ -10,6 +10,7 @@ namespace WindowsFormsSolution.Models
     {
         public string Agendapoint { get; set; }
         public List<string> Submeetings { get; set; } = new List<string>();
+//        public Project Project { get; set; }
 
         public CreatMeetingAgendaBuilder(string agendapoint)
         {

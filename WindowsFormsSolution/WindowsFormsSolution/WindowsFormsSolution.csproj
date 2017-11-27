@@ -59,6 +59,12 @@
     <Compile Include="Models\Classes\Attendance.cs" />
     <Compile Include="Models\Classes\CreatMeetingAgendaBuilder.cs" />
     <Compile Include="Models\Classes\Search.cs" />
+    <Compile Include="Models\Classes\SubmeetingPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\Classes\SubmeetingPopup.Designer.cs">
+      <DependentUpon>SubmeetingPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Exception\DoNotContainElementException.cs" />
     <Compile Include="Models\Exception\InvalidAccessException.cs" />
     <Compile Include="Models\Exception\CantBeNullException.cs" />
@@ -84,6 +90,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\Classes\SubmeetingPopup.resx">
+      <DependentUpon>SubmeetingPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\OpretExternPopup.resx">
       <DependentUpon>OpretExternPopup.cs</DependentUpon>
