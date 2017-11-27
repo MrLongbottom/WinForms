@@ -26,10 +26,10 @@ namespace WindowsFormsSolution.Models
             Users.Add(currUser);
             Attachments = attachments;
             Customer.addProject(this);
-            foreach (User user in users)
+            /*foreach (User user in users)
             {
                 user.addProject(this);
-            }
+            }*/
         }
         public void changeCostumer(Customer customer, User currUser)
         {

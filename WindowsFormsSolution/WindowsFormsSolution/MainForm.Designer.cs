@@ -34,7 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -357,7 +357,8 @@
             // 
             // ProfileProjects
             // 
-            this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjects.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProfileProjects.FormattingEnabled = true;
             this.ProfileProjects.ItemHeight = 25;
             this.ProfileProjects.Items.AddRange(new object[] {
@@ -787,10 +788,10 @@
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(16, 331);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode5.Name = "";
-            treeNode5.Text = "1. Test";
+            treeNode1.Name = "";
+            treeNode1.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
+            treeNode1});
             this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
             this.MeetingAgendaTree.TabIndex = 2;
             // 
@@ -1323,7 +1324,7 @@
             this.ProjectPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectPage.Location = new System.Drawing.Point(0, 0);
             this.ProjectPage.Name = "ProjectPage";
-            this.ProjectPage.Size = new System.Drawing.Size(1264, 762);
+            this.ProjectPage.Size = new System.Drawing.Size(1685, 938);
             this.ProjectPage.TabIndex = 4;
             // 
             // ProjectCustomerLabel
@@ -1422,6 +1423,7 @@
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.CreateProjectPanel);
+            this.Controls.Add(this.ProjectPage);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";

@@ -27,8 +27,7 @@ namespace WindowsFormsSolution
             MeetingTab.Visible = false;
             MeetingPage.Visible = false;
             CreateProjectPanel.Visible = false;
-            ProjectPage.Visible = true;
-            ProjectPage.BringToFront();
+            ProjectPage.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -81,6 +80,7 @@ namespace WindowsFormsSolution
                 ProfileEditEmailButton.Visible = true;
                 ProfileEditNameButton.Visible = true;
                 ProfileEditPhoneButton.Visible = true;
+                LogOut.Visible = true;
                 ChangeTab(ProfileTab, ProfileMenuItem);
             }
             else if (currUser.Admin)
@@ -88,6 +88,7 @@ namespace WindowsFormsSolution
                 ProfileEditEmailButton.Visible = true;
                 ProfileEditNameButton.Visible = true;
                 ProfileEditPhoneButton.Visible = true;
+                LogOut.Visible = false;
                 ChangeTab(ProfileTab, UsersMenuItem);
             }
             else
@@ -95,6 +96,7 @@ namespace WindowsFormsSolution
                 ProfileEditEmailButton.Visible = false;
                 ProfileEditNameButton.Visible = false;
                 ProfileEditPhoneButton.Visible = false;
+                LogOut.Visible = false;
                 ChangeTab(ProfileTab, UsersMenuItem);
             }
         }
@@ -269,22 +271,31 @@ namespace WindowsFormsSolution
 
         private void ProfileEditNameBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ProfileEditNameButton_Click(sender, e);
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProfileEditNameButton_Click(sender, e);
+            }
         }
 
         private void ProfileEditEmailBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ProfileEditEmailButton_Click(sender, e);
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProfileEditEmailButton_Click(sender, e);
+            }
         }
 
         private void ProfileEditPhoneBox_KeyDown(object sender, KeyEventArgs e)
         {
-            ProfileEditPhoneBox_KeyDown(sender, e);
+            if (e.KeyCode == Keys.Enter)
+            {
+                ProfileEditPhoneBox_KeyDown(sender, e);
+            }
         }
 
         private void UsersCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()) != null)
+            if (UsersCurrentBox.SelectedItem != null)
             {
                 LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
             }
@@ -502,6 +513,7 @@ namespace WindowsFormsSolution
         private void CreateMeetingCreateButtom_Click(object sender, EventArgs e)
         {
             List<Models.Person> persons = new List<Models.Person>();
+            persons.Add(currUser);
             foreach (String name in attendances)
             {
                 persons.Add(database.GetPersonByName(name));
@@ -554,12 +566,6 @@ namespace WindowsFormsSolution
 
         private void CreateProjectCancelButtom_Click(object sender, EventArgs e)
         {
-            List<Models.User> attandances = new List<Models.User>();
-            foreach (string attendance in projectAttendances)
-            {
-                attandances.Add(database.GetUserByName(attendance));
-            }
-            database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()));
             ChangeTab(ProjectTab, ProjectsMenuItem);
             projectAttendances.Clear();
             CreateProjectAdressTextBox.Clear();
@@ -572,7 +578,15 @@ namespace WindowsFormsSolution
 
         private void CreateProjectCreateButtom_Click(object sender, EventArgs e)
         {
-            ChangeTab(ProjectTab, ProjectsMenuItem);
+            List<Models.User> attandances = new List<Models.User>();
+            attandances.Add(currUser);
+            foreach (string attendance in projectAttendances)
+            {
+                attandances.Add(database.GetUserByName(attendance));
+            }
+            database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()), attandances);
+            ProjectsMenuItem_Click(sender, e);
+            //ChangeTab(ProjectTab, ProjectsMenuItem);
             projectAttendances.Clear();
             CreateProjectAdressTextBox.Clear();
             CreateProjectAttendanceComboBox.Items.Clear();
