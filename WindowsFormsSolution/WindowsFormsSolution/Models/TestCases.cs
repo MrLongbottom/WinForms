@@ -33,7 +33,7 @@ namespace WindowsFormsSolution.Models
             database.addProject(new Project(database.users.First(), "Frelsensvandrør", database.customers.First(), "Algade 27 9000 Aalborg", "Fix frelsens vandrør", new List<User>(), new List<Attachment>()));
 
             //add test meeting
-            database.addMeeting(new Meeting("Fredags møde 47", database.users.First<User>(), DateTime.Now, DateTime.Now, "Standard fredags møde"));
+            database.addMeeting(new Meeting("Fredags møde 47", database.users.First<User>(), DateTime.Now, DateTime.Now, "Standard fredags møde", new List<Person>(), new List<Classes.CreatMeetingAgendaBuilder>()));
             database.addSubmeeting(new Submeeting(database.users.First<User>(), "Hankats svimmingpool", "Vi starter på tirsdag", database.meetings.First<Meeting>(), database.projects.First<Project>()));
             database.meetings[0].AddAttendance(new Attendance(database.meetings[0], database.users[0], false, false, false));
 

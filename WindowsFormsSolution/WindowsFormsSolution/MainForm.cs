@@ -286,64 +286,154 @@ namespace WindowsFormsSolution
             LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
         }
 
-       /* private void LoadMeetingWindow(Models.Meeting meeting)
-        {
-            MeetingTitleLabel.Text = meeting.Title;
-            MeetingDescriptionLabel.Text = meeting.Description;
-            //Dagsorden Setup
-            MeetingAgendaTree.Nodes.Clear();
-            foreach (Models.AgendaItem agen in meeting.AgendaItems)
-            {
-                List<TreeNode> children = new List<TreeNode>();
-                foreach(Models.Submeeting sub in agen.Submeetings)
-                {
-                    children.Add(new TreeNode(sub.Title));
-                }
-                MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
-            }
+        /* private void LoadMeetingWindow(Models.Meeting meeting)
+         {
+             MeetingTitleLabel.Text = meeting.Title;
+             MeetingDescriptionLabel.Text = meeting.Description;
+             //Dagsorden Setup
+             MeetingAgendaTree.Nodes.Clear();
+             foreach (Models.AgendaItem agen in meeting.AgendaItems)
+             {
+                 List<TreeNode> children = new List<TreeNode>();
+                 foreach(Models.Submeeting sub in agen.Submeetings)
+                 {
+                     children.Add(new TreeNode(sub.Title));
+                 }
+                 MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+             }
 
-            ChangeTab(MeetingPage, MeetingsMenuItem);
-        }
+             ChangeTab(MeetingPage, MeetingsMenuItem);
+         }
 
-        private void LoadProjectWindow(Models.Project pro)
-        {
-            ProjectTitleLabel.Text = pro.Title;
-            ProjectReferBox.Items.Clear();
-            foreach(Models.Submeeting sub in pro.Submeetings)
-            {
-                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
-            }
-            ChangeTab(ProjectPage, ProjectsMenuItem);
-        }
+         private void LoadProjectWindow(Models.Project pro)
+         {
+             ProjectTitleLabel.Text = pro.Title;
+             ProjectReferBox.Items.Clear();
+             foreach(Models.Submeeting sub in pro.Submeetings)
+             {
+                 ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
+             }
+             ChangeTab(ProjectPage, ProjectsMenuItem);
+         }
 
-        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
-        }*/
+         private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
+         {
+             LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
+         }*/
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CreateMeetingAgendaLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        private List<Models.Classes.CreatMeetingAgendaBuilder> Agendapoints { get; set; } = new List<Models.Classes.CreatMeetingAgendaBuilder>();
+        private List<string> attendances { get; set; } = new List<string>();
 
         private void MeetingsCreateButtom_Click(object sender, EventArgs e)
         {
             ChangeTab(CreatMeeting, MeetingsMenuItem);
+            foreach (Models.User user in database.users)
+            {
+                CreateMeetingAttendancecomboBox.Items.Add(user.Name);
+            }
+            foreach (Models.External external in database.externals)
+            {
+                CreateMeetingAttendancecomboBox.Items.Add(external.Name);
+            }
+        }
+
+        private void CreateMeetingAddsubmeetingButtom_Click(object sender, EventArgs e)
+        {
+            if (Agendapoints.Contains(CreatmeetingSelectAgendacomboBox.SelectedItem))
+            {
+                foreach (Models.Classes.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+                {
+                    if (Agendapoint == CreatmeetingSelectAgendacomboBox.SelectedItem)
+                    {
+                        Agendapoint.Submeetings.Add(CreatemeetingSubmeetingTextbox.Text);
+                    }
+                }
+                CreatemeetingSubmeetingTextbox.Text = "";
+                UpdateCreateMeetingAgendaTextbox();
+            }
+        }
+
+        private void CreateMeetingAddAgendaItemButtom_Click(object sender, EventArgs e)
+        {
+            Agendapoints.Add(new Models.Classes.CreatMeetingAgendaBuilder(CreateMeetingAgendaTextbox.Text));
+            CreateMeetingAgendaTextbox.Text = "";
+            CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.Classes.CreatMeetingAgendaBuilder>());
+            UpdateCreateMeetingAgendaTextbox();
+        }
+
+        private void UpdateCreateMeetingAgendaTextbox()
+        {
+            CreateMeetingFullAgendaLabel.BeginUpdate();
+            CreateMeetingFullAgendaLabel.Nodes.Clear();
+            int i = 0;
+            foreach (Models.Classes.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+            {
+                CreateMeetingFullAgendaLabel.Nodes.Add(new TreeNode(Agendapoint.ToString()));
+                foreach (String submeeting in Agendapoint.Submeetings)
+                {
+                    CreateMeetingFullAgendaLabel.Nodes[i].Nodes.Add(submeeting);                  
+                }
+                i++;
+            }
+            CreateMeetingFullAgendaLabel.EndUpdate();
+        }
+
+        private void CreateMeetingAddexternButtom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreateMeetingAttendancecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (attendances.Contains(CreateMeetingAttendancecomboBox.SelectedItem))
+            {
+                attendances.Remove(CreateMeetingAttendancecomboBox.SelectedItem.ToString());
+            }
+            else
+            {
+                attendances.Add(CreateMeetingAttendancecomboBox.SelectedItem.ToString());
+            }
+            CreateMeetingAttendancesrichTextBox.Clear();
+            foreach (string attendance in attendances)
+            {
+                CreateMeetingAttendancesrichTextBox.Text += $"{attendance}\n";
+            }
+        }
+
+        private void CreateMeetingCreateButtom_Click(object sender, EventArgs e)
+        {
+            List<Models.Person> persons = new List<Models.Person>();
+            foreach (String name in attendances)
+            {
+                persons.Add(database.GetPersonByName(name));
+            }
+            database.addMeeting(new Models.Meeting(CreateMeetingTitleTextbox.Text, currUser, CreateMeetingStarttimeDatePicker.Value, CreateMeetingEndtimeDatePicker.Value, CreateMeetingDescriptionRichtextbox.Text, persons, Agendapoints));
+            ChangeTab(MeetingTab, MeetingsMenuItem);
+            Agendapoints.Clear();
+            attendances.Clear();
+            CreateMeetingAgendaTextbox.Clear();
+            CreateMeetingAttendancecomboBox.Items.Clear();
+            CreateMeetingAttendancesrichTextBox.Clear();
+            CreateMeetingDescriptionRichtextbox.Clear();
+            CreatemeetingSubmeetingTextbox.Clear();
+            CreateMeetingTitleTextbox.Clear();
+            UpdateCreateMeetingAgendaTextbox();
+
+        }
+
+        private void CreateMeetingCancelButtom_Click(object sender, EventArgs e)
+        {
+            ChangeTab(MeetingTab, MeetingsMenuItem);
+            Agendapoints.Clear();
+            attendances.Clear();
+            CreateMeetingAgendaTextbox.Clear();
+            CreateMeetingAttendancecomboBox.Items.Clear();
+            CreateMeetingAttendancesrichTextBox.Clear();
+            CreateMeetingDescriptionRichtextbox.Clear();
+            CreatemeetingSubmeetingTextbox.Clear();
+            CreateMeetingTitleTextbox.Clear();
+            UpdateCreateMeetingAgendaTextbox();
         }
     }
 }

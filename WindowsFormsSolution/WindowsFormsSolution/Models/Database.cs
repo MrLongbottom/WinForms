@@ -138,6 +138,21 @@ namespace WindowsFormsSolution.Models
             throw new Exception("No user with the name: " + name);
         }
 
+        public Person GetPersonByName(string name)
+        {
+            foreach (Person person in users)
+            {
+                if (person.Name == name)
+                { return person; }
+            }
+            foreach (Person person in externals)
+            {
+                if (person.Name == name)
+                { return person; }
+            }
+            throw new Exception("No person with the name: " + name);
+        }
+
         internal Meeting GetMeetingByTitle(string title)
         {
             foreach (Meeting meet in meetings)
