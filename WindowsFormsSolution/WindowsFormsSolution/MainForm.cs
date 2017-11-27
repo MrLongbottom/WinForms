@@ -244,17 +244,6 @@ namespace WindowsFormsSolution
             }
         }
 
-        private void logUdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeTab(LoginPage, null);
-            MainMenu.Visible = false;
-            SearchBar.Visible = false;
-            SearchButton.Visible = false;
-            LoginWrong.Visible = false;
-            LoginEmalBox.Clear();
-            LoginPasswordBox.Clear();
-        }
-
         private void ProfileEditNameBox_KeyDown(object sender, KeyEventArgs e)
         {
             ProfileEditNameButton_Click(sender, e);
@@ -308,6 +297,8 @@ namespace WindowsFormsSolution
         private void LoadProjectWindow(Models.Project pro)
         {
             ProjectTitleLabel.Text = pro.Title;
+            ProjectDescription.Text = pro.Description;
+            ProjectCustomerLabel.Text = pro.Customer.Name;
             ProjectReferBox.Items.Clear();
             foreach(Models.Submeeting sub in pro.Submeetings)
             {
@@ -359,6 +350,25 @@ namespace WindowsFormsSolution
             {
                 LoadProjectWindow(database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()));
             }
+        }
+
+        private void ProjectUsersBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            ChangeTab(LoginPage, null);
+            MainMenu.Visible = false;
+            SearchBar.Visible = false;
+            SearchButton.Visible = false;
+            LoginWrong.Visible = false;
+            LoginEmalBox.Clear();
+            LoginPasswordBox.Clear();
         }
     }
 }

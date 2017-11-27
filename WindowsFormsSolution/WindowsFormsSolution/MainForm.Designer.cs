@@ -34,11 +34,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LogoutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MeetingsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProjectsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +101,9 @@
             this.ProjectDescription = new System.Windows.Forms.Label();
             this.ProjectUsersBox = new System.Windows.Forms.ListBox();
             this.ProjectUsersLabel = new System.Windows.Forms.Label();
+            this.ProjectCustom = new System.Windows.Forms.Label();
+            this.ProjectCustomerLabel = new System.Windows.Forms.Label();
+            this.LogOut = new System.Windows.Forms.Button();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -145,22 +147,12 @@
             // ProfileMenuItem
             // 
             this.ProfileMenuItem.AutoSize = false;
-            this.ProfileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.LogoutMenuItem});
             this.ProfileMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.ProfileMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ProfileMenuItem.Image")));
             this.ProfileMenuItem.Name = "ProfileMenuItem";
             this.ProfileMenuItem.Size = new System.Drawing.Size(100, 41);
             this.ProfileMenuItem.Text = "Profil";
             this.ProfileMenuItem.Click += new System.EventHandler(this.ProfileMenuItem_Click);
-            // 
-            // LogoutMenuItem
-            // 
-            this.LogoutMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.LogoutMenuItem.Name = "LogoutMenuItem";
-            this.LogoutMenuItem.Size = new System.Drawing.Size(137, 26);
-            this.LogoutMenuItem.Text = "Log Ud";
-            this.LogoutMenuItem.Click += new System.EventHandler(this.logUdToolStripMenuItem_Click);
             // 
             // MeetingsMenuItem
             // 
@@ -206,6 +198,7 @@
             // 
             // ProfileTab
             // 
+            this.ProfileTab.Controls.Add(this.LogOut);
             this.ProfileTab.Controls.Add(this.ProfileEditPhoneBox);
             this.ProfileTab.Controls.Add(this.ProfileEditEmailBox);
             this.ProfileTab.Controls.Add(this.ProfileEditNameBox);
@@ -641,10 +634,10 @@
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(12, 246);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode2.Name = "";
-            treeNode2.Text = "1. Test";
+            treeNode3.Name = "";
+            treeNode3.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode3});
             this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
             this.MeetingAgendaTree.TabIndex = 2;
             // 
@@ -763,6 +756,8 @@
             // 
             // ProjectPage
             // 
+            this.ProjectPage.Controls.Add(this.ProjectCustomerLabel);
+            this.ProjectPage.Controls.Add(this.ProjectCustom);
             this.ProjectPage.Controls.Add(this.ProjectUsersLabel);
             this.ProjectPage.Controls.Add(this.ProjectUsersBox);
             this.ProjectPage.Controls.Add(this.ProjectDescription);
@@ -800,7 +795,7 @@
             // 
             this.ProjectTitleLabel.AutoSize = true;
             this.ProjectTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectTitleLabel.Location = new System.Drawing.Point(589, 75);
+            this.ProjectTitleLabel.Location = new System.Drawing.Point(537, 75);
             this.ProjectTitleLabel.Name = "ProjectTitleLabel";
             this.ProjectTitleLabel.Size = new System.Drawing.Size(158, 31);
             this.ProjectTitleLabel.TabIndex = 0;
@@ -855,6 +850,7 @@
             // ProjectDescription
             // 
             this.ProjectDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProjectDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectDescription.Location = new System.Drawing.Point(32, 121);
             this.ProjectDescription.Name = "ProjectDescription";
             this.ProjectDescription.Size = new System.Drawing.Size(1205, 61);
@@ -870,6 +866,7 @@
             this.ProjectUsersBox.Name = "ProjectUsersBox";
             this.ProjectUsersBox.Size = new System.Drawing.Size(440, 324);
             this.ProjectUsersBox.TabIndex = 4;
+            this.ProjectUsersBox.SelectedIndexChanged += new System.EventHandler(this.ProjectUsersBox_SelectedIndexChanged);
             // 
             // ProjectUsersLabel
             // 
@@ -881,6 +878,37 @@
             this.ProjectUsersLabel.TabIndex = 5;
             this.ProjectUsersLabel.Text = "Projekt Deltagere";
             // 
+            // ProjectCustom
+            // 
+            this.ProjectCustom.AutoSize = true;
+            this.ProjectCustom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCustom.Location = new System.Drawing.Point(793, 231);
+            this.ProjectCustom.Name = "ProjectCustom";
+            this.ProjectCustom.Size = new System.Drawing.Size(64, 20);
+            this.ProjectCustom.TabIndex = 6;
+            this.ProjectCustom.Text = "Kunder:";
+            // 
+            // ProjectCustomerLabel
+            // 
+            this.ProjectCustomerLabel.AutoSize = true;
+            this.ProjectCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectCustomerLabel.Location = new System.Drawing.Point(794, 260);
+            this.ProjectCustomerLabel.Name = "ProjectCustomerLabel";
+            this.ProjectCustomerLabel.Size = new System.Drawing.Size(158, 20);
+            this.ProjectCustomerLabel.TabIndex = 7;
+            this.ProjectCustomerLabel.Text = "Customer name here";
+            // 
+            // LogOut
+            // 
+            this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.Location = new System.Drawing.Point(93, 614);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(150, 40);
+            this.LogOut.TabIndex = 14;
+            this.LogOut.Text = "Log Ud";
+            this.LogOut.UseVisualStyleBackColor = true;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -889,14 +917,14 @@
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.ProfileTab);
+            this.Controls.Add(this.LoginPage);
+            this.Controls.Add(this.MeetingPage);
             this.Controls.Add(this.ProjectPage);
             this.Controls.Add(this.CustomerTab);
             this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
-            this.Controls.Add(this.ProfileTab);
-            this.Controls.Add(this.LoginPage);
-            this.Controls.Add(this.MeetingPage);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -959,7 +987,6 @@
         private System.Windows.Forms.TextBox ProfileEditPhoneBox;
         private System.Windows.Forms.TextBox ProfileEditEmailBox;
         private System.Windows.Forms.Label LoginWrong;
-        private System.Windows.Forms.ToolStripMenuItem LogoutMenuItem;
         private System.Windows.Forms.ListBox MeetingsFormerBox;
         private System.Windows.Forms.Label MeetingsUpcomingLabel;
         private System.Windows.Forms.Label MeetingsFormerLabel;
@@ -990,6 +1017,9 @@
         private System.Windows.Forms.Label ProjectDescription;
         private System.Windows.Forms.ListBox ProjectUsersBox;
         private System.Windows.Forms.Label ProjectUsersLabel;
+        private System.Windows.Forms.Label ProjectCustom;
+        private System.Windows.Forms.Label ProjectCustomerLabel;
+        private System.Windows.Forms.Button LogOut;
     }
 }
 
