@@ -34,7 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -294,7 +294,8 @@
             // 
             // ProfileProjects
             // 
-            this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileProjects.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProfileProjects.FormattingEnabled = true;
             this.ProfileProjects.ItemHeight = 20;
             this.ProfileProjects.Items.AddRange(new object[] {
@@ -319,7 +320,8 @@
             // 
             // ProfileMeetings
             // 
-            this.ProfileMeetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileMeetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileMeetings.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.ProfileMeetings.FormattingEnabled = true;
             this.ProfileMeetings.ItemHeight = 20;
             this.ProfileMeetings.Items.AddRange(new object[] {
@@ -436,6 +438,7 @@
             this.MeetingsFormerBox.Name = "MeetingsFormerBox";
             this.MeetingsFormerBox.Size = new System.Drawing.Size(535, 584);
             this.MeetingsFormerBox.TabIndex = 0;
+            this.MeetingsFormerBox.SelectedIndexChanged += new System.EventHandler(this.MeetingsFormerBox_SelectedIndexChanged);
             // 
             // ProjectTab
             // 
@@ -634,10 +637,10 @@
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(12, 246);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode3.Name = "";
-            treeNode3.Text = "1. Test";
+            treeNode5.Name = "";
+            treeNode5.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode5});
             this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
             this.MeetingAgendaTree.TabIndex = 2;
             // 

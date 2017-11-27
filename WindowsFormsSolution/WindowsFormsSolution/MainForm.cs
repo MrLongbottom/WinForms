@@ -280,15 +280,33 @@ namespace WindowsFormsSolution
                 MeetingAtendeeBox.Items.Add(att.Person.Name);
             }
             //Dagsorden Setup
-            MeetingAgendaTree.Nodes.Clear();
-            foreach (Models.AgendaItem agen in meeting.AgendaItems)
+            if (meeting.EndTime <= DateTime.Now)
             {
-                List<TreeNode> children = new List<TreeNode>();
-                foreach(Models.Submeeting sub in agen.Submeetings)
+                MeetingAgendaLabel.Text = "Referat";
+                MeetingAgendaTree.Nodes.Clear();
+                foreach (Models.AgendaItem agen in meeting.AgendaItems)
                 {
-                    children.Add(new TreeNode(sub.Title));
+                    List<TreeNode> children = new List<TreeNode>();
+                    foreach (Models.Submeeting sub in agen.Submeetings)
+                    {
+                        children.Add(new TreeNode(sub.Title + ": " + sub.Referat));
+                    }
+                    MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
                 }
-                MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+            }
+            else
+            {
+                MeetingAgendaLabel.Text = "Dagsorden";
+                MeetingAgendaTree.Nodes.Clear();
+                foreach (Models.AgendaItem agen in meeting.AgendaItems)
+                {
+                    List<TreeNode> children = new List<TreeNode>();
+                    foreach (Models.Submeeting sub in agen.Submeetings)
+                    {
+                        children.Add(new TreeNode(sub.Title));
+                    }
+                    MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+                }
             }
 
             ChangeTab(MeetingPage, MeetingsMenuItem);
@@ -369,6 +387,14 @@ namespace WindowsFormsSolution
             LoginWrong.Visible = false;
             LoginEmalBox.Clear();
             LoginPasswordBox.Clear();
+        }
+
+        private void MeetingsFormerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()) != null)
+            {
+                LoadMeetingWindow(database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()));
+            }
         }
     }
 }
