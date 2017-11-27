@@ -289,7 +289,7 @@ namespace WindowsFormsSolution
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ProfileEditPhoneBox_KeyDown(sender, e);
+                ProfileEditPhoneButton_Click(sender, e);
             }
         }
 
