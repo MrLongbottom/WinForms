@@ -32,12 +32,12 @@ namespace WindowsFormsSolution.Models
         {
             externals.Remove(external);
         }
-        public void addProject(Project project)
+        public void addProject(Project project, List<User> attendances)
         {
             projects.Add(project);
             for (int i = 0; i < users.Count; i++)
             {
-                if (project.Users.Contains(users.ElementAt<User>(i)))
+                if (attendances.Contains(users.ElementAt<User>(i)))
                 {
                     users.ElementAt<User>(i).Projects.Add(projects.Last<Project>());
                 }
@@ -214,6 +214,16 @@ namespace WindowsFormsSolution.Models
             {
                 if (meet.Title == title)
                 { return meet; }
+            }
+            throw new Exception("No meeting with the title: " + title);
+        }
+
+        internal Project GetProjectByTitle(string title)
+        {
+            foreach (Project pro in projects)
+            {
+                if (pro.Title == title)
+                { return pro; }
             }
             throw new Exception("No meeting with the title: " + title);
         }
