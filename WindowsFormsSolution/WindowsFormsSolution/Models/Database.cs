@@ -138,6 +138,18 @@ namespace WindowsFormsSolution.Models
             throw new Exception("No user with the name: " + name);
         }
 
+        public Project GetProjectByTitle(string title)
+        {
+            foreach (Project pro in projects)
+            {
+                if (pro.Title == title)
+                {
+                    return pro;
+                }
+            }
+            throw new Exception("No project with the title: " + title);
+        }
+
         internal Meeting GetMeetingByTitle(string title)
         {
             foreach (Meeting meet in meetings)
