@@ -217,5 +217,15 @@ namespace WindowsFormsSolution.Models
             }
             throw new Exception("No meeting with the title: " + title);
         }
+
+        internal Project GetProjectByTitle(string title)
+        {
+            foreach (Project pro in projects)
+            {
+                if (pro.Title == title)
+                { return pro; }
+            }
+            throw new Exception("No meeting with the title: " + title);
+        }
     }
 }
