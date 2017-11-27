@@ -27,6 +27,8 @@ namespace WindowsFormsSolution
             MeetingTab.Visible = false;
             MeetingPage.Visible = false;
             CreateProjectPanel.Visible = false;
+            ProjectPage.Visible = true;
+            ProjectPage.BringToFront();
         }
 
         private Models.Database database { get; }
@@ -202,7 +204,10 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
+            if (ProfileMeetings.SelectedItem != null)
+            {
+                LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
+            }
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -366,7 +371,7 @@ namespace WindowsFormsSolution
 
         private void ProfileProjects_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()) != null)
+            if (ProfileProjects.SelectedItem != null)
             {
                 LoadProjectWindow(database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()));
             }
@@ -374,7 +379,7 @@ namespace WindowsFormsSolution
 
         private void ProjectCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()) != null)
+            if (ProjectCurrentBox.SelectedItem != null)
             {
                 LoadProjectWindow(database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()));
             }
@@ -382,7 +387,7 @@ namespace WindowsFormsSolution
 
         private void ProjectFormerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()) != null)
+            if (ProjectFormerBox.SelectedItem != null)
             {
                 LoadProjectWindow(database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()));
             }
@@ -390,7 +395,7 @@ namespace WindowsFormsSolution
 
         private void ProjectUsersBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()) != null)
+            if (ProjectUsersBox.SelectedItem != null)
             {
                 LoadUserWindow(database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()));
             }
@@ -409,7 +414,7 @@ namespace WindowsFormsSolution
 
         private void MeetingsFormerBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()) != null)
+            if (MeetingsFormerBox.SelectedItem != null)
             {
                 LoadMeetingWindow(database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()));
             }

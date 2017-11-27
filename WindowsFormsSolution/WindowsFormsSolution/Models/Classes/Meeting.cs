@@ -30,7 +30,7 @@ namespace WindowsFormsSolution.Models
             }*/
             foreach (CreatMeetingAgendaBuilder agendaItem in agendaItems)
             {
-                AgendaItems.Add(new AgendaItem(agendaItem.Agendapoint, user, this));
+                AgendaItems.Add(new AgendaItem(agendaItem.Agendapoint, agendaItem.Submeetings ,user, this));
             }
         }
 
