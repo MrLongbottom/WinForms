@@ -122,6 +122,12 @@ namespace WindowsFormsSolution
 
         private void ProjectsMenuItem_Click(object sender, EventArgs e)
         {
+            ProjectFormerBox.Items.Clear();
+            ProjectCurrentBox.Items.Clear();
+            foreach(Models.Project pro in currUser.Projects)
+            {
+                ProjectCurrentBox.Items.Add(pro.Title);
+            }
             ChangeTab(ProjectTab, ProjectsMenuItem);
         }
 
@@ -196,7 +202,7 @@ namespace WindowsFormsSolution
 
         private void ProfileMeetings_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
+            LoadMeetingWindow(database.GetMeetingByTitle(ProfileMeetings.SelectedItem.ToString()));
         }
 
         private void LoginPasswordBox_KeyDown(object sender, KeyEventArgs e)
@@ -256,17 +262,6 @@ namespace WindowsFormsSolution
             }
         }
 
-        private void logUdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeTab(LoginPage, null);
-            MainMenu.Visible = false;
-            SearchBar.Visible = false;
-            SearchButton.Visible = false;
-            LoginWrong.Visible = false;
-            LoginEmalBox.Clear();
-            LoginPasswordBox.Clear();
-        }
-
         private void ProfileEditNameBox_KeyDown(object sender, KeyEventArgs e)
         {
             ProfileEditNameButton_Click(sender, e);
@@ -284,45 +279,141 @@ namespace WindowsFormsSolution
 
         private void UsersCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
+            if (database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(UsersCurrentBox.SelectedItem.ToString()));
+            }
         }
 
-        /* private void LoadMeetingWindow(Models.Meeting meeting)
-         {
-             MeetingTitleLabel.Text = meeting.Title;
-             MeetingDescriptionLabel.Text = meeting.Description;
-             //Dagsorden Setup
-             MeetingAgendaTree.Nodes.Clear();
-             foreach (Models.AgendaItem agen in meeting.AgendaItems)
-             {
-                 List<TreeNode> children = new List<TreeNode>();
-                 foreach(Models.Submeeting sub in agen.Submeetings)
-                 {
-                     children.Add(new TreeNode(sub.Title));
-                 }
-                 MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
-             }
+        private void LoadMeetingWindow(Models.Meeting meeting)
+        {
+            MeetingTitleLabel.Text = meeting.Title;
+            MeetingDescriptionLabel.Text = meeting.Description;
+            MeetingStartingTimeLabel.Text = "Start tidspunkt: " + meeting.StartTime.ToString();
+            MeetingEndingTimeLabel.Text = "Slut tidspunkt: " + meeting.EndTime.ToString();
+            //Mødedeltager Setup
+            MeetingAtendeeBox.Items.Clear();
+            foreach(Models.Attendance att in meeting.Attendances)
+            {
+                MeetingAtendeeBox.Items.Add(att.Person.Name);
+            }
+            //Dagsorden Setup
+            if (meeting.EndTime <= DateTime.Now)
+            {
+                MeetingAgendaLabel.Text = "Referat";
+                MeetingAgendaTree.Nodes.Clear();
+                foreach (Models.AgendaItem agen in meeting.AgendaItems)
+                {
+                    List<TreeNode> children = new List<TreeNode>();
+                    foreach (Models.Submeeting sub in agen.Submeetings)
+                    {
+                        children.Add(new TreeNode(sub.Title + ": " + sub.Referat));
+                    }
+                    MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+                }
+            }
+            else
+            {
+                MeetingAgendaLabel.Text = "Dagsorden";
+                MeetingAgendaTree.Nodes.Clear();
+                foreach (Models.AgendaItem agen in meeting.AgendaItems)
+                {
+                    List<TreeNode> children = new List<TreeNode>();
+                    foreach (Models.Submeeting sub in agen.Submeetings)
+                    {
+                        children.Add(new TreeNode(sub.Title));
+                    }
+                    MeetingAgendaTree.Nodes.Add(new TreeNode(agen.Headline, children.ToArray()));
+                }
+            }
 
-             ChangeTab(MeetingPage, MeetingsMenuItem);
-         }
+            ChangeTab(MeetingPage, MeetingsMenuItem);
+        }
 
-         private void LoadProjectWindow(Models.Project pro)
-         {
-             ProjectTitleLabel.Text = pro.Title;
-             ProjectReferBox.Items.Clear();
-             foreach(Models.Submeeting sub in pro.Submeetings)
-             {
-                 ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
-             }
-             ChangeTab(ProjectPage, ProjectsMenuItem);
-         }
+        private void LoadProjectWindow(Models.Project pro)
+        {
+            ProjectTitleLabel.Text = pro.Title;
+            ProjectDescription.Text = pro.Description;
+            ProjectCustomerLabel.Text = pro.Customer.Name;
+            ProjectReferBox.Items.Clear();
+            foreach(Models.Submeeting sub in pro.Submeetings)
+            {
+                ProjectReferBox.Items.Add(sub.Title + ": " + sub.Referat);
+            }
+            ProjectUsersBox.Items.Clear();
+            foreach(Models.User use in pro.Users)
+            {
+                ProjectUsersBox.Items.Add(use.Name);
+            }
+            ChangeTab(ProjectPage, ProjectsMenuItem);
+        }
 
-         private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
-         {
-             LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
-         }*/
+        private void MeetingsUpcomingBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()) != null)
+            {
+                LoadMeetingWindow(database.GetMeetingByTitle(MeetingsUpcomingBox.SelectedItem.ToString()));
+            }
+        }
 
+        private void MeetingAtendeeBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetUserByName(MeetingAtendeeBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(MeetingAtendeeBox.SelectedItem.ToString()));
+            }
+        }
 
+        private void ProfileProjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProfileProjects.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProjectCurrentBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProjectCurrentBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProjectFormerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()) != null)
+            {
+                LoadProjectWindow(database.GetProjectByTitle(ProjectFormerBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void ProjectUsersBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()) != null)
+            {
+                LoadUserWindow(database.GetUserByName(ProjectUsersBox.SelectedItem.ToString()));
+            }
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            ChangeTab(LoginPage, null);
+            MainMenu.Visible = false;
+            SearchBar.Visible = false;
+            SearchButton.Visible = false;
+            LoginWrong.Visible = false;
+            LoginEmalBox.Clear();
+            LoginPasswordBox.Clear();
+        }
+
+        private void MeetingsFormerBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()) != null)
+            {
+                LoadMeetingWindow(database.GetMeetingByTitle(MeetingsFormerBox.SelectedItem.ToString()));
+            }
+        }
         //Create Meeting buttoms
         private List<Models.CreatMeetingAgendaBuilder> Agendapoints { get; set; } = new List<Models.CreatMeetingAgendaBuilder>();
         private List<string> attendances { get; set; } = new List<string>();
