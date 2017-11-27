@@ -66,6 +66,7 @@
             this.MeetingsUpcomingBox = new System.Windows.Forms.ListBox();
             this.MeetingsFormerBox = new System.Windows.Forms.ListBox();
             this.ProjectTab = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.UserTab = new System.Windows.Forms.Panel();
             this.UsersExternalsLabel = new System.Windows.Forms.Label();
             this.UsersExternalsBox = new System.Windows.Forms.ListBox();
@@ -89,6 +90,7 @@
             this.LoginPage = new System.Windows.Forms.Panel();
             this.LoginWrong = new System.Windows.Forms.Label();
             this.CreatMeeting = new System.Windows.Forms.Panel();
+            this.CreateMeetingCancelButtom = new System.Windows.Forms.Button();
             this.CreateMeetingCreateButtom = new System.Windows.Forms.Button();
             this.CreatmeetingSelectAgendacomboBox = new System.Windows.Forms.ComboBox();
             this.CreatemeetingSubmeetingTextbox = new System.Windows.Forms.TextBox();
@@ -109,23 +111,39 @@
             this.CreateMeetingDescriptionLabel = new System.Windows.Forms.Label();
             this.CreateMeetingTitleTextbox = new System.Windows.Forms.TextBox();
             this.CreateMeetingTittleLabel = new System.Windows.Forms.Label();
-            this.CreateMeetingCancelButtom = new System.Windows.Forms.Button();
+            this.CreateProjectPanel = new System.Windows.Forms.Panel();
+            this.CreateProjectCreateButtom = new System.Windows.Forms.Button();
+            this.CreateProjectCancelButtom = new System.Windows.Forms.Button();
+            this.CreateProjectAttendanceRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.CreateProjectAttendanceComboBox = new System.Windows.Forms.ComboBox();
+            this.CreateProjectAttendanceLabel = new System.Windows.Forms.Label();
+            this.CreateProjectCustomerComboBox = new System.Windows.Forms.ComboBox();
+            this.CreateProjectCustomerLabel = new System.Windows.Forms.Label();
+            this.CreateProjectAdressTextBox = new System.Windows.Forms.TextBox();
+            this.CreateProjectAdressLabel = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.CreateProjectDescriptionTitle = new System.Windows.Forms.Label();
+            this.CreateProjectTitleTextBox = new System.Windows.Forms.TextBox();
+            this.CreateProjectTitleLabel = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.MeetingTab.SuspendLayout();
+            this.ProjectTab.SuspendLayout();
             this.UserTab.SuspendLayout();
             this.MeetingPage.SuspendLayout();
             this.LoginPage.SuspendLayout();
             this.CreatMeeting.SuspendLayout();
+            this.CreateProjectPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(1164, 0);
+            this.SearchButton.Location = new System.Drawing.Point(1552, 0);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(100, 45);
+            this.SearchButton.Size = new System.Drawing.Size(133, 55);
             this.SearchButton.TabIndex = 6;
             this.SearchButton.TabStop = false;
             this.SearchButton.Text = "Søg";
@@ -145,7 +163,8 @@
             this.CustomersMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(1264, 44);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.MainMenu.Size = new System.Drawing.Size(1685, 54);
             this.MainMenu.TabIndex = 4;
             this.MainMenu.Text = "MainMenu";
             this.MainMenu.Visible = false;
@@ -166,7 +185,7 @@
             // 
             this.LogoutMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.LogoutMenuItem.Name = "LogoutMenuItem";
-            this.LogoutMenuItem.Size = new System.Drawing.Size(137, 26);
+            this.LogoutMenuItem.Size = new System.Drawing.Size(162, 32);
             this.LogoutMenuItem.Text = "Log Ud";
             this.LogoutMenuItem.Click += new System.EventHandler(this.logUdToolStripMenuItem_Click);
             // 
@@ -174,7 +193,7 @@
             // 
             this.MeetingsMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.MeetingsMenuItem.Name = "MeetingsMenuItem";
-            this.MeetingsMenuItem.Size = new System.Drawing.Size(108, 40);
+            this.MeetingsMenuItem.Size = new System.Drawing.Size(133, 50);
             this.MeetingsMenuItem.Text = "Møder";
             this.MeetingsMenuItem.Click += new System.EventHandler(this.MeetingsMenuItem_Click);
             // 
@@ -182,7 +201,7 @@
             // 
             this.ProjectsMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.ProjectsMenuItem.Name = "ProjectsMenuItem";
-            this.ProjectsMenuItem.Size = new System.Drawing.Size(135, 40);
+            this.ProjectsMenuItem.Size = new System.Drawing.Size(168, 50);
             this.ProjectsMenuItem.Text = "Projekter";
             this.ProjectsMenuItem.Click += new System.EventHandler(this.ProjectsMenuItem_Click);
             // 
@@ -190,7 +209,7 @@
             // 
             this.UsersMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.UsersMenuItem.Name = "UsersMenuItem";
-            this.UsersMenuItem.Size = new System.Drawing.Size(121, 40);
+            this.UsersMenuItem.Size = new System.Drawing.Size(150, 50);
             this.UsersMenuItem.Text = "Brugere";
             this.UsersMenuItem.Click += new System.EventHandler(this.UsersMenuItem_Click);
             // 
@@ -198,17 +217,18 @@
             // 
             this.CustomersMenuItem.ForeColor = System.Drawing.SystemColors.Info;
             this.CustomersMenuItem.Name = "CustomersMenuItem";
-            this.CustomersMenuItem.Size = new System.Drawing.Size(114, 40);
+            this.CustomersMenuItem.Size = new System.Drawing.Size(140, 50);
             this.CustomersMenuItem.Text = "Kunder";
             this.CustomersMenuItem.Click += new System.EventHandler(this.CustomersMenuItem_Click);
             // 
             // SearchBar
             // 
             this.SearchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBar.Location = new System.Drawing.Point(908, 7);
+            this.SearchBar.Location = new System.Drawing.Point(1211, 9);
+            this.SearchBar.Margin = new System.Windows.Forms.Padding(4);
             this.SearchBar.MaxLength = 300;
             this.SearchBar.Name = "SearchBar";
-            this.SearchBar.Size = new System.Drawing.Size(250, 30);
+            this.SearchBar.Size = new System.Drawing.Size(332, 36);
             this.SearchBar.TabIndex = 5;
             this.SearchBar.Visible = false;
             // 
@@ -230,16 +250,18 @@
             this.ProfileTab.Controls.Add(this.ProfileName);
             this.ProfileTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileTab.Location = new System.Drawing.Point(0, 0);
+            this.ProfileTab.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileTab.Name = "ProfileTab";
-            this.ProfileTab.Size = new System.Drawing.Size(1264, 762);
+            this.ProfileTab.Size = new System.Drawing.Size(1685, 938);
             this.ProfileTab.TabIndex = 7;
             // 
             // ProfileEditPhoneBox
             // 
             this.ProfileEditPhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditPhoneBox.Location = new System.Drawing.Point(94, 323);
+            this.ProfileEditPhoneBox.Location = new System.Drawing.Point(125, 398);
+            this.ProfileEditPhoneBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditPhoneBox.Name = "ProfileEditPhoneBox";
-            this.ProfileEditPhoneBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditPhoneBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditPhoneBox.TabIndex = 13;
             this.ProfileEditPhoneBox.Visible = false;
             this.ProfileEditPhoneBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditPhoneBox_KeyDown);
@@ -247,9 +269,10 @@
             // ProfileEditEmailBox
             // 
             this.ProfileEditEmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditEmailBox.Location = new System.Drawing.Point(93, 288);
+            this.ProfileEditEmailBox.Location = new System.Drawing.Point(124, 354);
+            this.ProfileEditEmailBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditEmailBox.Name = "ProfileEditEmailBox";
-            this.ProfileEditEmailBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditEmailBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditEmailBox.TabIndex = 12;
             this.ProfileEditEmailBox.Visible = false;
             this.ProfileEditEmailBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditEmailBox_KeyDown);
@@ -257,9 +280,10 @@
             // ProfileEditNameBox
             // 
             this.ProfileEditNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEditNameBox.Location = new System.Drawing.Point(94, 243);
+            this.ProfileEditNameBox.Location = new System.Drawing.Point(125, 299);
+            this.ProfileEditNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditNameBox.Name = "ProfileEditNameBox";
-            this.ProfileEditNameBox.Size = new System.Drawing.Size(150, 29);
+            this.ProfileEditNameBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditNameBox.TabIndex = 11;
             this.ProfileEditNameBox.Visible = false;
             this.ProfileEditNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ProfileEditNameBox_KeyDown);
@@ -268,9 +292,10 @@
             // 
             this.ProfileEditPhoneButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditPhoneButton.BackgroundImage")));
             this.ProfileEditPhoneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditPhoneButton.Location = new System.Drawing.Point(61, 326);
+            this.ProfileEditPhoneButton.Location = new System.Drawing.Point(81, 401);
+            this.ProfileEditPhoneButton.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditPhoneButton.Name = "ProfileEditPhoneButton";
-            this.ProfileEditPhoneButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditPhoneButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditPhoneButton.TabIndex = 10;
             this.ProfileEditPhoneButton.UseVisualStyleBackColor = true;
             this.ProfileEditPhoneButton.Click += new System.EventHandler(this.ProfileEditPhoneButton_Click);
@@ -279,9 +304,10 @@
             // 
             this.ProfileEditEmailButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditEmailButton.BackgroundImage")));
             this.ProfileEditEmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditEmailButton.Location = new System.Drawing.Point(61, 291);
+            this.ProfileEditEmailButton.Location = new System.Drawing.Point(81, 358);
+            this.ProfileEditEmailButton.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditEmailButton.Name = "ProfileEditEmailButton";
-            this.ProfileEditEmailButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditEmailButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditEmailButton.TabIndex = 9;
             this.ProfileEditEmailButton.UseVisualStyleBackColor = true;
             this.ProfileEditEmailButton.Click += new System.EventHandler(this.ProfileEditEmailButton_Click);
@@ -290,9 +316,10 @@
             // 
             this.ProfileEditNameButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditNameButton.BackgroundImage")));
             this.ProfileEditNameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ProfileEditNameButton.Location = new System.Drawing.Point(61, 246);
+            this.ProfileEditNameButton.Location = new System.Drawing.Point(81, 303);
+            this.ProfileEditNameButton.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileEditNameButton.Name = "ProfileEditNameButton";
-            this.ProfileEditNameButton.Size = new System.Drawing.Size(23, 23);
+            this.ProfileEditNameButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditNameButton.TabIndex = 8;
             this.ProfileEditNameButton.UseVisualStyleBackColor = true;
             this.ProfileEditNameButton.Click += new System.EventHandler(this.ProfileEditNameButton_Click);
@@ -301,9 +328,10 @@
             // 
             this.ProfileProjectsLabel.AutoSize = true;
             this.ProfileProjectsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileProjectsLabel.Location = new System.Drawing.Point(882, 90);
+            this.ProfileProjectsLabel.Location = new System.Drawing.Point(1176, 111);
+            this.ProfileProjectsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProfileProjectsLabel.Name = "ProfileProjectsLabel";
-            this.ProfileProjectsLabel.Size = new System.Drawing.Size(188, 31);
+            this.ProfileProjectsLabel.Size = new System.Drawing.Size(236, 39);
             this.ProfileProjectsLabel.TabIndex = 7;
             this.ProfileProjectsLabel.Text = "Mine Projekter";
             // 
@@ -311,23 +339,25 @@
             // 
             this.ProfileProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileProjects.FormattingEnabled = true;
-            this.ProfileProjects.ItemHeight = 20;
+            this.ProfileProjects.ItemHeight = 25;
             this.ProfileProjects.Items.AddRange(new object[] {
             "Project 1",
             "Project 2",
             "Project 3"});
-            this.ProfileProjects.Location = new System.Drawing.Point(797, 130);
+            this.ProfileProjects.Location = new System.Drawing.Point(1063, 160);
+            this.ProfileProjects.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileProjects.Name = "ProfileProjects";
-            this.ProfileProjects.Size = new System.Drawing.Size(361, 504);
+            this.ProfileProjects.Size = new System.Drawing.Size(480, 604);
             this.ProfileProjects.TabIndex = 6;
             // 
             // ProfileMeetingsLabel
             // 
             this.ProfileMeetingsLabel.AutoSize = true;
             this.ProfileMeetingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileMeetingsLabel.Location = new System.Drawing.Point(474, 90);
+            this.ProfileMeetingsLabel.Location = new System.Drawing.Point(632, 111);
+            this.ProfileMeetingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProfileMeetingsLabel.Name = "ProfileMeetingsLabel";
-            this.ProfileMeetingsLabel.Size = new System.Drawing.Size(155, 31);
+            this.ProfileMeetingsLabel.Size = new System.Drawing.Size(196, 39);
             this.ProfileMeetingsLabel.TabIndex = 5;
             this.ProfileMeetingsLabel.Text = "Mine Møder";
             // 
@@ -335,14 +365,15 @@
             // 
             this.ProfileMeetings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileMeetings.FormattingEnabled = true;
-            this.ProfileMeetings.ItemHeight = 20;
+            this.ProfileMeetings.ItemHeight = 25;
             this.ProfileMeetings.Items.AddRange(new object[] {
             "Meeting 1",
             "Meeting 2",
             "Meeting 3"});
-            this.ProfileMeetings.Location = new System.Drawing.Point(373, 130);
+            this.ProfileMeetings.Location = new System.Drawing.Point(497, 160);
+            this.ProfileMeetings.Margin = new System.Windows.Forms.Padding(4);
             this.ProfileMeetings.Name = "ProfileMeetings";
-            this.ProfileMeetings.Size = new System.Drawing.Size(361, 504);
+            this.ProfileMeetings.Size = new System.Drawing.Size(480, 604);
             this.ProfileMeetings.TabIndex = 4;
             this.ProfileMeetings.SelectedIndexChanged += new System.EventHandler(this.ProfileMeetings_SelectedIndexChanged);
             // 
@@ -350,9 +381,10 @@
             // 
             this.ProfilePhone.AutoSize = true;
             this.ProfilePhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfilePhone.Location = new System.Drawing.Point(90, 325);
+            this.ProfilePhone.Location = new System.Drawing.Point(120, 400);
+            this.ProfilePhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProfilePhone.Name = "ProfilePhone";
-            this.ProfilePhone.Size = new System.Drawing.Size(35, 24);
+            this.ProfilePhone.Size = new System.Drawing.Size(47, 29);
             this.ProfilePhone.TabIndex = 3;
             this.ProfilePhone.Text = "Tlf.";
             // 
@@ -360,9 +392,10 @@
             // 
             this.ProfileEmail.AutoSize = true;
             this.ProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileEmail.Location = new System.Drawing.Point(90, 288);
+            this.ProfileEmail.Location = new System.Drawing.Point(120, 354);
+            this.ProfileEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProfileEmail.Name = "ProfileEmail";
-            this.ProfileEmail.Size = new System.Drawing.Size(57, 24);
+            this.ProfileEmail.Size = new System.Drawing.Size(74, 29);
             this.ProfileEmail.TabIndex = 2;
             this.ProfileEmail.Text = "Email";
             // 
@@ -370,9 +403,10 @@
             // 
             this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Cross;
             this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources._123;
-            this.ProfilePicture.Location = new System.Drawing.Point(93, 90);
+            this.ProfilePicture.Location = new System.Drawing.Point(124, 111);
+            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(4);
             this.ProfilePicture.Name = "ProfilePicture";
-            this.ProfilePicture.Size = new System.Drawing.Size(150, 150);
+            this.ProfilePicture.Size = new System.Drawing.Size(200, 185);
             this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ProfilePicture.TabIndex = 1;
             this.ProfilePicture.TabStop = false;
@@ -381,9 +415,10 @@
             // 
             this.ProfileName.AutoSize = true;
             this.ProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProfileName.Location = new System.Drawing.Point(90, 243);
+            this.ProfileName.Location = new System.Drawing.Point(120, 299);
+            this.ProfileName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProfileName.Name = "ProfileName";
-            this.ProfileName.Size = new System.Drawing.Size(61, 24);
+            this.ProfileName.Size = new System.Drawing.Size(78, 29);
             this.ProfileName.TabIndex = 0;
             this.ProfileName.Text = "Name";
             // 
@@ -396,16 +431,17 @@
             this.MeetingTab.Controls.Add(this.MeetingsFormerBox);
             this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingTab.Location = new System.Drawing.Point(0, 0);
+            this.MeetingTab.Margin = new System.Windows.Forms.Padding(4);
             this.MeetingTab.Name = "MeetingTab";
-            this.MeetingTab.Size = new System.Drawing.Size(1264, 762);
+            this.MeetingTab.Size = new System.Drawing.Size(1685, 938);
             this.MeetingTab.TabIndex = 0;
             // 
             // MeetingsCreateButtom
             // 
-            this.MeetingsCreateButtom.Location = new System.Drawing.Point(1126, 87);
-            this.MeetingsCreateButtom.Margin = new System.Windows.Forms.Padding(2);
+            this.MeetingsCreateButtom.Location = new System.Drawing.Point(1501, 107);
+            this.MeetingsCreateButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MeetingsCreateButtom.Name = "MeetingsCreateButtom";
-            this.MeetingsCreateButtom.Size = new System.Drawing.Size(92, 34);
+            this.MeetingsCreateButtom.Size = new System.Drawing.Size(123, 42);
             this.MeetingsCreateButtom.TabIndex = 4;
             this.MeetingsCreateButtom.Text = "Opret møde";
             this.MeetingsCreateButtom.UseVisualStyleBackColor = true;
@@ -415,9 +451,10 @@
             // 
             this.MeetingsUpcomingLabel.AutoSize = true;
             this.MeetingsUpcomingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MeetingsUpcomingLabel.Location = new System.Drawing.Point(850, 90);
+            this.MeetingsUpcomingLabel.Location = new System.Drawing.Point(1133, 111);
+            this.MeetingsUpcomingLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MeetingsUpcomingLabel.Name = "MeetingsUpcomingLabel";
-            this.MeetingsUpcomingLabel.Size = new System.Drawing.Size(234, 31);
+            this.MeetingsUpcomingLabel.Size = new System.Drawing.Size(296, 39);
             this.MeetingsUpcomingLabel.TabIndex = 3;
             this.MeetingsUpcomingLabel.Text = "Kommende Møder";
             // 
@@ -425,9 +462,10 @@
             // 
             this.MeetingsFormerLabel.AutoSize = true;
             this.MeetingsFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MeetingsFormerLabel.Location = new System.Drawing.Point(209, 90);
+            this.MeetingsFormerLabel.Location = new System.Drawing.Point(279, 111);
+            this.MeetingsFormerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MeetingsFormerLabel.Name = "MeetingsFormerLabel";
-            this.MeetingsFormerLabel.Size = new System.Drawing.Size(201, 31);
+            this.MeetingsFormerLabel.Size = new System.Drawing.Size(254, 39);
             this.MeetingsFormerLabel.TabIndex = 2;
             this.MeetingsFormerLabel.Text = "Tidligere Møder";
             // 
@@ -436,15 +474,16 @@
             this.MeetingsUpcomingBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingsUpcomingBox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.MeetingsUpcomingBox.FormattingEnabled = true;
-            this.MeetingsUpcomingBox.ItemHeight = 20;
+            this.MeetingsUpcomingBox.ItemHeight = 25;
             this.MeetingsUpcomingBox.Items.AddRange(new object[] {
             "Meeting 1",
             "Meeting 2",
             "Meeting 3"});
-            this.MeetingsUpcomingBox.Location = new System.Drawing.Point(684, 130);
+            this.MeetingsUpcomingBox.Location = new System.Drawing.Point(912, 160);
+            this.MeetingsUpcomingBox.Margin = new System.Windows.Forms.Padding(4);
             this.MeetingsUpcomingBox.MultiColumn = true;
             this.MeetingsUpcomingBox.Name = "MeetingsUpcomingBox";
-            this.MeetingsUpcomingBox.Size = new System.Drawing.Size(535, 564);
+            this.MeetingsUpcomingBox.Size = new System.Drawing.Size(712, 679);
             this.MeetingsUpcomingBox.TabIndex = 1;
             // 
             // MeetingsFormerBox
@@ -452,23 +491,36 @@
             this.MeetingsFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingsFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.MeetingsFormerBox.FormattingEnabled = true;
-            this.MeetingsFormerBox.ItemHeight = 20;
+            this.MeetingsFormerBox.ItemHeight = 25;
             this.MeetingsFormerBox.Items.AddRange(new object[] {
             "Meeting 1",
             "Meeting 2",
             "Meeting 3"});
-            this.MeetingsFormerBox.Location = new System.Drawing.Point(46, 130);
+            this.MeetingsFormerBox.Location = new System.Drawing.Point(61, 160);
+            this.MeetingsFormerBox.Margin = new System.Windows.Forms.Padding(4);
             this.MeetingsFormerBox.Name = "MeetingsFormerBox";
-            this.MeetingsFormerBox.Size = new System.Drawing.Size(535, 564);
+            this.MeetingsFormerBox.Size = new System.Drawing.Size(712, 679);
             this.MeetingsFormerBox.TabIndex = 0;
             // 
             // ProjectTab
             // 
+            this.ProjectTab.Controls.Add(this.button1);
             this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectTab.Location = new System.Drawing.Point(0, 0);
+            this.ProjectTab.Margin = new System.Windows.Forms.Padding(4);
             this.ProjectTab.Name = "ProjectTab";
-            this.ProjectTab.Size = new System.Drawing.Size(1264, 762);
+            this.ProjectTab.Size = new System.Drawing.Size(1685, 938);
             this.ProjectTab.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1441, 100);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Nyt Project";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserTab
             // 
@@ -480,17 +532,19 @@
             this.UserTab.Controls.Add(this.UsersFormerBox);
             this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserTab.Location = new System.Drawing.Point(0, 0);
+            this.UserTab.Margin = new System.Windows.Forms.Padding(4);
             this.UserTab.Name = "UserTab";
-            this.UserTab.Size = new System.Drawing.Size(1264, 762);
+            this.UserTab.Size = new System.Drawing.Size(1685, 938);
             this.UserTab.TabIndex = 0;
             // 
             // UsersExternalsLabel
             // 
             this.UsersExternalsLabel.AutoSize = true;
             this.UsersExternalsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersExternalsLabel.Location = new System.Drawing.Point(892, 69);
+            this.UsersExternalsLabel.Location = new System.Drawing.Point(1189, 85);
+            this.UsersExternalsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsersExternalsLabel.Name = "UsersExternalsLabel";
-            this.UsersExternalsLabel.Size = new System.Drawing.Size(309, 31);
+            this.UsersExternalsLabel.Size = new System.Drawing.Size(387, 39);
             this.UsersExternalsLabel.TabIndex = 9;
             this.UsersExternalsLabel.Text = "Eksterne Mødedeltagere";
             // 
@@ -499,24 +553,26 @@
             this.UsersExternalsBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersExternalsBox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.UsersExternalsBox.FormattingEnabled = true;
-            this.UsersExternalsBox.ItemHeight = 20;
+            this.UsersExternalsBox.ItemHeight = 25;
             this.UsersExternalsBox.Items.AddRange(new object[] {
             "External 1",
             "External 2",
             "External 3"});
-            this.UsersExternalsBox.Location = new System.Drawing.Point(869, 109);
+            this.UsersExternalsBox.Location = new System.Drawing.Point(1159, 134);
+            this.UsersExternalsBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsersExternalsBox.MultiColumn = true;
             this.UsersExternalsBox.Name = "UsersExternalsBox";
-            this.UsersExternalsBox.Size = new System.Drawing.Size(350, 564);
+            this.UsersExternalsBox.Size = new System.Drawing.Size(465, 679);
             this.UsersExternalsBox.TabIndex = 8;
             // 
             // UsersCurrentLabel
             // 
             this.UsersCurrentLabel.AutoSize = true;
             this.UsersCurrentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersCurrentLabel.Location = new System.Drawing.Point(505, 69);
+            this.UsersCurrentLabel.Location = new System.Drawing.Point(673, 85);
+            this.UsersCurrentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsersCurrentLabel.Name = "UsersCurrentLabel";
-            this.UsersCurrentLabel.Size = new System.Drawing.Size(256, 31);
+            this.UsersCurrentLabel.Size = new System.Drawing.Size(319, 39);
             this.UsersCurrentLabel.TabIndex = 7;
             this.UsersCurrentLabel.Text = "Nuværende Ansatte";
             // 
@@ -524,9 +580,10 @@
             // 
             this.UsersFormerLabel.AutoSize = true;
             this.UsersFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsersFormerLabel.Location = new System.Drawing.Point(112, 69);
+            this.UsersFormerLabel.Location = new System.Drawing.Point(149, 85);
+            this.UsersFormerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.UsersFormerLabel.Name = "UsersFormerLabel";
-            this.UsersFormerLabel.Size = new System.Drawing.Size(218, 31);
+            this.UsersFormerLabel.Size = new System.Drawing.Size(273, 39);
             this.UsersFormerLabel.TabIndex = 6;
             this.UsersFormerLabel.Text = "Tidligere Ansatte";
             // 
@@ -535,15 +592,16 @@
             this.UsersCurrentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersCurrentBox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.UsersCurrentBox.FormattingEnabled = true;
-            this.UsersCurrentBox.ItemHeight = 20;
+            this.UsersCurrentBox.ItemHeight = 25;
             this.UsersCurrentBox.Items.AddRange(new object[] {
             "User 1",
             "User 2",
             "User 3"});
-            this.UsersCurrentBox.Location = new System.Drawing.Point(457, 109);
+            this.UsersCurrentBox.Location = new System.Drawing.Point(609, 134);
+            this.UsersCurrentBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsersCurrentBox.MultiColumn = true;
             this.UsersCurrentBox.Name = "UsersCurrentBox";
-            this.UsersCurrentBox.Size = new System.Drawing.Size(350, 564);
+            this.UsersCurrentBox.Size = new System.Drawing.Size(465, 679);
             this.UsersCurrentBox.TabIndex = 5;
             this.UsersCurrentBox.SelectedIndexChanged += new System.EventHandler(this.UsersCurrentBox_SelectedIndexChanged);
             // 
@@ -552,22 +610,24 @@
             this.UsersFormerBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsersFormerBox.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.UsersFormerBox.FormattingEnabled = true;
-            this.UsersFormerBox.ItemHeight = 20;
+            this.UsersFormerBox.ItemHeight = 25;
             this.UsersFormerBox.Items.AddRange(new object[] {
             "User 1",
             "User 2",
             "User 3"});
-            this.UsersFormerBox.Location = new System.Drawing.Point(46, 109);
+            this.UsersFormerBox.Location = new System.Drawing.Point(61, 134);
+            this.UsersFormerBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsersFormerBox.Name = "UsersFormerBox";
-            this.UsersFormerBox.Size = new System.Drawing.Size(350, 564);
+            this.UsersFormerBox.Size = new System.Drawing.Size(465, 679);
             this.UsersFormerBox.TabIndex = 4;
             // 
             // CustomerTab
             // 
             this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerTab.Location = new System.Drawing.Point(0, 0);
+            this.CustomerTab.Margin = new System.Windows.Forms.Padding(4);
             this.CustomerTab.Name = "CustomerTab";
-            this.CustomerTab.Size = new System.Drawing.Size(1264, 762);
+            this.CustomerTab.Size = new System.Drawing.Size(1685, 938);
             this.CustomerTab.TabIndex = 0;
             // 
             // MeetingPage
@@ -578,8 +638,9 @@
             this.MeetingPage.Controls.Add(this.MeetingDescriptionLabel);
             this.MeetingPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingPage.Location = new System.Drawing.Point(0, 0);
+            this.MeetingPage.Margin = new System.Windows.Forms.Padding(4);
             this.MeetingPage.Name = "MeetingPage";
-            this.MeetingPage.Size = new System.Drawing.Size(1264, 762);
+            this.MeetingPage.Size = new System.Drawing.Size(1685, 938);
             this.MeetingPage.TabIndex = 0;
             this.MeetingPage.Visible = false;
             // 
@@ -587,9 +648,10 @@
             // 
             this.MeetingTitleLabel.AutoSize = true;
             this.MeetingTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MeetingTitleLabel.Location = new System.Drawing.Point(588, 90);
+            this.MeetingTitleLabel.Location = new System.Drawing.Point(784, 111);
+            this.MeetingTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MeetingTitleLabel.Name = "MeetingTitleLabel";
-            this.MeetingTitleLabel.Size = new System.Drawing.Size(198, 37);
+            this.MeetingTitleLabel.Size = new System.Drawing.Size(247, 46);
             this.MeetingTitleLabel.TabIndex = 0;
             this.MeetingTitleLabel.Text = "Meeting Title";
             // 
@@ -597,31 +659,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(264, 216);
+            this.label1.Location = new System.Drawing.Point(352, 266);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 24);
+            this.label1.Size = new System.Drawing.Size(132, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Dagsorden";
             // 
             // treeView1
             // 
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.Location = new System.Drawing.Point(12, 246);
+            this.treeView1.Location = new System.Drawing.Point(16, 303);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "";
             treeNode1.Text = "1. Test";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(617, 232);
+            this.treeView1.Size = new System.Drawing.Size(821, 285);
             this.treeView1.TabIndex = 2;
             // 
             // MeetingDescriptionLabel
             // 
             this.MeetingDescriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MeetingDescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MeetingDescriptionLabel.Location = new System.Drawing.Point(12, 130);
+            this.MeetingDescriptionLabel.Location = new System.Drawing.Point(16, 160);
+            this.MeetingDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MeetingDescriptionLabel.Name = "MeetingDescriptionLabel";
-            this.MeetingDescriptionLabel.Size = new System.Drawing.Size(1225, 75);
+            this.MeetingDescriptionLabel.Size = new System.Drawing.Size(1633, 92);
             this.MeetingDescriptionLabel.TabIndex = 1;
             this.MeetingDescriptionLabel.Text = resources.GetString("MeetingDescriptionLabel.Text");
             this.MeetingDescriptionLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -630,61 +695,68 @@
             // 
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginLabel.Location = new System.Drawing.Point(589, 260);
+            this.LoginLabel.Location = new System.Drawing.Point(785, 320);
+            this.LoginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(89, 31);
+            this.LoginLabel.Size = new System.Drawing.Size(112, 39);
             this.LoginLabel.TabIndex = 17;
             this.LoginLabel.Text = "Log In";
             // 
             // LoginEmailLabel
             // 
             this.LoginEmailLabel.AutoSize = true;
-            this.LoginEmailLabel.Location = new System.Drawing.Point(531, 325);
+            this.LoginEmailLabel.Location = new System.Drawing.Point(708, 400);
+            this.LoginEmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginEmailLabel.Name = "LoginEmailLabel";
-            this.LoginEmailLabel.Size = new System.Drawing.Size(35, 13);
+            this.LoginEmailLabel.Size = new System.Drawing.Size(46, 17);
             this.LoginEmailLabel.TabIndex = 16;
             this.LoginEmailLabel.Text = "Email:";
             // 
             // LoginPasswordLabel
             // 
             this.LoginPasswordLabel.AutoSize = true;
-            this.LoginPasswordLabel.Location = new System.Drawing.Point(531, 364);
+            this.LoginPasswordLabel.Location = new System.Drawing.Point(708, 448);
+            this.LoginPasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginPasswordLabel.Name = "LoginPasswordLabel";
-            this.LoginPasswordLabel.Size = new System.Drawing.Size(50, 13);
+            this.LoginPasswordLabel.Size = new System.Drawing.Size(66, 17);
             this.LoginPasswordLabel.TabIndex = 15;
             this.LoginPasswordLabel.Text = "Kodeord:";
             // 
             // LoginEmalBox
             // 
-            this.LoginEmalBox.Location = new System.Drawing.Point(534, 341);
+            this.LoginEmalBox.Location = new System.Drawing.Point(712, 420);
+            this.LoginEmalBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginEmalBox.Name = "LoginEmalBox";
-            this.LoginEmalBox.Size = new System.Drawing.Size(200, 20);
+            this.LoginEmalBox.Size = new System.Drawing.Size(265, 22);
             this.LoginEmalBox.TabIndex = 1;
             // 
             // LoginForgotPasswordLink
             // 
             this.LoginForgotPasswordLink.AutoSize = true;
-            this.LoginForgotPasswordLink.Location = new System.Drawing.Point(657, 411);
+            this.LoginForgotPasswordLink.Location = new System.Drawing.Point(876, 506);
+            this.LoginForgotPasswordLink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginForgotPasswordLink.Name = "LoginForgotPasswordLink";
-            this.LoginForgotPasswordLink.Size = new System.Drawing.Size(77, 13);
+            this.LoginForgotPasswordLink.Size = new System.Drawing.Size(103, 17);
             this.LoginForgotPasswordLink.TabIndex = 4;
             this.LoginForgotPasswordLink.TabStop = true;
             this.LoginForgotPasswordLink.Text = "Glemt Kodeord";
             // 
             // LoginPasswordBox
             // 
-            this.LoginPasswordBox.Location = new System.Drawing.Point(534, 380);
+            this.LoginPasswordBox.Location = new System.Drawing.Point(712, 468);
+            this.LoginPasswordBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPasswordBox.Name = "LoginPasswordBox";
-            this.LoginPasswordBox.Size = new System.Drawing.Size(200, 20);
+            this.LoginPasswordBox.Size = new System.Drawing.Size(265, 22);
             this.LoginPasswordBox.TabIndex = 2;
             this.LoginPasswordBox.UseSystemPasswordChar = true;
             this.LoginPasswordBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginPasswordBox_KeyDown);
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(534, 406);
+            this.LoginButton.Location = new System.Drawing.Point(712, 500);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 23);
+            this.LoginButton.Size = new System.Drawing.Size(100, 28);
             this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Log In";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -702,8 +774,9 @@
             this.LoginPage.Controls.Add(this.LoginButton);
             this.LoginPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginPage.Location = new System.Drawing.Point(0, 0);
+            this.LoginPage.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPage.Name = "LoginPage";
-            this.LoginPage.Size = new System.Drawing.Size(1264, 762);
+            this.LoginPage.Size = new System.Drawing.Size(1685, 938);
             this.LoginPage.TabIndex = 11;
             // 
             // LoginWrong
@@ -711,9 +784,10 @@
             this.LoginWrong.AutoSize = true;
             this.LoginWrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginWrong.ForeColor = System.Drawing.Color.Red;
-            this.LoginWrong.Location = new System.Drawing.Point(540, 300);
+            this.LoginWrong.Location = new System.Drawing.Point(720, 369);
+            this.LoginWrong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginWrong.Name = "LoginWrong";
-            this.LoginWrong.Size = new System.Drawing.Size(192, 17);
+            this.LoginWrong.Size = new System.Drawing.Size(229, 20);
             this.LoginWrong.TabIndex = 14;
             this.LoginWrong.Text = "Wrong Username / Password";
             this.LoginWrong.Visible = false;
@@ -743,16 +817,28 @@
             this.CreatMeeting.Controls.Add(this.CreateMeetingTittleLabel);
             this.CreatMeeting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreatMeeting.Location = new System.Drawing.Point(0, 0);
-            this.CreatMeeting.Margin = new System.Windows.Forms.Padding(2);
+            this.CreatMeeting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreatMeeting.Name = "CreatMeeting";
-            this.CreatMeeting.Size = new System.Drawing.Size(1264, 762);
+            this.CreatMeeting.Size = new System.Drawing.Size(1685, 938);
             this.CreatMeeting.TabIndex = 4;
+            // 
+            // CreateMeetingCancelButtom
+            // 
+            this.CreateMeetingCancelButtom.Location = new System.Drawing.Point(1416, 641);
+            this.CreateMeetingCancelButtom.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateMeetingCancelButtom.Name = "CreateMeetingCancelButtom";
+            this.CreateMeetingCancelButtom.Size = new System.Drawing.Size(100, 28);
+            this.CreateMeetingCancelButtom.TabIndex = 20;
+            this.CreateMeetingCancelButtom.Text = "Annuler";
+            this.CreateMeetingCancelButtom.UseVisualStyleBackColor = true;
+            this.CreateMeetingCancelButtom.Click += new System.EventHandler(this.CreateMeetingCancelButtom_Click);
             // 
             // CreateMeetingCreateButtom
             // 
-            this.CreateMeetingCreateButtom.Location = new System.Drawing.Point(1143, 521);
+            this.CreateMeetingCreateButtom.Location = new System.Drawing.Point(1524, 641);
+            this.CreateMeetingCreateButtom.Margin = new System.Windows.Forms.Padding(4);
             this.CreateMeetingCreateButtom.Name = "CreateMeetingCreateButtom";
-            this.CreateMeetingCreateButtom.Size = new System.Drawing.Size(75, 23);
+            this.CreateMeetingCreateButtom.Size = new System.Drawing.Size(100, 28);
             this.CreateMeetingCreateButtom.TabIndex = 19;
             this.CreateMeetingCreateButtom.Text = "Opret";
             this.CreateMeetingCreateButtom.UseVisualStyleBackColor = true;
@@ -761,31 +847,34 @@
             // CreatmeetingSelectAgendacomboBox
             // 
             this.CreatmeetingSelectAgendacomboBox.FormattingEnabled = true;
-            this.CreatmeetingSelectAgendacomboBox.Location = new System.Drawing.Point(731, 521);
+            this.CreatmeetingSelectAgendacomboBox.Location = new System.Drawing.Point(975, 641);
+            this.CreatmeetingSelectAgendacomboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CreatmeetingSelectAgendacomboBox.Name = "CreatmeetingSelectAgendacomboBox";
-            this.CreatmeetingSelectAgendacomboBox.Size = new System.Drawing.Size(76, 21);
+            this.CreatmeetingSelectAgendacomboBox.Size = new System.Drawing.Size(100, 24);
             this.CreatmeetingSelectAgendacomboBox.TabIndex = 18;
             // 
             // CreatemeetingSubmeetingTextbox
             // 
-            this.CreatemeetingSubmeetingTextbox.Location = new System.Drawing.Point(408, 521);
+            this.CreatemeetingSubmeetingTextbox.Location = new System.Drawing.Point(544, 641);
+            this.CreatemeetingSubmeetingTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.CreatemeetingSubmeetingTextbox.Name = "CreatemeetingSubmeetingTextbox";
-            this.CreatemeetingSubmeetingTextbox.Size = new System.Drawing.Size(324, 20);
+            this.CreatemeetingSubmeetingTextbox.Size = new System.Drawing.Size(431, 22);
             this.CreatemeetingSubmeetingTextbox.TabIndex = 17;
             // 
             // CreateMeetingAgendaTextbox
             // 
-            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(408, 495);
+            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(544, 609);
+            this.CreateMeetingAgendaTextbox.Margin = new System.Windows.Forms.Padding(4);
             this.CreateMeetingAgendaTextbox.Name = "CreateMeetingAgendaTextbox";
-            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(324, 20);
+            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(431, 22);
             this.CreateMeetingAgendaTextbox.TabIndex = 16;
             // 
             // CreateMeetingAddexternButtom
             // 
-            this.CreateMeetingAddexternButtom.Location = new System.Drawing.Point(1126, 181);
-            this.CreateMeetingAddexternButtom.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingAddexternButtom.Location = new System.Drawing.Point(1501, 223);
+            this.CreateMeetingAddexternButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddexternButtom.Name = "CreateMeetingAddexternButtom";
-            this.CreateMeetingAddexternButtom.Size = new System.Drawing.Size(92, 24);
+            this.CreateMeetingAddexternButtom.Size = new System.Drawing.Size(123, 30);
             this.CreateMeetingAddexternButtom.TabIndex = 15;
             this.CreateMeetingAddexternButtom.Text = "Tilføj ekstern";
             this.CreateMeetingAddexternButtom.UseVisualStyleBackColor = true;
@@ -794,21 +883,21 @@
             // CreateMeetingAttendancesrichTextBox
             // 
             this.CreateMeetingAttendancesrichTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.CreateMeetingAttendancesrichTextBox.Location = new System.Drawing.Point(887, 209);
-            this.CreateMeetingAttendancesrichTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingAttendancesrichTextBox.Location = new System.Drawing.Point(1183, 257);
+            this.CreateMeetingAttendancesrichTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAttendancesrichTextBox.Name = "CreateMeetingAttendancesrichTextBox";
             this.CreateMeetingAttendancesrichTextBox.ReadOnly = true;
-            this.CreateMeetingAttendancesrichTextBox.Size = new System.Drawing.Size(332, 271);
+            this.CreateMeetingAttendancesrichTextBox.Size = new System.Drawing.Size(441, 333);
             this.CreateMeetingAttendancesrichTextBox.TabIndex = 14;
             this.CreateMeetingAttendancesrichTextBox.Text = "";
             // 
             // CreateMeetingAttendancecomboBox
             // 
             this.CreateMeetingAttendancecomboBox.FormattingEnabled = true;
-            this.CreateMeetingAttendancecomboBox.Location = new System.Drawing.Point(889, 181);
-            this.CreateMeetingAttendancecomboBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingAttendancecomboBox.Location = new System.Drawing.Point(1185, 223);
+            this.CreateMeetingAttendancecomboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAttendancecomboBox.Name = "CreateMeetingAttendancecomboBox";
-            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(233, 21);
+            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(309, 24);
             this.CreateMeetingAttendancecomboBox.TabIndex = 13;
             this.CreateMeetingAttendancecomboBox.SelectedIndexChanged += new System.EventHandler(this.CreateMeetingAttendancecomboBox_SelectedIndexChanged);
             // 
@@ -816,10 +905,9 @@
             // 
             this.CreateMeetingAttendanceLabel.AutoSize = true;
             this.CreateMeetingAttendanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingAttendanceLabel.Location = new System.Drawing.Point(885, 158);
-            this.CreateMeetingAttendanceLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingAttendanceLabel.Location = new System.Drawing.Point(1180, 194);
             this.CreateMeetingAttendanceLabel.Name = "CreateMeetingAttendanceLabel";
-            this.CreateMeetingAttendanceLabel.Size = new System.Drawing.Size(114, 20);
+            this.CreateMeetingAttendanceLabel.Size = new System.Drawing.Size(140, 25);
             this.CreateMeetingAttendanceLabel.TabIndex = 12;
             this.CreateMeetingAttendanceLabel.Text = "Møde Deltager";
             // 
@@ -827,10 +915,9 @@
             // 
             this.CreateMeetingEndtimeLabel.AutoSize = true;
             this.CreateMeetingEndtimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingEndtimeLabel.Location = new System.Drawing.Point(1064, 83);
-            this.CreateMeetingEndtimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingEndtimeLabel.Location = new System.Drawing.Point(1419, 102);
             this.CreateMeetingEndtimeLabel.Name = "CreateMeetingEndtimeLabel";
-            this.CreateMeetingEndtimeLabel.Size = new System.Drawing.Size(78, 20);
+            this.CreateMeetingEndtimeLabel.Size = new System.Drawing.Size(97, 25);
             this.CreateMeetingEndtimeLabel.TabIndex = 11;
             this.CreateMeetingEndtimeLabel.Text = "End TIme";
             // 
@@ -838,30 +925,29 @@
             // 
             this.CreateMeetingEndtimeDatePicker.CustomFormat = "dd/MM/yyyy | hh:mm";
             this.CreateMeetingEndtimeDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CreateMeetingEndtimeDatePicker.Location = new System.Drawing.Point(1068, 106);
-            this.CreateMeetingEndtimeDatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingEndtimeDatePicker.Location = new System.Drawing.Point(1424, 130);
+            this.CreateMeetingEndtimeDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingEndtimeDatePicker.Name = "CreateMeetingEndtimeDatePicker";
             this.CreateMeetingEndtimeDatePicker.ShowUpDown = true;
-            this.CreateMeetingEndtimeDatePicker.Size = new System.Drawing.Size(151, 20);
+            this.CreateMeetingEndtimeDatePicker.Size = new System.Drawing.Size(200, 22);
             this.CreateMeetingEndtimeDatePicker.TabIndex = 10;
             // 
             // CreateMeetingStarttimeLabel
             // 
             this.CreateMeetingStarttimeLabel.AutoSize = true;
             this.CreateMeetingStarttimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingStarttimeLabel.Location = new System.Drawing.Point(885, 83);
-            this.CreateMeetingStarttimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingStarttimeLabel.Location = new System.Drawing.Point(1180, 102);
             this.CreateMeetingStarttimeLabel.Name = "CreateMeetingStarttimeLabel";
-            this.CreateMeetingStarttimeLabel.Size = new System.Drawing.Size(82, 20);
+            this.CreateMeetingStarttimeLabel.Size = new System.Drawing.Size(102, 25);
             this.CreateMeetingStarttimeLabel.TabIndex = 9;
             this.CreateMeetingStarttimeLabel.Text = "Start Time";
             // 
             // CreateMeetingAddsubmeetingButtom
             // 
-            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(673, 546);
-            this.CreateMeetingAddsubmeetingButtom.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(897, 672);
+            this.CreateMeetingAddsubmeetingButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddsubmeetingButtom.Name = "CreateMeetingAddsubmeetingButtom";
-            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(134, 22);
+            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(179, 27);
             this.CreateMeetingAddsubmeetingButtom.TabIndex = 8;
             this.CreateMeetingAddsubmeetingButtom.Text = "Tilføj Dagsordenspunkt";
             this.CreateMeetingAddsubmeetingButtom.UseVisualStyleBackColor = true;
@@ -870,29 +956,29 @@
             // CreateMeetingFullAgendaLabel
             // 
             this.CreateMeetingFullAgendaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingFullAgendaLabel.Location = new System.Drawing.Point(408, 111);
-            this.CreateMeetingFullAgendaLabel.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingFullAgendaLabel.Location = new System.Drawing.Point(544, 137);
+            this.CreateMeetingFullAgendaLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingFullAgendaLabel.Name = "CreateMeetingFullAgendaLabel";
-            this.CreateMeetingFullAgendaLabel.Size = new System.Drawing.Size(399, 376);
+            this.CreateMeetingFullAgendaLabel.Size = new System.Drawing.Size(531, 462);
             this.CreateMeetingFullAgendaLabel.TabIndex = 7;
             // 
             // CreateMeetingStarttimeDatePicker
             // 
             this.CreateMeetingStarttimeDatePicker.CustomFormat = "dd/MM/yyyy | hh:mm";
             this.CreateMeetingStarttimeDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CreateMeetingStarttimeDatePicker.Location = new System.Drawing.Point(889, 106);
-            this.CreateMeetingStarttimeDatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingStarttimeDatePicker.Location = new System.Drawing.Point(1185, 130);
+            this.CreateMeetingStarttimeDatePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingStarttimeDatePicker.Name = "CreateMeetingStarttimeDatePicker";
             this.CreateMeetingStarttimeDatePicker.ShowUpDown = true;
-            this.CreateMeetingStarttimeDatePicker.Size = new System.Drawing.Size(151, 20);
+            this.CreateMeetingStarttimeDatePicker.Size = new System.Drawing.Size(200, 22);
             this.CreateMeetingStarttimeDatePicker.TabIndex = 6;
             // 
             // CreateMeetingAddAgendaItemButtom
             // 
-            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(731, 495);
-            this.CreateMeetingAddAgendaItemButtom.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(975, 609);
+            this.CreateMeetingAddAgendaItemButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAddAgendaItemButtom.Name = "CreateMeetingAddAgendaItemButtom";
-            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(76, 22);
+            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(101, 27);
             this.CreateMeetingAddAgendaItemButtom.TabIndex = 5;
             this.CreateMeetingAddAgendaItemButtom.Text = "Tilføj Emne";
             this.CreateMeetingAddAgendaItemButtom.UseVisualStyleBackColor = true;
@@ -902,19 +988,18 @@
             // 
             this.CreateMeetingAgendaLabel.AutoSize = true;
             this.CreateMeetingAgendaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingAgendaLabel.Location = new System.Drawing.Point(406, 80);
-            this.CreateMeetingAgendaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingAgendaLabel.Location = new System.Drawing.Point(541, 98);
             this.CreateMeetingAgendaLabel.Name = "CreateMeetingAgendaLabel";
-            this.CreateMeetingAgendaLabel.Size = new System.Drawing.Size(88, 20);
+            this.CreateMeetingAgendaLabel.Size = new System.Drawing.Size(108, 25);
             this.CreateMeetingAgendaLabel.TabIndex = 4;
             this.CreateMeetingAgendaLabel.Text = "Dagsorden";
             // 
             // CreateMeetingDescriptionRichtextbox
             // 
-            this.CreateMeetingDescriptionRichtextbox.Location = new System.Drawing.Point(16, 168);
-            this.CreateMeetingDescriptionRichtextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingDescriptionRichtextbox.Location = new System.Drawing.Point(21, 207);
+            this.CreateMeetingDescriptionRichtextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingDescriptionRichtextbox.Name = "CreateMeetingDescriptionRichtextbox";
-            this.CreateMeetingDescriptionRichtextbox.Size = new System.Drawing.Size(301, 369);
+            this.CreateMeetingDescriptionRichtextbox.Size = new System.Drawing.Size(400, 453);
             this.CreateMeetingDescriptionRichtextbox.TabIndex = 3;
             this.CreateMeetingDescriptionRichtextbox.Text = "";
             // 
@@ -922,58 +1007,188 @@
             // 
             this.CreateMeetingDescriptionLabel.AutoSize = true;
             this.CreateMeetingDescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingDescriptionLabel.Location = new System.Drawing.Point(13, 145);
-            this.CreateMeetingDescriptionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingDescriptionLabel.Location = new System.Drawing.Point(17, 178);
             this.CreateMeetingDescriptionLabel.Name = "CreateMeetingDescriptionLabel";
-            this.CreateMeetingDescriptionLabel.Size = new System.Drawing.Size(133, 20);
+            this.CreateMeetingDescriptionLabel.Size = new System.Drawing.Size(167, 25);
             this.CreateMeetingDescriptionLabel.TabIndex = 2;
             this.CreateMeetingDescriptionLabel.Text = "Møde Beskrivelse";
             // 
             // CreateMeetingTitleTextbox
             // 
-            this.CreateMeetingTitleTextbox.Location = new System.Drawing.Point(16, 113);
-            this.CreateMeetingTitleTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.CreateMeetingTitleTextbox.Location = new System.Drawing.Point(21, 139);
+            this.CreateMeetingTitleTextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingTitleTextbox.Name = "CreateMeetingTitleTextbox";
-            this.CreateMeetingTitleTextbox.Size = new System.Drawing.Size(306, 20);
+            this.CreateMeetingTitleTextbox.Size = new System.Drawing.Size(407, 22);
             this.CreateMeetingTitleTextbox.TabIndex = 1;
             // 
             // CreateMeetingTittleLabel
             // 
             this.CreateMeetingTittleLabel.AutoSize = true;
             this.CreateMeetingTittleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateMeetingTittleLabel.Location = new System.Drawing.Point(13, 87);
-            this.CreateMeetingTittleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreateMeetingTittleLabel.Location = new System.Drawing.Point(17, 107);
             this.CreateMeetingTittleLabel.Name = "CreateMeetingTittleLabel";
-            this.CreateMeetingTittleLabel.Size = new System.Drawing.Size(82, 20);
+            this.CreateMeetingTittleLabel.Size = new System.Drawing.Size(104, 25);
             this.CreateMeetingTittleLabel.TabIndex = 0;
             this.CreateMeetingTittleLabel.Text = "Møde Titel";
             // 
-            // CreateMeetingCancelButtom
+            // CreateProjectPanel
             // 
-            this.CreateMeetingCancelButtom.Location = new System.Drawing.Point(1062, 521);
-            this.CreateMeetingCancelButtom.Name = "CreateMeetingCancelButtom";
-            this.CreateMeetingCancelButtom.Size = new System.Drawing.Size(75, 23);
-            this.CreateMeetingCancelButtom.TabIndex = 20;
-            this.CreateMeetingCancelButtom.Text = "Annuler";
-            this.CreateMeetingCancelButtom.UseVisualStyleBackColor = true;
-            this.CreateMeetingCancelButtom.Click += new System.EventHandler(this.CreateMeetingCancelButtom_Click);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectCreateButtom);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectCancelButtom);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectAttendanceRichTextBox);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectAttendanceComboBox);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectAttendanceLabel);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectCustomerComboBox);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectCustomerLabel);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectAdressTextBox);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectAdressLabel);
+            this.CreateProjectPanel.Controls.Add(this.richTextBox1);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectDescriptionTitle);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectTitleTextBox);
+            this.CreateProjectPanel.Controls.Add(this.CreateProjectTitleLabel);
+            this.CreateProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CreateProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.CreateProjectPanel.Name = "CreateProjectPanel";
+            this.CreateProjectPanel.Size = new System.Drawing.Size(1685, 938);
+            this.CreateProjectPanel.TabIndex = 21;
+            // 
+            // CreateProjectCreateButtom
+            // 
+            this.CreateProjectCreateButtom.Location = new System.Drawing.Point(1441, 736);
+            this.CreateProjectCreateButtom.Name = "CreateProjectCreateButtom";
+            this.CreateProjectCreateButtom.Size = new System.Drawing.Size(75, 28);
+            this.CreateProjectCreateButtom.TabIndex = 12;
+            this.CreateProjectCreateButtom.Text = "Opret";
+            this.CreateProjectCreateButtom.UseVisualStyleBackColor = true;
+            this.CreateProjectCreateButtom.Click += new System.EventHandler(this.CreateProjectCreateButtom_Click);
+            // 
+            // CreateProjectCancelButtom
+            // 
+            this.CreateProjectCancelButtom.Location = new System.Drawing.Point(1354, 736);
+            this.CreateProjectCancelButtom.Name = "CreateProjectCancelButtom";
+            this.CreateProjectCancelButtom.Size = new System.Drawing.Size(75, 28);
+            this.CreateProjectCancelButtom.TabIndex = 11;
+            this.CreateProjectCancelButtom.Text = "Annullere";
+            this.CreateProjectCancelButtom.UseVisualStyleBackColor = true;
+            this.CreateProjectCancelButtom.Click += new System.EventHandler(this.CreateProjectCancelButtom_Click);
+            // 
+            // CreateProjectAttendanceRichTextBox
+            // 
+            this.CreateProjectAttendanceRichTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.CreateProjectAttendanceRichTextBox.Location = new System.Drawing.Point(880, 292);
+            this.CreateProjectAttendanceRichTextBox.Name = "CreateProjectAttendanceRichTextBox";
+            this.CreateProjectAttendanceRichTextBox.ReadOnly = true;
+            this.CreateProjectAttendanceRichTextBox.Size = new System.Drawing.Size(440, 472);
+            this.CreateProjectAttendanceRichTextBox.TabIndex = 10;
+            this.CreateProjectAttendanceRichTextBox.Text = "";
+            // 
+            // CreateProjectAttendanceComboBox
+            // 
+            this.CreateProjectAttendanceComboBox.FormattingEnabled = true;
+            this.CreateProjectAttendanceComboBox.Location = new System.Drawing.Point(879, 263);
+            this.CreateProjectAttendanceComboBox.Name = "CreateProjectAttendanceComboBox";
+            this.CreateProjectAttendanceComboBox.Size = new System.Drawing.Size(440, 24);
+            this.CreateProjectAttendanceComboBox.TabIndex = 9;
+            this.CreateProjectAttendanceComboBox.SelectedIndexChanged += new System.EventHandler(this.CreateProjectAttendanceComboBox_SelectedIndexChanged);
+            // 
+            // CreateProjectAttendanceLabel
+            // 
+            this.CreateProjectAttendanceLabel.AutoSize = true;
+            this.CreateProjectAttendanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProjectAttendanceLabel.Location = new System.Drawing.Point(874, 234);
+            this.CreateProjectAttendanceLabel.Name = "CreateProjectAttendanceLabel";
+            this.CreateProjectAttendanceLabel.Size = new System.Drawing.Size(161, 25);
+            this.CreateProjectAttendanceLabel.TabIndex = 8;
+            this.CreateProjectAttendanceLabel.Text = "Projekt Deltagere";
+            // 
+            // CreateProjectCustomerComboBox
+            // 
+            this.CreateProjectCustomerComboBox.FormattingEnabled = true;
+            this.CreateProjectCustomerComboBox.Location = new System.Drawing.Point(879, 207);
+            this.CreateProjectCustomerComboBox.Name = "CreateProjectCustomerComboBox";
+            this.CreateProjectCustomerComboBox.Size = new System.Drawing.Size(440, 24);
+            this.CreateProjectCustomerComboBox.TabIndex = 7;
+            // 
+            // CreateProjectCustomerLabel
+            // 
+            this.CreateProjectCustomerLabel.AutoSize = true;
+            this.CreateProjectCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProjectCustomerLabel.Location = new System.Drawing.Point(874, 178);
+            this.CreateProjectCustomerLabel.Name = "CreateProjectCustomerLabel";
+            this.CreateProjectCustomerLabel.Size = new System.Drawing.Size(141, 25);
+            this.CreateProjectCustomerLabel.TabIndex = 6;
+            this.CreateProjectCustomerLabel.Text = "Projekt Kunder";
+            // 
+            // CreateProjectAdressTextBox
+            // 
+            this.CreateProjectAdressTextBox.Location = new System.Drawing.Point(879, 137);
+            this.CreateProjectAdressTextBox.Name = "CreateProjectAdressTextBox";
+            this.CreateProjectAdressTextBox.Size = new System.Drawing.Size(440, 22);
+            this.CreateProjectAdressTextBox.TabIndex = 5;
+            // 
+            // CreateProjectAdressLabel
+            // 
+            this.CreateProjectAdressLabel.AutoSize = true;
+            this.CreateProjectAdressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProjectAdressLabel.Location = new System.Drawing.Point(875, 107);
+            this.CreateProjectAdressLabel.Name = "CreateProjectAdressLabel";
+            this.CreateProjectAdressLabel.Size = new System.Drawing.Size(150, 25);
+            this.CreateProjectAdressLabel.TabIndex = 4;
+            this.CreateProjectAdressLabel.Text = "Projekt Adresse";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(322, 207);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(440, 557);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
+            // CreateProjectDescriptionTitle
+            // 
+            this.CreateProjectDescriptionTitle.AutoSize = true;
+            this.CreateProjectDescriptionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProjectDescriptionTitle.Location = new System.Drawing.Point(317, 178);
+            this.CreateProjectDescriptionTitle.Name = "CreateProjectDescriptionTitle";
+            this.CreateProjectDescriptionTitle.Size = new System.Drawing.Size(177, 25);
+            this.CreateProjectDescriptionTitle.TabIndex = 2;
+            this.CreateProjectDescriptionTitle.Text = "Projekt Beskrivelse";
+            // 
+            // CreateProjectTitleTextBox
+            // 
+            this.CreateProjectTitleTextBox.Location = new System.Drawing.Point(322, 137);
+            this.CreateProjectTitleTextBox.Name = "CreateProjectTitleTextBox";
+            this.CreateProjectTitleTextBox.Size = new System.Drawing.Size(440, 22);
+            this.CreateProjectTitleTextBox.TabIndex = 1;
+            // 
+            // CreateProjectTitleLabel
+            // 
+            this.CreateProjectTitleLabel.AutoSize = true;
+            this.CreateProjectTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreateProjectTitleLabel.Location = new System.Drawing.Point(317, 106);
+            this.CreateProjectTitleLabel.Name = "CreateProjectTitleLabel";
+            this.CreateProjectTitleLabel.Size = new System.Drawing.Size(114, 25);
+            this.CreateProjectTitleLabel.TabIndex = 0;
+            this.CreateProjectTitleLabel.Text = "Projekt Titel";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 762);
+            this.ClientSize = new System.Drawing.Size(1685, 938);
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.SearchBar);
             this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.CreateProjectPanel);
+            this.Controls.Add(this.LoginPage);
+            this.Controls.Add(this.MeetingPage);
             this.Controls.Add(this.CreatMeeting);
             this.Controls.Add(this.CustomerTab);
             this.Controls.Add(this.MeetingTab);
             this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.ProfileTab);
-            this.Controls.Add(this.LoginPage);
-            this.Controls.Add(this.MeetingPage);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -984,6 +1199,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.MeetingTab.ResumeLayout(false);
             this.MeetingTab.PerformLayout();
+            this.ProjectTab.ResumeLayout(false);
             this.UserTab.ResumeLayout(false);
             this.UserTab.PerformLayout();
             this.MeetingPage.ResumeLayout(false);
@@ -992,6 +1208,8 @@
             this.LoginPage.PerformLayout();
             this.CreatMeeting.ResumeLayout(false);
             this.CreatMeeting.PerformLayout();
+            this.CreateProjectPanel.ResumeLayout(false);
+            this.CreateProjectPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1073,6 +1291,21 @@
         private System.Windows.Forms.TextBox CreateMeetingAgendaTextbox;
         private System.Windows.Forms.Button CreateMeetingCreateButtom;
         private System.Windows.Forms.Button CreateMeetingCancelButtom;
+        private System.Windows.Forms.Panel CreateProjectPanel;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label CreateProjectDescriptionTitle;
+        private System.Windows.Forms.TextBox CreateProjectTitleTextBox;
+        private System.Windows.Forms.Label CreateProjectTitleLabel;
+        private System.Windows.Forms.Label CreateProjectAdressLabel;
+        private System.Windows.Forms.TextBox CreateProjectAdressTextBox;
+        private System.Windows.Forms.Label CreateProjectCustomerLabel;
+        private System.Windows.Forms.ComboBox CreateProjectCustomerComboBox;
+        private System.Windows.Forms.ComboBox CreateProjectAttendanceComboBox;
+        private System.Windows.Forms.Label CreateProjectAttendanceLabel;
+        private System.Windows.Forms.RichTextBox CreateProjectAttendanceRichTextBox;
+        private System.Windows.Forms.Button CreateProjectCancelButtom;
+        private System.Windows.Forms.Button CreateProjectCreateButtom;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -26,6 +26,7 @@ namespace WindowsFormsSolution
             ProfileTab.Visible = false;
             MeetingTab.Visible = false;
             MeetingPage.Visible = false;
+            CreateProjectPanel.Visible = false;
         }
 
         private Models.Database database { get; }
@@ -322,7 +323,8 @@ namespace WindowsFormsSolution
          }*/
 
 
-        private List<Models.Classes.CreatMeetingAgendaBuilder> Agendapoints { get; set; } = new List<Models.Classes.CreatMeetingAgendaBuilder>();
+        //Create Meeting buttoms
+        private List<Models.CreatMeetingAgendaBuilder> Agendapoints { get; set; } = new List<Models.CreatMeetingAgendaBuilder>();
         private List<string> attendances { get; set; } = new List<string>();
 
         private void MeetingsCreateButtom_Click(object sender, EventArgs e)
@@ -342,7 +344,7 @@ namespace WindowsFormsSolution
         {
             if (Agendapoints.Contains(CreatmeetingSelectAgendacomboBox.SelectedItem))
             {
-                foreach (Models.Classes.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+                foreach (Models.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
                 {
                     if (Agendapoint == CreatmeetingSelectAgendacomboBox.SelectedItem)
                     {
@@ -356,9 +358,9 @@ namespace WindowsFormsSolution
 
         private void CreateMeetingAddAgendaItemButtom_Click(object sender, EventArgs e)
         {
-            Agendapoints.Add(new Models.Classes.CreatMeetingAgendaBuilder(CreateMeetingAgendaTextbox.Text));
+            Agendapoints.Add(new Models.CreatMeetingAgendaBuilder(CreateMeetingAgendaTextbox.Text));
             CreateMeetingAgendaTextbox.Text = "";
-            CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.Classes.CreatMeetingAgendaBuilder>());
+            CreatmeetingSelectAgendacomboBox.Items.Add(Agendapoints.Last<Models.CreatMeetingAgendaBuilder>());
             UpdateCreateMeetingAgendaTextbox();
         }
 
@@ -367,7 +369,7 @@ namespace WindowsFormsSolution
             CreateMeetingFullAgendaLabel.BeginUpdate();
             CreateMeetingFullAgendaLabel.Nodes.Clear();
             int i = 0;
-            foreach (Models.Classes.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
+            foreach (Models.CreatMeetingAgendaBuilder Agendapoint in Agendapoints)
             {
                 CreateMeetingFullAgendaLabel.Nodes.Add(new TreeNode(Agendapoint.ToString()));
                 foreach (String submeeting in Agendapoint.Submeetings)
@@ -408,8 +410,9 @@ namespace WindowsFormsSolution
             {
                 persons.Add(database.GetPersonByName(name));
             }
-            database.addMeeting(new Models.Meeting(CreateMeetingTitleTextbox.Text, currUser, CreateMeetingStarttimeDatePicker.Value, CreateMeetingEndtimeDatePicker.Value, CreateMeetingDescriptionRichtextbox.Text, persons, Agendapoints));
-            ChangeTab(MeetingTab, MeetingsMenuItem);
+            database.addMeeting(new Models.Meeting(CreateMeetingTitleTextbox.Text, currUser, CreateMeetingStarttimeDatePicker.Value, CreateMeetingEndtimeDatePicker.Value, CreateMeetingDescriptionRichtextbox.Text, persons, Agendapoints), persons);
+            MeetingsMenuItem_Click(sender, e);
+          //ChangeTab(MeetingTab, MeetingsMenuItem);
             Agendapoints.Clear();
             attendances.Clear();
             CreateMeetingAgendaTextbox.Clear();
@@ -434,6 +437,70 @@ namespace WindowsFormsSolution
             CreatemeetingSubmeetingTextbox.Clear();
             CreateMeetingTitleTextbox.Clear();
             UpdateCreateMeetingAgendaTextbox();
+        }
+
+        //Create Project Buttoms
+        private List<string> projectAttendances { get; set; } = new List<string>();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChangeTab(CreateProjectPanel, ProjectsMenuItem);
+            foreach (Models.User user in database.users)
+            {
+                CreateProjectAttendanceComboBox.Items.Add(user.Name);
+            }
+            foreach (Models.Customer customer in database.customers)
+            {
+                CreateProjectCustomerComboBox.Items.Add(customer.Name);
+            }
+        }
+
+
+
+        private void CreateProjectCancelButtom_Click(object sender, EventArgs e)
+        {
+            List<Models.User> attandances = new List<Models.User>();
+            foreach (string attendance in projectAttendances)
+            {
+                attandances.Add(database.GetUserByName(attendance));
+            }
+            database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()));
+            ChangeTab(ProjectTab, ProjectsMenuItem);
+            projectAttendances.Clear();
+            CreateProjectAdressTextBox.Clear();
+            CreateProjectAttendanceComboBox.Items.Clear();
+            CreateProjectAttendanceRichTextBox.Clear();
+            CreateProjectCustomerComboBox.Items.Clear();
+            CreateProjectTitleTextBox.Clear();
+            richTextBox1.Clear();
+        }
+
+        private void CreateProjectCreateButtom_Click(object sender, EventArgs e)
+        {
+            ChangeTab(ProjectTab, ProjectsMenuItem);
+            projectAttendances.Clear();
+            CreateProjectAdressTextBox.Clear();
+            CreateProjectAttendanceComboBox.Items.Clear();
+            CreateProjectAttendanceRichTextBox.Clear();
+            CreateProjectCustomerComboBox.Items.Clear();
+            CreateProjectTitleTextBox.Clear();
+            richTextBox1.Clear();
+        }
+
+        private void CreateProjectAttendanceComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (projectAttendances.Contains(CreateProjectAttendanceComboBox.SelectedItem))
+            {
+                projectAttendances.Remove(CreateProjectAttendanceComboBox.SelectedItem.ToString());
+            }
+            else
+            {
+                projectAttendances.Add(CreateProjectAttendanceComboBox.SelectedItem.ToString());
+            }
+            CreateProjectAttendanceRichTextBox.Clear();
+            foreach (string projectAttendance in projectAttendances)
+            {
+                CreateProjectAttendanceRichTextBox.Text += $"{projectAttendance}\n";
+            }
         }
     }
 }

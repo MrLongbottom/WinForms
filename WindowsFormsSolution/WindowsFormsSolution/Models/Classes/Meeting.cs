@@ -17,18 +17,18 @@ namespace WindowsFormsSolution.Models
         public List<Attachment> Attachments { get; private set; } = new List<Attachment>();
 
 
-        public Meeting(string title, User user, DateTime startTime, DateTime endTime, string description, List<Person> attendances, List<Classes.CreatMeetingAgendaBuilder> agendaItems)
+        public Meeting(string title, User user, DateTime startTime, DateTime endTime, string description, List<Person> attendances, List<CreatMeetingAgendaBuilder> agendaItems)
         {
             Title = title;
             Owner = user;
             StartTime = startTime;
             Description = description;
-            Attendances.Add(new Attendance(this, user, false, false, true));
-            foreach (Person attendance in attendances)
+            //Attendances.Add(new Attendance(this, user, false, false, true));
+            /*foreach (Person attendance in attendances)
             {
                 Attendances.Add(new Attendance(this, attendance, false, false, false));
-            }
-            foreach (Classes.CreatMeetingAgendaBuilder agendaItem in agendaItems)
+            }*/
+            foreach (CreatMeetingAgendaBuilder agendaItem in agendaItems)
             {
                 AgendaItems.Add(new AgendaItem(agendaItem.Agendapoint, user, this));
             }

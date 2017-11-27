@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsSolution.Models.Classes
+namespace WindowsFormsSolution.Models
 {
     public class CreatMeetingAgendaBuilder
     {
