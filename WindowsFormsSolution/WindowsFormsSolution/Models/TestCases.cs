@@ -29,6 +29,7 @@ namespace WindowsFormsSolution.Models
             database.addCustomer(new Customer("Frelsens", "Frelsen@mail.dk", "Algade 27 9000 Aalborg", "+45 123245678", "763781627836127"));
             database.addCustomer(new Customer("Hotel Hankat", "hotel@hankat.dk", "Vestrebro 73 8000 Aarhus", "12312340", "9852478315"));
             database.addCustomer(new Customer("Firmanavn", "Firma@email.dk", "Vejnavn hus nr postnr by", "Firma telefon nr", "Firma cvr"));
+            database.addCustomer(new Customer("Tarm Svømmehal", "tarmsvøm@mail.dk", "Tarm 2880", "12345678", "12432154"));
 
             //add test eksterns
             database.addExtern(new External("Klaus Klausen", "Klaus@mail.dk", "87654321"));

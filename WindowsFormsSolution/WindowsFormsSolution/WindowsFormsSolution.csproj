@@ -86,6 +86,12 @@
     <Compile Include="Models\Classes\User.cs" />
     <Compile Include="Models\Database.cs" />
     <Compile Include="Models\Exception\notAdminException.cs" />
+    <Compile Include="Models\NeedCustommerWarningPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\NeedCustommerWarningPopup.Designer.cs">
+      <DependentUpon>NeedCustommerWarningPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\OpretExternPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Models\CreateUserPopup.resx">
       <DependentUpon>CreateUserPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\NeedCustommerWarningPopup.resx">
+      <DependentUpon>NeedCustommerWarningPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\OpretExternPopup.resx">
       <DependentUpon>OpretExternPopup.cs</DependentUpon>

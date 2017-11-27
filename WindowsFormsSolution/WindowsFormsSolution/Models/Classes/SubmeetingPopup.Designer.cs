@@ -41,27 +41,31 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(221, 43);
+            this.label1.Location = new System.Drawing.Point(166, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 29);
+            this.label1.Size = new System.Drawing.Size(152, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tilføj Underpunkt";
             // 
             // HovedpunktcomboBox
             // 
+            this.HovedpunktcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.HovedpunktcomboBox.FormattingEnabled = true;
-            this.HovedpunktcomboBox.Location = new System.Drawing.Point(17, 122);
+            this.HovedpunktcomboBox.Location = new System.Drawing.Point(13, 99);
+            this.HovedpunktcomboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.HovedpunktcomboBox.Name = "HovedpunktcomboBox";
-            this.HovedpunktcomboBox.Size = new System.Drawing.Size(636, 24);
+            this.HovedpunktcomboBox.Size = new System.Drawing.Size(478, 21);
             this.HovedpunktcomboBox.TabIndex = 1;
             // 
             // HovedpunktLabel
             // 
             this.HovedpunktLabel.AutoSize = true;
             this.HovedpunktLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HovedpunktLabel.Location = new System.Drawing.Point(15, 94);
+            this.HovedpunktLabel.Location = new System.Drawing.Point(11, 76);
+            this.HovedpunktLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HovedpunktLabel.Name = "HovedpunktLabel";
-            this.HovedpunktLabel.Size = new System.Drawing.Size(123, 25);
+            this.HovedpunktLabel.Size = new System.Drawing.Size(99, 20);
             this.HovedpunktLabel.TabIndex = 2;
             this.HovedpunktLabel.Text = "Hovedpunkt:";
             // 
@@ -69,25 +73,28 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 158);
+            this.label3.Location = new System.Drawing.Point(9, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 25);
+            this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Underpunkt:";
             // 
             // UnderpunktrichTextBox1
             // 
-            this.UnderpunktrichTextBox1.Location = new System.Drawing.Point(17, 187);
+            this.UnderpunktrichTextBox1.Location = new System.Drawing.Point(13, 152);
+            this.UnderpunktrichTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UnderpunktrichTextBox1.Name = "UnderpunktrichTextBox1";
-            this.UnderpunktrichTextBox1.Size = new System.Drawing.Size(631, 191);
+            this.UnderpunktrichTextBox1.Size = new System.Drawing.Size(474, 156);
             this.UnderpunktrichTextBox1.TabIndex = 5;
             this.UnderpunktrichTextBox1.Text = "";
             // 
             // CreateButtom
             // 
-            this.CreateButtom.Location = new System.Drawing.Point(345, 410);
+            this.CreateButtom.Location = new System.Drawing.Point(259, 333);
+            this.CreateButtom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CreateButtom.Name = "CreateButtom";
-            this.CreateButtom.Size = new System.Drawing.Size(119, 48);
+            this.CreateButtom.Size = new System.Drawing.Size(89, 39);
             this.CreateButtom.TabIndex = 8;
             this.CreateButtom.Text = "Tilføj";
             this.CreateButtom.UseVisualStyleBackColor = true;
@@ -95,9 +102,10 @@
             // 
             // AnnullereButtom
             // 
-            this.AnnullereButtom.Location = new System.Drawing.Point(217, 410);
+            this.AnnullereButtom.Location = new System.Drawing.Point(163, 333);
+            this.AnnullereButtom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AnnullereButtom.Name = "AnnullereButtom";
-            this.AnnullereButtom.Size = new System.Drawing.Size(100, 48);
+            this.AnnullereButtom.Size = new System.Drawing.Size(75, 39);
             this.AnnullereButtom.TabIndex = 9;
             this.AnnullereButtom.Text = "Annullere";
             this.AnnullereButtom.UseVisualStyleBackColor = true;
@@ -105,9 +113,9 @@
             // 
             // SubmeetingPopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(660, 470);
+            this.ClientSize = new System.Drawing.Size(495, 382);
             this.Controls.Add(this.AnnullereButtom);
             this.Controls.Add(this.CreateButtom);
             this.Controls.Add(this.UnderpunktrichTextBox1);
@@ -115,6 +123,7 @@
             this.Controls.Add(this.HovedpunktLabel);
             this.Controls.Add(this.HovedpunktcomboBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SubmeetingPopup";
             this.Text = "SubmeetingPopup";
             this.ResumeLayout(false);

@@ -316,7 +316,7 @@ namespace WindowsFormsSolution
             //Dagsorden Setup
             if (meeting.EndTime <= DateTime.Now)
             {
-                MeetingAgendaLabel.Text = "Referat";
+                label1.Text = "Referat";
                 MeetingAgendaTree.Nodes.Clear();
                 foreach (Models.AgendaItem agen in meeting.AgendaItems)
                 {
@@ -330,7 +330,7 @@ namespace WindowsFormsSolution
             }
             else
             {
-                MeetingAgendaLabel.Text = "Dagsorden";
+                label1.Text = "Dagsorden";
                 MeetingAgendaTree.Nodes.Clear();
                 foreach (Models.AgendaItem agen in meeting.AgendaItems)
                 {
@@ -594,22 +594,30 @@ namespace WindowsFormsSolution
 
         private void CreateProjectCreateButtom_Click(object sender, EventArgs e)
         {
-            List<Models.User> attandances = new List<Models.User>();
-            attandances.Add(currUser);
-            foreach (string attendance in projectAttendances)
+            if (CreateProjectCustomerComboBox.SelectedItem == null)
             {
-                attandances.Add(database.GetUserByName(attendance));
+                Models.NeedCustommerWarningPopup needCustommerWarningPopup = new Models.NeedCustommerWarningPopup();
+                needCustommerWarningPopup.ShowDialog();
             }
-            database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()), attandances);
-            ProjectsMenuItem_Click(sender, e);
-            //ChangeTab(ProjectTab, ProjectsMenuItem);
-            projectAttendances.Clear();
-            CreateProjectAdressTextBox.Clear();
-            CreateProjectAttendanceComboBox.Items.Clear();
-            CreateProjectAttendanceRichTextBox.Clear();
-            CreateProjectCustomerComboBox.Items.Clear();
-            CreateProjectTitleTextBox.Clear();
-            richTextBox1.Clear();
+            else
+            {
+                List<Models.User> attandances = new List<Models.User>();
+                attandances.Add(currUser);
+                foreach (string attendance in projectAttendances)
+                {
+                    attandances.Add(database.GetUserByName(attendance));
+                }
+                database.addProject(new Models.Project(currUser, CreateProjectTitleTextBox.Text, database.GetCustomerByName(CreateProjectCustomerComboBox.SelectedItem.ToString()), CreateProjectAdressTextBox.Text, richTextBox1.Text, attandances, new List<Models.Attachment>()), attandances);
+                ProjectsMenuItem_Click(sender, e);
+                //ChangeTab(ProjectTab, ProjectsMenuItem);
+                projectAttendances.Clear();
+                CreateProjectAdressTextBox.Clear();
+                CreateProjectAttendanceComboBox.Items.Clear();
+                CreateProjectAttendanceRichTextBox.Clear();
+                CreateProjectCustomerComboBox.Items.Clear();
+                CreateProjectTitleTextBox.Clear();
+                richTextBox1.Clear();
+            }            
         }
 
         private void CreateProjectAttendanceComboBox_SelectedIndexChanged(object sender, EventArgs e)
