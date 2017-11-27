@@ -65,6 +65,12 @@
     <Compile Include="Models\Classes\SubmeetingPopup.Designer.cs">
       <DependentUpon>SubmeetingPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CreateUserPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\CreateUserPopup.Designer.cs">
+      <DependentUpon>CreateUserPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Exception\DoNotContainElementException.cs" />
     <Compile Include="Models\Exception\InvalidAccessException.cs" />
     <Compile Include="Models\Exception\CantBeNullException.cs" />
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Models\Classes\SubmeetingPopup.resx">
       <DependentUpon>SubmeetingPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\CreateUserPopup.resx">
+      <DependentUpon>CreateUserPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Models\OpretExternPopup.resx">
       <DependentUpon>OpretExternPopup.cs</DependentUpon>

@@ -34,7 +34,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("1. Test");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("1. Test");
             this.SearchButton = new System.Windows.Forms.Button();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.ProfileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -141,6 +141,8 @@
             this.ProfileReferatLabel = new System.Windows.Forms.Label();
             this.ProjectReferBox = new System.Windows.Forms.ListBox();
             this.ProjectTitleLabel = new System.Windows.Forms.Label();
+            this.CreateUserButtom = new System.Windows.Forms.Button();
+            this.CreateExternalButtom = new System.Windows.Forms.Button();
             this.MainMenu.SuspendLayout();
             this.ProfileTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
@@ -158,8 +160,9 @@
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchButton.Location = new System.Drawing.Point(1159, 0);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(100, 45);
+            this.SearchButton.Size = new System.Drawing.Size(100, 46);
             this.SearchButton.TabIndex = 6;
             this.SearchButton.TabStop = false;
             this.SearchButton.Text = "Søg";
@@ -180,7 +183,7 @@
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.MainMenu.Size = new System.Drawing.Size(1685, 54);
+            this.MainMenu.Size = new System.Drawing.Size(1604, 54);
             this.MainMenu.TabIndex = 4;
             this.MainMenu.Text = "MainMenu";
             this.MainMenu.Visible = false;
@@ -189,7 +192,7 @@
             // 
             this.ProfileMenuItem.AutoSize = false;
             this.ProfileMenuItem.ForeColor = System.Drawing.SystemColors.Info;
-            this.ProfileMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ProfileMenuItem.Image")));
+            this.ProfileMenuItem.Image = global::WindowsFormsSolution.Properties.Resources.blank;
             this.ProfileMenuItem.Name = "ProfileMenuItem";
             this.ProfileMenuItem.Size = new System.Drawing.Size(100, 41);
             this.ProfileMenuItem.Text = "Profil";
@@ -231,7 +234,7 @@
             // 
             this.SearchBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBar.Location = new System.Drawing.Point(1260, 4);
-            this.SearchBar.Margin = new System.Windows.Forms.Padding(4);
+            this.SearchBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SearchBar.MaxLength = 300;
             this.SearchBar.Name = "SearchBar";
             this.SearchBar.Size = new System.Drawing.Size(332, 36);
@@ -257,17 +260,18 @@
             this.ProfileTab.Controls.Add(this.ProfileName);
             this.ProfileTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProfileTab.Location = new System.Drawing.Point(0, 0);
-            this.ProfileTab.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileTab.Name = "ProfileTab";
-            this.ProfileTab.Size = new System.Drawing.Size(1685, 938);
+            this.ProfileTab.Size = new System.Drawing.Size(1604, 882);
             this.ProfileTab.TabIndex = 7;
             // 
             // LogOut
             // 
             this.LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOut.Location = new System.Drawing.Point(93, 614);
+            this.LogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogOut.Name = "LogOut";
-            this.LogOut.Size = new System.Drawing.Size(150, 40);
+            this.LogOut.Size = new System.Drawing.Size(149, 39);
             this.LogOut.TabIndex = 14;
             this.LogOut.Text = "Log Ud";
             this.LogOut.UseVisualStyleBackColor = true;
@@ -277,7 +281,7 @@
             // 
             this.ProfileEditPhoneBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileEditPhoneBox.Location = new System.Drawing.Point(125, 398);
-            this.ProfileEditPhoneBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditPhoneBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditPhoneBox.Name = "ProfileEditPhoneBox";
             this.ProfileEditPhoneBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditPhoneBox.TabIndex = 13;
@@ -288,7 +292,7 @@
             // 
             this.ProfileEditEmailBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileEditEmailBox.Location = new System.Drawing.Point(124, 354);
-            this.ProfileEditEmailBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditEmailBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditEmailBox.Name = "ProfileEditEmailBox";
             this.ProfileEditEmailBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditEmailBox.TabIndex = 12;
@@ -299,7 +303,7 @@
             // 
             this.ProfileEditNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProfileEditNameBox.Location = new System.Drawing.Point(125, 299);
-            this.ProfileEditNameBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditNameBox.Name = "ProfileEditNameBox";
             this.ProfileEditNameBox.Size = new System.Drawing.Size(199, 34);
             this.ProfileEditNameBox.TabIndex = 11;
@@ -311,7 +315,7 @@
             this.ProfileEditPhoneButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditPhoneButton.BackgroundImage")));
             this.ProfileEditPhoneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProfileEditPhoneButton.Location = new System.Drawing.Point(81, 401);
-            this.ProfileEditPhoneButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditPhoneButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditPhoneButton.Name = "ProfileEditPhoneButton";
             this.ProfileEditPhoneButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditPhoneButton.TabIndex = 10;
@@ -323,7 +327,7 @@
             this.ProfileEditEmailButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditEmailButton.BackgroundImage")));
             this.ProfileEditEmailButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProfileEditEmailButton.Location = new System.Drawing.Point(81, 358);
-            this.ProfileEditEmailButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditEmailButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditEmailButton.Name = "ProfileEditEmailButton";
             this.ProfileEditEmailButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditEmailButton.TabIndex = 9;
@@ -335,7 +339,7 @@
             this.ProfileEditNameButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ProfileEditNameButton.BackgroundImage")));
             this.ProfileEditNameButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ProfileEditNameButton.Location = new System.Drawing.Point(81, 303);
-            this.ProfileEditNameButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileEditNameButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileEditNameButton.Name = "ProfileEditNameButton";
             this.ProfileEditNameButton.Size = new System.Drawing.Size(31, 28);
             this.ProfileEditNameButton.TabIndex = 8;
@@ -364,9 +368,9 @@
             "Project 2",
             "Project 3"});
             this.ProfileProjects.Location = new System.Drawing.Point(1063, 160);
-            this.ProfileProjects.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileProjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileProjects.Name = "ProfileProjects";
-            this.ProfileProjects.Size = new System.Drawing.Size(480, 604);
+            this.ProfileProjects.Size = new System.Drawing.Size(480, 579);
             this.ProfileProjects.TabIndex = 6;
             this.ProfileProjects.SelectedIndexChanged += new System.EventHandler(this.ProfileProjects_SelectedIndexChanged);
             // 
@@ -392,9 +396,9 @@
             "Meeting 2",
             "Meeting 3"});
             this.ProfileMeetings.Location = new System.Drawing.Point(497, 160);
-            this.ProfileMeetings.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfileMeetings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfileMeetings.Name = "ProfileMeetings";
-            this.ProfileMeetings.Size = new System.Drawing.Size(480, 604);
+            this.ProfileMeetings.Size = new System.Drawing.Size(480, 579);
             this.ProfileMeetings.TabIndex = 4;
             this.ProfileMeetings.SelectedIndexChanged += new System.EventHandler(this.ProfileMeetings_SelectedIndexChanged);
             // 
@@ -423,9 +427,9 @@
             // ProfilePicture
             // 
             this.ProfilePicture.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources._123;
+            this.ProfilePicture.Image = global::WindowsFormsSolution.Properties.Resources.blank;
             this.ProfilePicture.Location = new System.Drawing.Point(124, 111);
-            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(4);
+            this.ProfilePicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProfilePicture.Name = "ProfilePicture";
             this.ProfilePicture.Size = new System.Drawing.Size(200, 185);
             this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,9 +456,9 @@
             this.MeetingTab.Controls.Add(this.MeetingsFormerBox);
             this.MeetingTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingTab.Location = new System.Drawing.Point(0, 0);
-            this.MeetingTab.Margin = new System.Windows.Forms.Padding(4);
+            this.MeetingTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MeetingTab.Name = "MeetingTab";
-            this.MeetingTab.Size = new System.Drawing.Size(1685, 938);
+            this.MeetingTab.Size = new System.Drawing.Size(1604, 882);
             this.MeetingTab.TabIndex = 0;
             // 
             // MeetingsCreateButtom
@@ -501,10 +505,10 @@
             "Meeting 2",
             "Meeting 3"});
             this.MeetingsUpcomingBox.Location = new System.Drawing.Point(912, 160);
-            this.MeetingsUpcomingBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MeetingsUpcomingBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MeetingsUpcomingBox.MultiColumn = true;
             this.MeetingsUpcomingBox.Name = "MeetingsUpcomingBox";
-            this.MeetingsUpcomingBox.Size = new System.Drawing.Size(712, 679);
+            this.MeetingsUpcomingBox.Size = new System.Drawing.Size(712, 654);
             this.MeetingsUpcomingBox.TabIndex = 1;
             this.MeetingsUpcomingBox.SelectedIndexChanged += new System.EventHandler(this.MeetingsUpcomingBox_SelectedIndexChanged);
             // 
@@ -519,9 +523,9 @@
             "Meeting 2",
             "Meeting 3"});
             this.MeetingsFormerBox.Location = new System.Drawing.Point(61, 160);
-            this.MeetingsFormerBox.Margin = new System.Windows.Forms.Padding(4);
+            this.MeetingsFormerBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MeetingsFormerBox.Name = "MeetingsFormerBox";
-            this.MeetingsFormerBox.Size = new System.Drawing.Size(712, 679);
+            this.MeetingsFormerBox.Size = new System.Drawing.Size(712, 654);
             this.MeetingsFormerBox.TabIndex = 0;
             this.MeetingsFormerBox.SelectedIndexChanged += new System.EventHandler(this.MeetingsFormerBox_SelectedIndexChanged);
             // 
@@ -534,16 +538,17 @@
             this.ProjectTab.Controls.Add(this.ProjectFormerBox);
             this.ProjectTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectTab.Location = new System.Drawing.Point(0, 0);
-            this.ProjectTab.Margin = new System.Windows.Forms.Padding(4);
+            this.ProjectTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProjectTab.Name = "ProjectTab";
-            this.ProjectTab.Size = new System.Drawing.Size(1685, 938);
+            this.ProjectTab.Size = new System.Drawing.Size(1604, 882);
             this.ProjectTab.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1118, 68);
+            this.button1.Location = new System.Drawing.Point(1117, 68);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 35);
+            this.button1.Size = new System.Drawing.Size(101, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "Nyt Project";
             this.button1.UseVisualStyleBackColor = true;
@@ -553,7 +558,7 @@
             // 
             this.ProjectCurrentLabel.AutoSize = true;
             this.ProjectCurrentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectCurrentLabel.Location = new System.Drawing.Point(772, 65);
+            this.ProjectCurrentLabel.Location = new System.Drawing.Point(750, 63);
             this.ProjectCurrentLabel.Name = "ProjectCurrentLabel";
             this.ProjectCurrentLabel.Size = new System.Drawing.Size(340, 39);
             this.ProjectCurrentLabel.TabIndex = 7;
@@ -563,7 +568,7 @@
             // 
             this.ProjectFormerLabel.AutoSize = true;
             this.ProjectFormerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectFormerLabel.Location = new System.Drawing.Point(198, 69);
+            this.ProjectFormerLabel.Location = new System.Drawing.Point(197, 69);
             this.ProjectFormerLabel.Name = "ProjectFormerLabel";
             this.ProjectFormerLabel.Size = new System.Drawing.Size(294, 39);
             this.ProjectFormerLabel.TabIndex = 6;
@@ -579,10 +584,11 @@
             "Project 1",
             "Project 2",
             "Project 3"});
-            this.ProjectCurrentBox.Location = new System.Drawing.Point(684, 109);
+            this.ProjectCurrentBox.Location = new System.Drawing.Point(684, 110);
+            this.ProjectCurrentBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectCurrentBox.MultiColumn = true;
             this.ProjectCurrentBox.Name = "ProjectCurrentBox";
-            this.ProjectCurrentBox.Size = new System.Drawing.Size(535, 579);
+            this.ProjectCurrentBox.Size = new System.Drawing.Size(535, 554);
             this.ProjectCurrentBox.TabIndex = 5;
             this.ProjectCurrentBox.SelectedIndexChanged += new System.EventHandler(this.ProjectCurrentBox_SelectedIndexChanged);
             // 
@@ -596,14 +602,17 @@
             "Project 1",
             "Project 2",
             "Project 3"});
-            this.ProjectFormerBox.Location = new System.Drawing.Point(46, 109);
+            this.ProjectFormerBox.Location = new System.Drawing.Point(45, 110);
+            this.ProjectFormerBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectFormerBox.Name = "ProjectFormerBox";
-            this.ProjectFormerBox.Size = new System.Drawing.Size(535, 579);
+            this.ProjectFormerBox.Size = new System.Drawing.Size(535, 554);
             this.ProjectFormerBox.TabIndex = 4;
             this.ProjectFormerBox.SelectedIndexChanged += new System.EventHandler(this.ProjectFormerBox_SelectedIndexChanged);
             // 
             // UserTab
             // 
+            this.UserTab.Controls.Add(this.CreateExternalButtom);
+            this.UserTab.Controls.Add(this.CreateUserButtom);
             this.UserTab.Controls.Add(this.UsersExternalsLabel);
             this.UserTab.Controls.Add(this.UsersExternalsBox);
             this.UserTab.Controls.Add(this.UsersCurrentLabel);
@@ -612,9 +621,9 @@
             this.UserTab.Controls.Add(this.UsersFormerBox);
             this.UserTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserTab.Location = new System.Drawing.Point(0, 0);
-            this.UserTab.Margin = new System.Windows.Forms.Padding(4);
+            this.UserTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserTab.Name = "UserTab";
-            this.UserTab.Size = new System.Drawing.Size(1685, 938);
+            this.UserTab.Size = new System.Drawing.Size(1604, 882);
             this.UserTab.TabIndex = 0;
             // 
             // UsersExternalsLabel
@@ -639,10 +648,10 @@
             "External 2",
             "External 3"});
             this.UsersExternalsBox.Location = new System.Drawing.Point(1159, 134);
-            this.UsersExternalsBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UsersExternalsBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsersExternalsBox.MultiColumn = true;
             this.UsersExternalsBox.Name = "UsersExternalsBox";
-            this.UsersExternalsBox.Size = new System.Drawing.Size(465, 679);
+            this.UsersExternalsBox.Size = new System.Drawing.Size(465, 654);
             this.UsersExternalsBox.TabIndex = 8;
             // 
             // UsersCurrentLabel
@@ -678,10 +687,10 @@
             "User 2",
             "User 3"});
             this.UsersCurrentBox.Location = new System.Drawing.Point(609, 134);
-            this.UsersCurrentBox.Margin = new System.Windows.Forms.Padding(4);
+            this.UsersCurrentBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsersCurrentBox.MultiColumn = true;
             this.UsersCurrentBox.Name = "UsersCurrentBox";
-            this.UsersCurrentBox.Size = new System.Drawing.Size(465, 679);
+            this.UsersCurrentBox.Size = new System.Drawing.Size(465, 654);
             this.UsersCurrentBox.TabIndex = 5;
             this.UsersCurrentBox.SelectedIndexChanged += new System.EventHandler(this.UsersCurrentBox_SelectedIndexChanged);
             // 
@@ -696,17 +705,18 @@
             "User 2",
             "User 3"});
             this.UsersFormerBox.Location = new System.Drawing.Point(44, 135);
+            this.UsersFormerBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsersFormerBox.Name = "UsersFormerBox";
-            this.UsersFormerBox.Size = new System.Drawing.Size(465, 679);
+            this.UsersFormerBox.Size = new System.Drawing.Size(465, 654);
             this.UsersFormerBox.TabIndex = 4;
             // 
             // CustomerTab
             // 
             this.CustomerTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerTab.Location = new System.Drawing.Point(0, 0);
-            this.CustomerTab.Margin = new System.Windows.Forms.Padding(4);
+            this.CustomerTab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CustomerTab.Name = "CustomerTab";
-            this.CustomerTab.Size = new System.Drawing.Size(1685, 938);
+            this.CustomerTab.Size = new System.Drawing.Size(1604, 882);
             this.CustomerTab.TabIndex = 0;
             // 
             // MeetingPage
@@ -722,9 +732,9 @@
             this.MeetingPage.Controls.Add(this.MeetingDescriptionLabel);
             this.MeetingPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MeetingPage.Location = new System.Drawing.Point(0, 0);
-            this.MeetingPage.Margin = new System.Windows.Forms.Padding(4);
+            this.MeetingPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MeetingPage.Name = "MeetingPage";
-            this.MeetingPage.Size = new System.Drawing.Size(1685, 938);
+            this.MeetingPage.Size = new System.Drawing.Size(1604, 882);
             this.MeetingPage.TabIndex = 0;
             this.MeetingPage.Visible = false;
             // 
@@ -732,7 +742,7 @@
             // 
             this.MeetingAtendeeLabel.AutoSize = true;
             this.MeetingAtendeeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MeetingAtendeeLabel.Location = new System.Drawing.Point(862, 385);
+            this.MeetingAtendeeLabel.Location = new System.Drawing.Point(861, 385);
             this.MeetingAtendeeLabel.Name = "MeetingAtendeeLabel";
             this.MeetingAtendeeLabel.Size = new System.Drawing.Size(194, 31);
             this.MeetingAtendeeLabel.TabIndex = 7;
@@ -748,9 +758,10 @@
             "User 2",
             "User 3",
             "External 1"});
-            this.MeetingAtendeeBox.Location = new System.Drawing.Point(658, 431);
+            this.MeetingAtendeeBox.Location = new System.Drawing.Point(659, 431);
+            this.MeetingAtendeeBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MeetingAtendeeBox.Name = "MeetingAtendeeBox";
-            this.MeetingAtendeeBox.Size = new System.Drawing.Size(580, 404);
+            this.MeetingAtendeeBox.Size = new System.Drawing.Size(580, 379);
             this.MeetingAtendeeBox.TabIndex = 6;
             this.MeetingAtendeeBox.SelectedIndexChanged += new System.EventHandler(this.MeetingAtendeeBox_SelectedIndexChanged);
             // 
@@ -768,7 +779,7 @@
             // 
             this.MeetingStartingTimeLabel.AutoSize = true;
             this.MeetingStartingTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MeetingStartingTimeLabel.Location = new System.Drawing.Point(654, 331);
+            this.MeetingStartingTimeLabel.Location = new System.Drawing.Point(653, 331);
             this.MeetingStartingTimeLabel.Name = "MeetingStartingTimeLabel";
             this.MeetingStartingTimeLabel.Size = new System.Drawing.Size(127, 20);
             this.MeetingStartingTimeLabel.TabIndex = 4;
@@ -785,12 +796,13 @@
             // 
             this.MeetingAgendaTree.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MeetingAgendaTree.Location = new System.Drawing.Point(16, 331);
+            this.MeetingAgendaTree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MeetingAgendaTree.Name = "MeetingAgendaTree";
-            treeNode5.Name = "";
-            treeNode5.Text = "1. Test";
+            treeNode1.Name = "";
+            treeNode1.Text = "1. Test";
             this.MeetingAgendaTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            this.MeetingAgendaTree.Size = new System.Drawing.Size(617, 504);
+            treeNode1});
+            this.MeetingAgendaTree.Size = new System.Drawing.Size(821, 619);
             this.MeetingAgendaTree.TabIndex = 2;
             // 
             // MeetingTitleLabel
@@ -808,7 +820,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(234, 296);
+            this.label1.Location = new System.Drawing.Point(235, 295);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 29);
@@ -819,7 +831,7 @@
             // 
             this.MeetingDescriptionLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MeetingDescriptionLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MeetingDescriptionLabel.Location = new System.Drawing.Point(16, 160);
+            this.MeetingDescriptionLabel.Location = new System.Drawing.Point(-25, 160);
             this.MeetingDescriptionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MeetingDescriptionLabel.Name = "MeetingDescriptionLabel";
             this.MeetingDescriptionLabel.Size = new System.Drawing.Size(1633, 92);
@@ -861,7 +873,7 @@
             // LoginEmalBox
             // 
             this.LoginEmalBox.Location = new System.Drawing.Point(712, 420);
-            this.LoginEmalBox.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginEmalBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginEmalBox.Name = "LoginEmalBox";
             this.LoginEmalBox.Size = new System.Drawing.Size(265, 22);
             this.LoginEmalBox.TabIndex = 1;
@@ -880,7 +892,7 @@
             // LoginPasswordBox
             // 
             this.LoginPasswordBox.Location = new System.Drawing.Point(712, 468);
-            this.LoginPasswordBox.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginPasswordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginPasswordBox.Name = "LoginPasswordBox";
             this.LoginPasswordBox.Size = new System.Drawing.Size(265, 22);
             this.LoginPasswordBox.TabIndex = 2;
@@ -890,7 +902,7 @@
             // LoginButton
             // 
             this.LoginButton.Location = new System.Drawing.Point(712, 500);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(100, 28);
             this.LoginButton.TabIndex = 3;
@@ -910,9 +922,9 @@
             this.LoginPage.Controls.Add(this.LoginButton);
             this.LoginPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LoginPage.Location = new System.Drawing.Point(0, 0);
-            this.LoginPage.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginPage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginPage.Name = "LoginPage";
-            this.LoginPage.Size = new System.Drawing.Size(1685, 938);
+            this.LoginPage.Size = new System.Drawing.Size(1604, 882);
             this.LoginPage.TabIndex = 11;
             // 
             // LoginWrong
@@ -953,13 +965,13 @@
             this.CreatMeeting.Location = new System.Drawing.Point(0, 0);
             this.CreatMeeting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreatMeeting.Name = "CreatMeeting";
-            this.CreatMeeting.Size = new System.Drawing.Size(1685, 938);
+            this.CreatMeeting.Size = new System.Drawing.Size(1604, 882);
             this.CreatMeeting.TabIndex = 4;
             // 
             // CreateMeetingCancelButtom
             // 
             this.CreateMeetingCancelButtom.Location = new System.Drawing.Point(1416, 641);
-            this.CreateMeetingCancelButtom.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateMeetingCancelButtom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateMeetingCancelButtom.Name = "CreateMeetingCancelButtom";
             this.CreateMeetingCancelButtom.Size = new System.Drawing.Size(100, 28);
             this.CreateMeetingCancelButtom.TabIndex = 20;
@@ -970,7 +982,7 @@
             // CreateMeetingCreateButtom
             // 
             this.CreateMeetingCreateButtom.Location = new System.Drawing.Point(1524, 641);
-            this.CreateMeetingCreateButtom.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateMeetingCreateButtom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateMeetingCreateButtom.Name = "CreateMeetingCreateButtom";
             this.CreateMeetingCreateButtom.Size = new System.Drawing.Size(100, 28);
             this.CreateMeetingCreateButtom.TabIndex = 19;
@@ -980,17 +992,17 @@
             // 
             // CreateMeetingAgendaTextbox
             // 
-            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(712, 605);
-            this.CreateMeetingAgendaTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.CreateMeetingAgendaTextbox.Location = new System.Drawing.Point(949, 745);
+            this.CreateMeetingAgendaTextbox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.CreateMeetingAgendaTextbox.Name = "CreateMeetingAgendaTextbox";
-            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(363, 22);
+            this.CreateMeetingAgendaTextbox.Size = new System.Drawing.Size(483, 22);
             this.CreateMeetingAgendaTextbox.TabIndex = 16;
             // 
             // CreateMeetingAddexternButtom
             // 
             this.CreateMeetingAddexternButtom.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CreateMeetingAddexternButtom.Location = new System.Drawing.Point(1501, 223);
-            this.CreateMeetingAddexternButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CreateMeetingAddexternButtom.Location = new System.Drawing.Point(2001, 274);
+            this.CreateMeetingAddexternButtom.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CreateMeetingAddexternButtom.Name = "CreateMeetingAddexternButtom";
             this.CreateMeetingAddexternButtom.Size = new System.Drawing.Size(123, 30);
             this.CreateMeetingAddexternButtom.TabIndex = 15;
@@ -1015,7 +1027,7 @@
             this.CreateMeetingAttendancecomboBox.Location = new System.Drawing.Point(1185, 223);
             this.CreateMeetingAttendancecomboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingAttendancecomboBox.Name = "CreateMeetingAttendancecomboBox";
-            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(310, 24);
+            this.CreateMeetingAttendancecomboBox.Size = new System.Drawing.Size(412, 24);
             this.CreateMeetingAttendancecomboBox.TabIndex = 13;
             this.CreateMeetingAttendancecomboBox.SelectedIndexChanged += new System.EventHandler(this.CreateMeetingAttendancecomboBox_SelectedIndexChanged);
             // 
@@ -1062,10 +1074,10 @@
             // 
             // CreateMeetingAddsubmeetingButtom
             // 
-            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(568, 633);
-            this.CreateMeetingAddsubmeetingButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CreateMeetingAddsubmeetingButtom.Location = new System.Drawing.Point(757, 779);
+            this.CreateMeetingAddsubmeetingButtom.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CreateMeetingAddsubmeetingButtom.Name = "CreateMeetingAddsubmeetingButtom";
-            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(148, 27);
+            this.CreateMeetingAddsubmeetingButtom.Size = new System.Drawing.Size(197, 33);
             this.CreateMeetingAddsubmeetingButtom.TabIndex = 8;
             this.CreateMeetingAddsubmeetingButtom.Text = "Tilføj Underpunkt";
             this.CreateMeetingAddsubmeetingButtom.UseVisualStyleBackColor = true;
@@ -1093,10 +1105,10 @@
             // 
             // CreateMeetingAddAgendaItemButtom
             // 
-            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(544, 603);
-            this.CreateMeetingAddAgendaItemButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CreateMeetingAddAgendaItemButtom.Location = new System.Drawing.Point(725, 742);
+            this.CreateMeetingAddAgendaItemButtom.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CreateMeetingAddAgendaItemButtom.Name = "CreateMeetingAddAgendaItemButtom";
-            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(172, 27);
+            this.CreateMeetingAddAgendaItemButtom.Size = new System.Drawing.Size(229, 33);
             this.CreateMeetingAddAgendaItemButtom.TabIndex = 5;
             this.CreateMeetingAddAgendaItemButtom.Text = "Tilføj Dagsordenspunkt";
             this.CreateMeetingAddAgendaItemButtom.UseVisualStyleBackColor = true;
@@ -1114,7 +1126,7 @@
             // 
             // CreateMeetingDescriptionRichtextbox
             // 
-            this.CreateMeetingDescriptionRichtextbox.Location = new System.Drawing.Point(22, 232);
+            this.CreateMeetingDescriptionRichtextbox.Location = new System.Drawing.Point(21, 231);
             this.CreateMeetingDescriptionRichtextbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateMeetingDescriptionRichtextbox.Name = "CreateMeetingDescriptionRichtextbox";
             this.CreateMeetingDescriptionRichtextbox.Size = new System.Drawing.Size(400, 453);
@@ -1168,13 +1180,15 @@
             this.CreateProjectPanel.Controls.Add(this.CreateProjectTitleLabel);
             this.CreateProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CreateProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.CreateProjectPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectPanel.Name = "CreateProjectPanel";
-            this.CreateProjectPanel.Size = new System.Drawing.Size(1685, 938);
+            this.CreateProjectPanel.Size = new System.Drawing.Size(1604, 882);
             this.CreateProjectPanel.TabIndex = 21;
             // 
             // CreateProjectCreateButtom
             // 
             this.CreateProjectCreateButtom.Location = new System.Drawing.Point(1441, 736);
+            this.CreateProjectCreateButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectCreateButtom.Name = "CreateProjectCreateButtom";
             this.CreateProjectCreateButtom.Size = new System.Drawing.Size(75, 28);
             this.CreateProjectCreateButtom.TabIndex = 12;
@@ -1184,7 +1198,8 @@
             // 
             // CreateProjectCancelButtom
             // 
-            this.CreateProjectCancelButtom.Location = new System.Drawing.Point(1354, 736);
+            this.CreateProjectCancelButtom.Location = new System.Drawing.Point(1355, 736);
+            this.CreateProjectCancelButtom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectCancelButtom.Name = "CreateProjectCancelButtom";
             this.CreateProjectCancelButtom.Size = new System.Drawing.Size(75, 28);
             this.CreateProjectCancelButtom.TabIndex = 11;
@@ -1196,6 +1211,7 @@
             // 
             this.CreateProjectAttendanceRichTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.CreateProjectAttendanceRichTextBox.Location = new System.Drawing.Point(880, 292);
+            this.CreateProjectAttendanceRichTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectAttendanceRichTextBox.Name = "CreateProjectAttendanceRichTextBox";
             this.CreateProjectAttendanceRichTextBox.ReadOnly = true;
             this.CreateProjectAttendanceRichTextBox.Size = new System.Drawing.Size(440, 472);
@@ -1206,6 +1222,7 @@
             // 
             this.CreateProjectAttendanceComboBox.FormattingEnabled = true;
             this.CreateProjectAttendanceComboBox.Location = new System.Drawing.Point(879, 263);
+            this.CreateProjectAttendanceComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectAttendanceComboBox.Name = "CreateProjectAttendanceComboBox";
             this.CreateProjectAttendanceComboBox.Size = new System.Drawing.Size(440, 24);
             this.CreateProjectAttendanceComboBox.TabIndex = 9;
@@ -1215,7 +1232,7 @@
             // 
             this.CreateProjectAttendanceLabel.AutoSize = true;
             this.CreateProjectAttendanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjectAttendanceLabel.Location = new System.Drawing.Point(874, 234);
+            this.CreateProjectAttendanceLabel.Location = new System.Drawing.Point(875, 234);
             this.CreateProjectAttendanceLabel.Name = "CreateProjectAttendanceLabel";
             this.CreateProjectAttendanceLabel.Size = new System.Drawing.Size(161, 25);
             this.CreateProjectAttendanceLabel.TabIndex = 8;
@@ -1225,6 +1242,7 @@
             // 
             this.CreateProjectCustomerComboBox.FormattingEnabled = true;
             this.CreateProjectCustomerComboBox.Location = new System.Drawing.Point(879, 207);
+            this.CreateProjectCustomerComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectCustomerComboBox.Name = "CreateProjectCustomerComboBox";
             this.CreateProjectCustomerComboBox.Size = new System.Drawing.Size(440, 24);
             this.CreateProjectCustomerComboBox.TabIndex = 7;
@@ -1233,7 +1251,7 @@
             // 
             this.CreateProjectCustomerLabel.AutoSize = true;
             this.CreateProjectCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateProjectCustomerLabel.Location = new System.Drawing.Point(874, 178);
+            this.CreateProjectCustomerLabel.Location = new System.Drawing.Point(875, 178);
             this.CreateProjectCustomerLabel.Name = "CreateProjectCustomerLabel";
             this.CreateProjectCustomerLabel.Size = new System.Drawing.Size(141, 25);
             this.CreateProjectCustomerLabel.TabIndex = 6;
@@ -1242,6 +1260,7 @@
             // CreateProjectAdressTextBox
             // 
             this.CreateProjectAdressTextBox.Location = new System.Drawing.Point(879, 137);
+            this.CreateProjectAdressTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectAdressTextBox.Name = "CreateProjectAdressTextBox";
             this.CreateProjectAdressTextBox.Size = new System.Drawing.Size(440, 22);
             this.CreateProjectAdressTextBox.TabIndex = 5;
@@ -1258,7 +1277,8 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(322, 207);
+            this.richTextBox1.Location = new System.Drawing.Point(323, 207);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(440, 557);
             this.richTextBox1.TabIndex = 3;
@@ -1276,7 +1296,8 @@
             // 
             // CreateProjectTitleTextBox
             // 
-            this.CreateProjectTitleTextBox.Location = new System.Drawing.Point(322, 137);
+            this.CreateProjectTitleTextBox.Location = new System.Drawing.Point(323, 137);
+            this.CreateProjectTitleTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CreateProjectTitleTextBox.Name = "CreateProjectTitleTextBox";
             this.CreateProjectTitleTextBox.Size = new System.Drawing.Size(440, 22);
             this.CreateProjectTitleTextBox.TabIndex = 1;
@@ -1303,15 +1324,16 @@
             this.ProjectPage.Controls.Add(this.ProjectTitleLabel);
             this.ProjectPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectPage.Location = new System.Drawing.Point(0, 0);
+            this.ProjectPage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectPage.Name = "ProjectPage";
-            this.ProjectPage.Size = new System.Drawing.Size(1685, 938);
+            this.ProjectPage.Size = new System.Drawing.Size(1604, 882);
             this.ProjectPage.TabIndex = 4;
             // 
             // ProjectCustomerLabel
             // 
             this.ProjectCustomerLabel.AutoSize = true;
             this.ProjectCustomerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProjectCustomerLabel.Location = new System.Drawing.Point(794, 260);
+            this.ProjectCustomerLabel.Location = new System.Drawing.Point(795, 260);
             this.ProjectCustomerLabel.Name = "ProjectCustomerLabel";
             this.ProjectCustomerLabel.Size = new System.Drawing.Size(195, 25);
             this.ProjectCustomerLabel.TabIndex = 7;
@@ -1343,8 +1365,9 @@
             this.ProjectUsersBox.FormattingEnabled = true;
             this.ProjectUsersBox.ItemHeight = 25;
             this.ProjectUsersBox.Location = new System.Drawing.Point(797, 406);
+            this.ProjectUsersBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectUsersBox.Name = "ProjectUsersBox";
-            this.ProjectUsersBox.Size = new System.Drawing.Size(440, 304);
+            this.ProjectUsersBox.Size = new System.Drawing.Size(440, 279);
             this.ProjectUsersBox.TabIndex = 4;
             this.ProjectUsersBox.SelectedIndexChanged += new System.EventHandler(this.ProjectUsersBox_SelectedIndexChanged);
             // 
@@ -1362,7 +1385,7 @@
             // 
             this.ProfileReferatLabel.AutoSize = true;
             this.ProfileReferatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.ProfileReferatLabel.Location = new System.Drawing.Point(346, 204);
+            this.ProfileReferatLabel.Location = new System.Drawing.Point(347, 204);
             this.ProfileReferatLabel.Name = "ProfileReferatLabel";
             this.ProfileReferatLabel.Size = new System.Drawing.Size(113, 29);
             this.ProfileReferatLabel.TabIndex = 2;
@@ -1374,8 +1397,9 @@
             this.ProjectReferBox.FormattingEnabled = true;
             this.ProjectReferBox.ItemHeight = 25;
             this.ProjectReferBox.Location = new System.Drawing.Point(32, 231);
+            this.ProjectReferBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ProjectReferBox.Name = "ProjectReferBox";
-            this.ProjectReferBox.Size = new System.Drawing.Size(715, 504);
+            this.ProjectReferBox.Size = new System.Drawing.Size(715, 479);
             this.ProjectReferBox.TabIndex = 1;
             // 
             // ProjectTitleLabel
@@ -1388,15 +1412,32 @@
             this.ProjectTitleLabel.TabIndex = 0;
             this.ProjectTitleLabel.Text = "Projekt Titel";
             // 
+            // CreateUserButtom
+            // 
+            this.CreateUserButtom.Location = new System.Drawing.Point(949, 795);
+            this.CreateUserButtom.Name = "CreateUserButtom";
+            this.CreateUserButtom.Size = new System.Drawing.Size(124, 29);
+            this.CreateUserButtom.TabIndex = 10;
+            this.CreateUserButtom.Text = "Tilføj ny Ansatte";
+            this.CreateUserButtom.UseVisualStyleBackColor = true;
+            this.CreateUserButtom.Click += new System.EventHandler(this.CreateUserButtom_Click);
+            // 
+            // CreateExternalButtom
+            // 
+            this.CreateExternalButtom.Location = new System.Drawing.Point(1489, 795);
+            this.CreateExternalButtom.Name = "CreateExternalButtom";
+            this.CreateExternalButtom.Size = new System.Drawing.Size(112, 29);
+            this.CreateExternalButtom.TabIndex = 11;
+            this.CreateExternalButtom.Text = "Tilføj ny extern";
+            this.CreateExternalButtom.UseVisualStyleBackColor = true;
+            this.CreateExternalButtom.Click += new System.EventHandler(this.CreateExternalButtom_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1685, 938);
+            this.ClientSize = new System.Drawing.Size(1604, 882);
             this.Controls.Add(this.MainMenu);
-            this.Controls.Add(this.CustomerTab);
-            this.Controls.Add(this.MeetingTab);
-            this.Controls.Add(this.ProjectTab);
             this.Controls.Add(this.UserTab);
             this.Controls.Add(this.CreateProjectPanel);
             this.Controls.Add(this.ProjectPage);
@@ -1404,7 +1445,10 @@
             this.Controls.Add(this.LoginPage);
             this.Controls.Add(this.MeetingPage);
             this.Controls.Add(this.CreatMeeting);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.CustomerTab);
+            this.Controls.Add(this.MeetingTab);
+            this.Controls.Add(this.ProjectTab);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "MainForm";
             this.Text = "Fjorblink Meeting Program";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1541,6 +1585,8 @@
         private System.Windows.Forms.Label ProjectCustom;
         private System.Windows.Forms.Label ProjectCustomerLabel;
         private System.Windows.Forms.Button LogOut;
+        private System.Windows.Forms.Button CreateUserButtom;
+        private System.Windows.Forms.Button CreateExternalButtom;
     }
 }
 

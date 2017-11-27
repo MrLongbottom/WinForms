@@ -628,5 +628,19 @@ namespace WindowsFormsSolution
                 CreateProjectAttendanceRichTextBox.Text += $"{projectAttendance}\n";
             }
         }
+
+        private void CreateUserButtom_Click(object sender, EventArgs e)
+        {
+            Models.CreateUserPopup createUserPopup = new Models.CreateUserPopup(database);
+            createUserPopup.ShowDialog();
+            UsersMenuItem_Click(sender, e);
+        }
+
+        private void CreateExternalButtom_Click(object sender, EventArgs e)
+        {
+            Models.OpretExternPopup opretExternPopup = new Models.OpretExternPopup(database);
+            opretExternPopup.ShowDialog();
+            UsersMenuItem_Click(sender, e);
+        }
     }
 }
